@@ -56,9 +56,8 @@ exec --no-startup-id unclutter
 #Network Manager applet
 exec killall nm-applet
 exec_always --no-startup-id nm-applet &
-#Create OpenVPN Config
-exec --no-startup-id sudo openvpn --config ~/Documents/clientArch.ovpn
-exec --no-startup-id openvpn --config ~/Documents/clientArch.ovpn
+#Disable sleeping on inactivity
+exec_always xset s off -dpms
 
 #OPENRC
 #set $shutdown sudo openrc-shutdown -p
