@@ -1,0 +1,5 @@
+
+Place eisvogel.latex into /usr/share/pandoc/data/templates/
+
+Rename md.md to {filename}.md, put that {filename} in Makefile
+
