@@ -1,6 +1,8 @@
 FILE = ""
 
 make:
-	@pandoc $(FILE).md -o $(FILE).pdf --from markdown --template eisvogel --listings
+	@pandoc $(FILE).md -o $(FILE).pdf --from markdown \
+		--template eisvogel --listings \
+		--pdf-engine=xelatex --variable papersize=letter
 	@mupdf $(FILE).pdf &
 
