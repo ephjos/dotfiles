@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+
+if (( "$#" == 1 )) ; then
+    cat "/home/joseph/.scripts/templates/$1"
+    exit 0
+fi
+
+echo "Invalid arguments" >&2
+exit 1
