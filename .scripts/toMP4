@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+
+if (( "$#" == 2 )) ; then
+    ffmpeg -i $1 -codec copy $2
+    exit 0
+fi
+
+echo "Invalid arguments" >&2
+exit 1
