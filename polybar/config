@@ -41,6 +41,8 @@
 	offset-x = 0
 	offset-y = 0
 
+	monitor = ${env:MONITOR:LVDS-1}
+
 	top = true
 
 	background = #000f0f0f
@@ -70,8 +72,8 @@
 	font-3 = Kochi Gothic:size=10;1
 
 	modules-left = workspaces
-	modules-center  = arch
-	modules-right   = filesystem pulseaudio temp battery paddinglite essid down paddinglite date
+	modules-center  = spotify
+	modules-right   = arch filesystem pulseaudio temp battery paddinglite essid down paddinglite date
 
 	fixed-center = true
 
@@ -93,7 +95,7 @@
 
 [module/date]
 	type     = internal/date
-	interval = 1.0
+	interval = 5
 	time     = "%m-%d %I:%M %p"
 	label    = "%time%"
 
@@ -275,7 +277,7 @@
 
 	format-disconnected = <label-disconnected>
 
-	format-disconnected-prefix              = ""
+	format-disconnected-prefix              = "!"
 	format-disconnected-prefix-padding      = 1
 	format-disconnected-prefix-padding-left = 1
 	format-disconnected-prefix-background   = ${xrdb:color0}
@@ -323,6 +325,9 @@
 	wrapping-scroll = false
 	strip-wsnumbers = true
 
+	; Only show workspaces on the same output as the bar
+	pin-workspaces = true
+
 	label-mode-background = ${xrdb:color0}
 	label-mode-foreground = ${xrdb:color7}
 	label-mode-padding    = 3
@@ -348,78 +353,10 @@
 	label-urgent-padding    = 3
 
 
-[module/openbox]
-	type                      = internal/xworkspaces
-	pin-workspaces            = true
-	enable-click              = false
-	enable-scroll             = false
-	format                    = <label-state>
-	label-monitor             = %name%
-	label-active              = %icon%%name%
-	label-active-foreground   = ${colors.obfg}
-	label-active-background   = ${colors.obbg}
-	label-active-underline    = #fba922
-	label-active-padding      = 1
-	label-occupied            = %name%
-	label-occupied-background = ${colors.obbg}
-	label-occupied-padding    = 1
-	label-urgent              = %index%
-	label-urgent-foreground   = #000000
-	label-urgent-background   = #bd2c40
-	label-urgent-underline    = #9b0a20
-	label-empty               = %name%
-	label-empty-padding       = 1
-	label-empty-background    = ${colors.obibg}
-	label-empty-foreground    = ${colors.obifg}
-
-[module/backlight]
-	type = internal/backlight
-
-;	output = LVDS-1
-
-	card          = acpi_video0
-	enable-scroll = false
-
-	format        = <label>
-	format-prefix = 
-
-	format-prefix-padding    = 1
-	format-prefix-background = ${colors.cpu_p_bg}
-	format-prefix-foreground = ${colors.modules_prefix_fg}
-
-	label            = %percentage%%
-	label-background = ${colors.modules_bg}
-	label-foreground = ${colors.modules_fg}
-	label-padding    = 1
-
-[module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${xrdb:color5}
-;format-connected-underline = #9f78e1
-label-connected = %essid%
-
-;format-disconnected =
-format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-label-disconnected = no wifi
-label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
 [module/pulseaudio]
 	type = custom/script
 	exec = ~/.config/polybar/pulseaudio-simple.sh
-	interval = 0
+	interval = 1
 
 	format = <label>
 
@@ -434,11 +371,11 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/arch]
 	type = custom/script
 	exec = ~/.config/polybar/updates-arch-combined.sh
-	interval = 0
+	interval = 30
 
 	format = <label>
 
-	format-prefix            = new
+	format-prefix            = 
 	format-prefix-background = ${xrdb:color0}
 	format-prefix-foreground = ${xrdb:color4}
 	format-prefix-padding    = 1
@@ -461,9 +398,24 @@ ramp-signal-foreground = ${colors.foreground-alt}
 	label-foreground = ${xrdb:color7}
 	label-padding    = 0
 
+[module/spotify]
+	type = custom/script
+	exec = ~/.config/polybar/spotify.sh
+	interval = 2
+
+	format = <label>
+
+	format-prefix            = 
+	format-prefix-background = ${xrdb:color0}
+	format-prefix-foreground = ${xrdb:color4}
+	format-prefix-padding    = 1
+	label-background = ${xrdb:color0}
+	label-foreground = ${xrdb:color7}
+	label-padding    = 0
+
 [module/filesystem]
 	type = internal/fs
-	interval = 25
+	interval = 60
 
 	mount-0 = /
 

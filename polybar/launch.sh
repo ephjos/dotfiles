@@ -2,7 +2,7 @@
 #!/usr/bin/env sh
 
 # Terminate already running bar instances
-killall -q polybar
+sudo killall polybar
 
 # Wait until the processes have been shut down
 while pgrep -x polybar >/dev/null; do sleep 1; done
@@ -11,8 +11,9 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 #polybar example &
 
 for i in $(polybar -m | awk -F: '{print $1}'); do MONITOR=$i polybar base -c ~/.config/polybar/config & done
-#feh --bg-scale ~/.config/wall.png
+feh --bg-scale ~/.config/wall.png
 
-#polybar example -c ~/.config/polybar/config
+#polybar base -c ~/.config/polybar/config
+#feh --bg-scale ~/.config/wall.png
 
 echo "Bars launched..."

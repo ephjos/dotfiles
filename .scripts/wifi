@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+
+if (( "$#" == 2 )) ; then
+    nmcli device wifi connect $1 password $2
+    exit 0
+fi
+
+echo "Invalid arguments" >&2
+exit 1
