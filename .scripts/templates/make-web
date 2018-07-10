@@ -1,0 +1,11 @@
+page=<++>
+browser=firefox
+
+.PHONY : run stop
+
+run :
+	-@python -m http.server 8000 &
+	-@$(browser) localhost:8000/$(page).html &
+
+stop :
+	-@killall python

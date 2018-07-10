@@ -4,6 +4,10 @@
 " | |__| |_| |   <  __/  ___) | | | | | | | |_| | | | \__ \  \ V /| | | | | | | | | (__
 " |_____\__,_|_|\_\___| |____/|_| |_| |_|_|\__|_| |_| |___/   \_/ |_|_| |_| |_|_|  \___|
 
+	set tabstop=2
+	set shiftwidth=2
+	set softtabstop=2
+
 " Load Pathogen for plugins:
 	execute pathogen#infect()
 	execute pathogen#helptags()
@@ -30,7 +34,7 @@ let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markd
 	map <F9> :r! make &> /dev/null<CR>
 
 " Push F2 to add one &nbsp;
-	map <F2> :r! echo "&nbsp;"<CR>
+	map <F2> :r! echo "&nbsp;" && echo<CR>
 
 " Push F3 to make md friendly paragraph indent
 	map <F3> :r! space_indent<CR>
