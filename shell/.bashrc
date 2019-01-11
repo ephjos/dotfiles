@@ -1,6 +1,3 @@
-stty -ixon
-shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
-
 # For directory and config shortcuts:
 source ~/.bash_shortcuts
 
@@ -30,9 +27,6 @@ alias editPandoc="cd ~/repos/pandoc-resume"
 
 # SSH
 alias tux="ssh jth95@tux.cs.drexel.edu"
-alias website="ssh -i "/home/joseph/Documents/important/ec2-site.pem" ubuntu@ec2-18-188-139-134.us-east-2.compute.amazonaws.com"
-alias deployVue="scp -i "/home/joseph/Documents/important/ec2-site.pem" -r /home/joseph/repos/learning-vue-js/my-project/dist/ ubuntu@ec2-18-188-139-134.us-east-2.compute.amazonaws.com:~/ && website && exit"
-
 
 o() { xdg-open $@ & }
 

@@ -8,10 +8,6 @@
 	set shiftwidth=2
 	set softtabstop=2
 
-" Load Pathogen for plugins:
-	execute pathogen#infect()
-	execute pathogen#helptags()
-
 " Some basics:
 	set nocompatible
 	filetype plugin on
@@ -27,9 +23,6 @@
 
 let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}	"Interpret .md files, etc. as .markdown
 
-" Make calcurse notes markdown compatible:
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-
 " Push F9 to run Makefile
 	map <F9> :r! make &> /dev/null<CR>
 
@@ -42,16 +35,9 @@ let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markd
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us,es<CR>
 
-" Toggle DeadKeys set to F7 (for accent marks):
-	so ~/.vim/luke/deadkeys.vim
-	nm <F7> :call ToggleDeadKeys()<CR>
-
 " Goyo plugin makes text more readable when writing prose:
 	map <F10> :Goyo<CR>
 	inoremap <F10> <esc>:Goyo<CR>a
-
-" Source my IPA shorcuts:
-	so ~/.vim/luke/ipa.vim
 
 " Enable Goyo by default for mutt writting
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=72
@@ -64,10 +50,6 @@ let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markd
 
 " Automatically deletes all tralling whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
-
-" When shortcut files are updated, renew bash and ranger configs with new
-" material:
-	autocmd BufWritePost ~/.config/Scripts/folders,~/.config/Scripts/configs !bash ~/.config/Scripts/shortcuts.sh
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear
