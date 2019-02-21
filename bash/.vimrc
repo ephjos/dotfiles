@@ -1,9 +1,3 @@
-"  _          _          ____            _ _   _     _             _
-" | |   _   _| | _____  / ___| _ __ ___ (_) |_| |__ ( )___  __   _(_)_ __ ___  _ __ ___
-" | |  | | | | |/ / _ \ \___ \| '_ ` _ \| | __| '_ \|// __| \ \ / / | '_ ` _ \| '__/ __|
-" | |__| |_| |   <  __/  ___) | | | | | | | |_| | | | \__ \  \ V /| | | | | | | | | (__
-" |_____\__,_|_|\_\___| |____/|_| |_| |_|_|\__|_| |_| |___/   \_/ |_|_| |_| |_|_|  \___|
-
 	set tabstop=2
 	set shiftwidth=2
 	set softtabstop=2
@@ -17,9 +11,6 @@
 	set number
 	set relativenumber
 
-"For saving view folds:
-	"au BufWinLeave * mkview
-	"au BufWinEnter * silent loadview
 
 let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}	"Interpret .md files, etc. as .markdown
 
