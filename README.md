@@ -1,2 +1,3 @@
-# arch-config-files
-Arch Linux + i3wm config/script files
+# common-files
+
+These are files that I find myself needing everywhere that I try to develop.
