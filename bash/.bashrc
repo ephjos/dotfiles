@@ -1,7 +1,9 @@
-# For directory and config shortcuts:
-source ~/.bash_shortcuts
 
-NOGIT="true"
+# Bring in aliases
+[ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
+
+# Define the prompt
+NOGIT="false"
 
 if [[ $NOGIT == "true" ]]; then
     echo "Disabling git info in prompt"
@@ -91,59 +93,4 @@ else
 	    else export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]ROOT\[$(tput setaf 2)\]@\[$(tput setaf 4)\]$(hostname | awk '{print toupper($0)}') \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\`git_color\`\`parse_git_branch\`\`echo -e $COLOR_RESET\`\n\\$ \[$(tput sgr0)\]"
     fi
 fi
-
-# My Shortcuts
-alias l="ls -al"
-alias up="packer -Syu --noconfirm"
-
-# Generic shortcuts:
-alias music="ncmpcpp"
-alias clock="ncmpcpp -s clock"
-alias visualizer="ncmpcpp -s visualizer"
-alias news="newsbeuter"
-alias email="neomutt"
-alias files="ranger"
-alias chat="weechat"
-alias audio="ncpamixer"
-alias calender="calcurse"
-alias getmail="offlineimap && notmuch new"
-alias gm="offlineimap && notmuch new"
-alias theme="(cat ~/.cache/wal/sequences &)"
-alias reload="source ~/.bash_profile"
-
-# Git
-alias gs="git status -sb"
-alias gsv="git status -vvb"
-
-alias ga="git add"
-alias gr="git rm"
-alias gcm="git commit -m"
-alias gp="git push"
-
-alias gc="git checkout"
-alias gcb="git checkout -b"
-
-alias gb="git branch -v"
-alias gbd="git branch -D"
-
-alias gd="git diff --color-words"
-
-alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-
-# Yarn
-alias y='yarn'
-
-alias yr='yarn run'
-alias yrs='yarn run start'
-alias yrt='yarn run test'
-alias yrb='yarn run build'
-
-alias ya='yarn add'
-alias yrm='yarn remove'
-
-alias yu='yarn upgrade-interactive --latest'
-
-alias yga='yarn global add'
-alias ygrm='yarn global remove'
-alias ygu='yarn global upgrade-interactive --latest'
 
