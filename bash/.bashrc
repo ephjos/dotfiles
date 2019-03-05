@@ -3,7 +3,7 @@
 [ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
 
 # Define the prompt
-NOGIT="false"
+NOGIT="true"
 
 if [[ $NOGIT == "true" ]]; then
     echo "Disabling git info in prompt"

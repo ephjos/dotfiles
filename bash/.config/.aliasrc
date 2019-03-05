@@ -40,17 +40,11 @@ alias yrm='yarn remove'
 
 alias yu='yarn upgrade-interactive --latest'
 
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
 sa() {
-	du -a \
-		-I node_modules \
-		-I Library \
-		-I .npm \
-		-I .cache \
-		-I .Trash \
-		-I *plugged* \
-		-I *vscode* \
-		| awk '{print $2}' | fzf | xargs $EDITOR;
+		du -a 2> /dev/null | awk '{print $2}' | fzf | xargs $EDITOR;
 }
-sc() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs  $EDITOR ;}
+sc() { grep -r .* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR; }
+
