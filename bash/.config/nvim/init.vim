@@ -5,6 +5,7 @@
 	Plug 'junegunn/goyo.vim'
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 	call plug#end()
 
 " don't use arrowkeys
