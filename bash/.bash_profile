@@ -6,6 +6,7 @@ set -o vi
 stty -ixon
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+bind -f ~/.inputrc
 
 export PATH=$PATH:$HOME/.config/Scripts:$HOME/.scripts:/usr/lib/jvm/java-8-openjdk/bin/
 export EDITOR="vim"
