@@ -33,6 +33,8 @@ Leader is <C-a> instead of <C-b>.
 | :--: | :----: |
 | <leader> + r | Reload the config |
 | M + HJKL | Switch pane in respective direction |
+| <leader> + - | Split pane vertically |
+| <leader> + \| | Split pane horizontally |
 | <leader> + b | Only type in active pane |
 | <leader> + B | Type in all panes |
 | <leader> + m | Mouse can be used (selecting panes, resizing, scrolling) |
