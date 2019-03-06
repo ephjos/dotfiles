@@ -6,6 +6,8 @@
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 	call plug#end()
 
 " don't use arrowkeys
@@ -29,6 +31,9 @@
 	set nocompatible
 	filetype plugin on
 	syntax on
+	highlight EndOfBuffer ctermfg=black ctermbg=black
+	colorscheme desert
+	let g:airline_theme='minimalist'
 
 "colorscheme wal
 	set encoding=utf-8
@@ -40,6 +45,9 @@
 
 " Push F3 to make md friendly paragraph indent
 	map <F3> :r! space_indent<CR>
+
+" Reset
+	map <F5> :e<CR> :pc<CR> :noh<CR>
 
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us,es<CR>
@@ -71,9 +79,9 @@
 	nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
-	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-	map <Space><Tab> <Esc>/<++><Enter>"_c4l
+	inoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
+	vnoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
+	map <leader><Tab> <Esc>/<++><Enter>"_c4l
 	inoremap ;gui <++>
 
 " For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)

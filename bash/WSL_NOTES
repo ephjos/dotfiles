@@ -1,0 +1,24 @@
+Getting WSL working with Git and Docker:
+
+Install GitBash
+	- This is used only for its credential manager
+	- Located at /mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe or /mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
+
+Install Docker
+Once Logged in and running, go to settings
+General -> Expose Daemon on Localhost
+
+Install Ubuntu from the Windows Store
+Open Ubuntu and make user
+
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install docker.io
+
+mkdir /c
+echo 'sudo mount --bind /mnt/c /c' >> ~/.bashrc
+sudo visudo
+Append "{username} ALL=(root) NOPASSWD: /bin/mount"
+
+echo 'export DOCKER_HOST=tcp://localhost:2375' >> ~/.bashrc
+
+source ~/.bashrc
