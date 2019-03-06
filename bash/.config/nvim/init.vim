@@ -16,7 +16,22 @@
 	let g:airline_theme='minimalist'
 	let g:javascript_plugin_jsdoc = 1
 	let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+	autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+	let g:prettier#config#print_width = 80
+	let g:prettier#config#tab_width = 2
+	let g:prettier#config#use_tabs = 'false'
+	let g:prettier#config#semi = 'false'
+	let g:prettier#config#single_quote = 'true'
+	let g:prettier#config#bracket_spacing = 'true'
+	let g:prettier#config#jsx_bracket_same_line = 'false'
+
+" avoid|always
+" Prettier default: avoid
+let g:prettier#config#arrow_parens = 'always'
+
+" none|es5|all
+" Prettier default: none
+let g:prettier#config#trailing_comma = 'all'
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
