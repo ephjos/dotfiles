@@ -8,7 +8,15 @@
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'pangloss/vim-javascript'
+	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	call plug#end()
+
+" Plugin Options
+	let g:airline_theme='minimalist'
+	let g:javascript_plugin_jsdoc = 1
+	let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
@@ -33,7 +41,6 @@
 	syntax on
 	highlight EndOfBuffer ctermfg=black ctermbg=black
 	colorscheme desert
-	let g:airline_theme='minimalist'
 
 "colorscheme wal
 	set encoding=utf-8
