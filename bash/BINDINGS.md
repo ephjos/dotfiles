@@ -19,6 +19,7 @@ Arrow keys are disabled (use the home row!)
 |   <F6>    |                       Toggle Spellcheck                       |
 |   <F9>    |                         Open NERDTree                         |
 |   <F10>   |                          Toggle GOYO                          |
+|     S     |                      Search and Replace                       |
 
 # tmux
 
