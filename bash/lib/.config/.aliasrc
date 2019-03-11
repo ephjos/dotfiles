@@ -57,5 +57,10 @@ sa() {
 		du -a 2> /dev/null | awk '{print $2}' | fzf | xargs $EDITOR;
 }
 
-sc() { grep -r .* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR; }
+sc() {
+	grep -r .* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR;
+}
 
+emoji() {
+	cat ~/.emoji | fzf | awk '{print $1}'
+}

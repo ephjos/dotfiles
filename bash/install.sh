@@ -62,11 +62,19 @@ curl -fLov ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 clear
 
+# Install fzf
+echo "-----------------------------------------------------------------------"
+echo "--------------------------- Installing fzf ----------------------------"
+echo "-----------------------------------------------------------------------"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install < yes
+clear
+
 # Instructions to finish
 echo "-----------------------------------------------------------------------"
 echo "-------------------------- Install finished! --------------------------"
 echo "-----------------------------------------------------------------------"
 echo "    1: Launch vim"
 echo "    2: Run :PlugInstall"
-echo "    3: Run :so ~/.vimrc"
+echo "    3: Quit vim"
 echo ""
