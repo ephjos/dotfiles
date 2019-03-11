@@ -1,6 +1,6 @@
 # bash
 
-> .bashrc, .bash_profile, .config/.aliasrc
+> .bashrc, .profile, .config/.aliasrc
 
 Shell is in vi mode
 

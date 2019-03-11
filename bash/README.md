@@ -1,9 +1,26 @@
-To get started:
+Use my shell setup!
 
-- **OPTIONAL** Install [NeoVIM](https://neovim.io/)
-- Install [VIM Plug](https://github.com/junegunn/vim-plug)
-- From this directory, run `cp -r .* ~/`
-- Then run `reload`
-- Run `vim`, then run `:PlugInstall`
+Pre-reqs: - Optional - [NeoVIM](https://neovim.io/)
 
+    - Required
+    	- [Yarn](https://yarnpkg.com/en/docs/install#mac-stable)
+    	- [Dependencies for YouCompleteMe vim plugin](https://valloric.github.io/YouCompleteMe/)
+    	- Shell Programs
+    		- tmux
+    		- watch
 
+Install:
+
+From this directory run
+
+```bash
+./install.sh
+```
+
+Follow the instructions at the end of the install, and you're done!
+
+---
+
+Usage:
+
+Find keybindings in [BINDINGS](./BINDINGS.md)
