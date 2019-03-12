@@ -28,6 +28,7 @@ openssl
 pandoc
 pcre2
 python@2
+ranger
 readline
 sqlite
 tmux

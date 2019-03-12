@@ -1,20 +1,27 @@
 
 " vim-plug
 	call plug#begin('~/.config/nvim/plugged')
+	" Vim Tools
 	Plug 'scrooloose/nerdtree'
 	Plug 'junegunn/goyo.vim'
-	Plug 'leafgarland/typescript-vim'
-	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'flazz/vim-colorschemes'
+	" Language Tools
+	Plug 'leafgarland/typescript-vim'
+	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'pangloss/vim-javascript'
+	Plug 'sheerun/vim-polyglot'
+	" Formatting
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	call plug#end()
 
 " Plugin Options
 	let g:airline_theme='minimalist'
+
 	let g:javascript_plugin_jsdoc = 1
+
 	let g:prettier#autoformat = 0
 	autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 	let g:prettier#config#print_width = 80
@@ -24,14 +31,15 @@
 	let g:prettier#config#single_quote = 'true'
 	let g:prettier#config#bracket_spacing = 'true'
 	let g:prettier#config#jsx_bracket_same_line = 'false'
+	let g:prettier#config#arrow_parens = 'always'
+	let g:prettier#config#trailing_comma = 'all'
 
-" avoid|always
-" Prettier default: avoid
-let g:prettier#config#arrow_parens = 'always'
-
-" none|es5|all
-" Prettier default: none
-let g:prettier#config#trailing_comma = 'all'
+" Some basics:
+	set nocompatible
+	filetype plugin on
+	syntax on
+	highlight EndOfBuffer ctermfg=black ctermbg=black
+	colorscheme darkglass
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
@@ -49,13 +57,6 @@ let g:prettier#config#trailing_comma = 'all'
 	set tabstop=2
 	set shiftwidth=2
 	set softtabstop=2
-
-" Some basics:
-	set nocompatible
-	filetype plugin on
-	syntax on
-	highlight EndOfBuffer ctermfg=black ctermbg=black
-	colorscheme desert
 
 "colorscheme wal
 	set encoding=utf-8
