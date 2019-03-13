@@ -3,10 +3,9 @@
 [ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
 
 # Define the prompt
-NOGIT="true"
+GIT_PROMPT="false"
 
-if [[ $NOGIT == "true" ]]; then
-    echo "Disabling git info in prompt"
+if [[ $GIT_PROMPT == "false" ]]; then
 
     if [ "$EUID" -ne 0 ]; then
         export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\[$(tput setaf 2)\]\[$(tput sgr0)\]\n\\$ \[$(tput sgr0)\]"
@@ -15,7 +14,6 @@ if [[ $NOGIT == "true" ]]; then
     fi
 
 else
-    echo "Using git prompt"
 
     COLOR_RED="\033[0;31m"
     COLOR_YELLOW="\033[0;33m"
