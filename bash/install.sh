@@ -5,6 +5,7 @@
 ###################
 
 # Clean Home Directory
+echo
 echo "-----------------------------------------------------------------------"
 echo "----------------------- Cleaning Home directory -----------------------"
 echo "-----------------------------------------------------------------------"
@@ -24,6 +25,7 @@ clear
 ###############
 
 # Copy Files to Home Directory
+echo
 echo "-----------------------------------------------------------------------"
 echo "------------------- Copying files to Home directory -------------------"
 echo "-----------------------------------------------------------------------"
@@ -39,6 +41,7 @@ clear
 cd ~/
 
 # Link vim files to nvim (done to support both vim and neovim)
+echo
 echo "-----------------------------------------------------------------------"
 echo "-------------------------- Linking vim files --------------------------"
 echo "-----------------------------------------------------------------------"
@@ -47,6 +50,7 @@ ln -sv ~/.config/nvim/init.vim .vimrc
 clear
 
 # Link .bash_profile to .profile
+echo
 echo "-----------------------------------------------------------------------"
 echo "------------------------ Linking bash_profile -------------------------"
 echo "-----------------------------------------------------------------------"
@@ -55,22 +59,25 @@ source ~/.bash_profile
 clear
 
 # Install Vim-Plug
+echo
 echo "-----------------------------------------------------------------------"
 echo "------------------------- Installing vim-plug -------------------------"
 echo "-----------------------------------------------------------------------"
-curl -fLov ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+yes | curl -fLov ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 clear
 
 # Install fzf
+echo
 echo "-----------------------------------------------------------------------"
 echo "--------------------------- Installing fzf ----------------------------"
 echo "-----------------------------------------------------------------------"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install < yes
+yes | ~/.fzf/install
 clear
 
 # Instructions to finish
+echo
 echo "-----------------------------------------------------------------------"
 echo "-------------------------- Install finished! --------------------------"
 echo "-----------------------------------------------------------------------"
