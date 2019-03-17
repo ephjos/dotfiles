@@ -13,6 +13,7 @@
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'pangloss/vim-javascript'
 	Plug 'sheerun/vim-polyglot'
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	" Formatting
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	call plug#end()
