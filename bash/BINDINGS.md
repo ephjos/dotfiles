@@ -12,14 +12,14 @@ All aliases in `.config/.aliasrc`
 
 Arrow keys are disabled (use the home row!)
 
-|   Keys    |                            Action                             |
-| :-------: | :-----------------------------------------------------------: |
-| \ + <Tab> |    Find the next "<++>", remove it, and enter insert mode     |
-|   <F5>    | "Refresh" (reloads the file, clears scratches, clears search) |
-|   <F6>    |                       Toggle Spellcheck                       |
-|   <F9>    |                         Open NERDTree                         |
-|   <F10>   |                          Toggle GOYO                          |
-|     S     |                      Search and Replace                       |
+|    Keys    |                            Action                             |
+| :--------: | :-----------------------------------------------------------: |
+| \\ + <Tab> |    Find the next "<++>", remove it, and enter insert mode     |
+|    <F5>    | "Refresh" (reloads the file, clears scratches, clears search) |
+|    <F6>    |                       Toggle Spellcheck                       |
+|    <F9>    |                         Open NERDTree                         |
+|   <F10>    |                          Toggle GOYO                          |
+|     S      |                      Search and Replace                       |
 
 # tmux
 

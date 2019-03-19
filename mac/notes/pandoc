@@ -1,0 +1,3 @@
+brew install pandoc
+brew cask install mactex
+ln -s /Library/TeX/Root/bin/x86_64-darwin/xelatex /usr/local/bin/xelatex
