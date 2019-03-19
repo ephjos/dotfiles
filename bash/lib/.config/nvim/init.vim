@@ -71,7 +71,8 @@
 	map <F3> :r! space_indent<CR>
 
 " Reset
-	map <F5> :e<CR> :pc<CR> :noh<CR>
+	map <F4> :e<CR> :pc<CR>
+	map <F5> :noh<CR>
 
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us,es<CR>

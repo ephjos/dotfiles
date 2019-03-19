@@ -4,8 +4,8 @@
 ##### Generic Shortcuts ######
 ##############################
 alias \
-	l="ls -al" \
-	theme="(cat ~/.cache/wal/sequences &)" \
+	l="ls -ACG" \
+	ll="ls -alG" \
 	reload="source ~/.bash_profile"
 
 ##############################

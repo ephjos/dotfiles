@@ -1,8 +1,7 @@
 Use my shell setup!
 
-Pre-reqs: - Optional - [NeoVIM](https://neovim.io/)
-
     - Required
+    		- [NeoVIM](https://neovim.io/)
     	- [Yarn](https://yarnpkg.com/en/docs/install#mac-stable)
     	- [Dependencies for YouCompleteMe vim plugin](https://valloric.github.io/YouCompleteMe/)
     	- Shell Programs

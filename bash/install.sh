@@ -1,6 +1,24 @@
 #!/bin/bash
 
 ###################
+## Check Prereqs ##
+###################
+
+require() {
+	command -v "$1" >/dev/null 2>&1 || { echo >&2 "I require "$1" but it's not installed.  Aborting."; exit 1; }
+}
+
+require "npm"
+require "yarn"
+require "nvim"
+
+require "tmux"
+require "watch"
+
+require "python3"
+require "cmake"
+
+###################
 ### Pre Install ###
 ###################
 
@@ -17,6 +35,7 @@ rm -rfv \
   ~/.bashrc \
   ~/.inputrc \
   ~/.profile \
+  ~/.fzf \
   ~/.bash_profile
 clear
 
@@ -29,8 +48,10 @@ echo
 echo "-----------------------------------------------------------------------"
 echo "------------------- Copying files to Home directory -------------------"
 echo "-----------------------------------------------------------------------"
-cp -rv lib/.* ~/
-cp -rv lib/* ~/
+cp -v lib/.* ~/
+
+mkdir -p ~/.config
+cp -rv lib/.config/ ~/.config
 clear
 
 ####################
@@ -63,7 +84,7 @@ echo
 echo "-----------------------------------------------------------------------"
 echo "------------------------- Installing vim-plug -------------------------"
 echo "-----------------------------------------------------------------------"
-yes | curl -fLov ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+yes | curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 clear
 
