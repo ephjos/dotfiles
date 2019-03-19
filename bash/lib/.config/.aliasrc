@@ -22,81 +22,87 @@ checkDeps () {
 
 pdf2jpg (){
 	require "convert"
-if (( "$#" == 1 )) ; then
-		convert -quality 100 -density 600x600 "$1".pdf "$1"%d.jpg
-    exit 0
-fi
+	if [ -z "${1}" ]; then
+		echo "You need to specify the markdown file"
+		exit 0
+	fi
 
-echo "Invalid arguments" >&2
-exit 1
+	if [ -z "${2}" ]; then
+		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
+	  pdf_filename="${filename_without_ext}"
+	else
+		pdf_filename="${2}"
+	fi
+
+	convert -quality 100 -density 600x600 "${pdf_filename}".pdf "${pdf_filename}"%d.jpg
 }
 
 md2slides () {
 	checkDeps
- if [ -z "${1}" ]; then
-	echo "You need to specify the markdown file"
-	exit 0
-fi
+	if [ -z "${1}" ]; then
+		echo "You need to specify the markdown file"
+		exit 0
+	fi
 
-if [ -z "${2}" ]; then
-	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-    pdf_filename="${filename_without_ext}.pdf"
-else
-	pdf_filename="${2}"
-fi
+	if [ -z "${2}" ]; then
+		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
+	  pdf_filename="${filename_without_ext}.pdf"
+	else
+		pdf_filename="${2}"
+	fi
 
-pandoc -o "${pdf_filename}" -t beamer "${1}"
+	pandoc -o "${pdf_filename}" -t beamer "${1}"
 }
 
 docx2md () {
 	checkDeps
- if [ -z "${1}" ]; then
-	echo "You need to specify the markdown file"
-	exit 0
-fi
+	if [ -z "${1}" ]; then
+		echo "You need to specify the markdown file"
+		exit 0
+	fi
 
-if [ -z "${2}" ]; then
-	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-    pdf_filename="${filename_without_ext}.md"
-else
-	pdf_filename="${2}"
-fi
+	if [ -z "${2}" ]; then
+		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
+	  pdf_filename="${filename_without_ext}.md"
+	else
+		pdf_filename="${2}"
+	fi
 
-pandoc -o "${pdf_filename}" -s "${1}" -t markdown
+	pandoc -o "${pdf_filename}" -s "${1}" -t markdown
 }
 
 md2docx () {
 	checkDeps
- if [ -z "${1}" ]; then
-	echo "You need to specify the markdown file"
-	exit 0
-fi
+	if [ -z "${1}" ]; then
+		echo "You need to specify the markdown file"
+		exit 0
+	fi
 
-if [ -z "${2}" ]; then
-	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-    pdf_filename="${filename_without_ext}.docx"
-else
-	pdf_filename="${2}"
-fi
+	if [ -z "${2}" ]; then
+		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
+	  pdf_filename="${filename_without_ext}.docx"
+	else
+		pdf_filename="${2}"
+	fi
 
-pandoc -o "${pdf_filename}" -s "${1}"
+	pandoc -o "${pdf_filename}" -s "${1}"
 }
 
 md2pdf () {
 	checkDeps
- if [ -z "${1}" ]; then
-	echo "You need to specify the markdown file"
-	exit 0
-fi
+	if [ -z "${1}" ]; then
+		echo "You need to specify the markdown file"
+		exit 0
+	fi
 
-if [ -z "${2}" ]; then
-	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-    pdf_filename="${filename_without_ext}.pdf"
-else
-	pdf_filename="${2}"
-fi
+	if [ -z "${2}" ]; then
+		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
+	  pdf_filename="${filename_without_ext}.pdf"
+	else
+		pdf_filename="${2}"
+	fi
 
-pandoc -o "${pdf_filename}" -s "${1}"
+	pandoc -o "${pdf_filename}" -s "${1}"
 }
 
 ##############################
