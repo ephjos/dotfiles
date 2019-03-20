@@ -1,0 +1,17 @@
+#!/bin/bash
+
+	pandocReady
+
+	if [ -z "${1}" ]; then
+		echo "You need to specify the markdown file"
+		exit 0
+	fi
+
+	if [ -z "${2}" ]; then
+		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
+	  pdf_filename="${filename_without_ext}.md"
+	else
+		pdf_filename="${2}"
+	fi
+
+	pandoc -o "${pdf_filename}" -s "${1}" -t markdown

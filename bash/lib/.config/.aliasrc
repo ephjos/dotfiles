@@ -1,109 +1,74 @@
 #!/bin/bash
 
+CONF_OS="mac"
+
 ##############################
 ##### Generic Shortcuts ######
 ##############################
+
+if [ "$CONF_OS" == "mac" ] ; then
 alias \
 	l="ls -ACG" \
 	ll="ls -alG" \
-	reload="source ~/.bash_profile"
+	reload="source ~/.profile"
+elif [ "$CONF_OS" == "linux" ] ; then
+alias \
+	l="ls -AC --color=auto" \
+	ll="ls -al --color=auto" \
+	reload="source ~/.profile"
+else
+alias \
+	l="ls -AC --color=auto" \
+	ll="ls -al --color=auto" \
+	reload="source ~/.profile"
+fi
 
 ##############################
-##### Document Functions #####
+########### Opener ###########
 ##############################
 
-require () {
-	command -v "$1" >/dev/null 2>&1 || { echo >&2 "I require "$1" but it's not installed.  Aborting."; exit 1; }
-}
+if [ "$CONF_OS" == "mac" ] ; then
+	open="qlmanage -p"
+elif [ "$CONF_OS" == "linux" ] ; then
+	open="xdg-open"
+else
+	open="cmd.exe /C start"
+fi
 
-checkDeps () {
-	require "pandoc"
-}
+export open="$open"
+alias open="$open"
 
-pdf2jpg (){
-	require "convert"
-	if [ -z "${1}" ]; then
-		echo "You need to specify the markdown file"
-		exit 0
-	fi
+##############################
+######### Clipboard ##########
+##############################
 
-	if [ -z "${2}" ]; then
-		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-	  pdf_filename="${filename_without_ext}"
-	else
-		pdf_filename="${2}"
-	fi
+if [ "$CONF_OS" == "mac" ] ; then
+	clipboard="pbcopy"
+elif [ "$CONF_OS" == "linux" ] ; then
+	clipboard="xclip"
+else
+	clipboard="clip.exe"
+fi
 
-	convert -quality 100 -density 600x600 "${pdf_filename}".pdf "${pdf_filename}"%d.jpg
-}
+export clipboard="$clipboard"
+alias clipboard="$clipboard"
 
-md2slides () {
-	checkDeps
-	if [ -z "${1}" ]; then
-		echo "You need to specify the markdown file"
-		exit 0
-	fi
+##############################
+########## Notifier ##########
+##############################
 
-	if [ -z "${2}" ]; then
-		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-	  pdf_filename="${filename_without_ext}.pdf"
-	else
-		pdf_filename="${2}"
-	fi
+if [ "$CONF_OS" == "mac" ] ; then
+	notifier="terminal-notifier"
+elif [ "$CONF_OS" == "linux" ] ; then
+	notifier="notify-send"
+else
+	echo "https://codelearn.me/2019/01/13/wsl-windows-toast.html"
+	$open "https://codelearn.me/2019/01/13/wsl-windows-toast.html"
+	notifier="wsl-notify"
+fi
 
-	pandoc -o "${pdf_filename}" -t beamer "${1}"
-}
-
-docx2md () {
-	checkDeps
-	if [ -z "${1}" ]; then
-		echo "You need to specify the markdown file"
-		exit 0
-	fi
-
-	if [ -z "${2}" ]; then
-		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-	  pdf_filename="${filename_without_ext}.md"
-	else
-		pdf_filename="${2}"
-	fi
-
-	pandoc -o "${pdf_filename}" -s "${1}" -t markdown
-}
-
-md2docx () {
-	checkDeps
-	if [ -z "${1}" ]; then
-		echo "You need to specify the markdown file"
-		exit 0
-	fi
-
-	if [ -z "${2}" ]; then
-		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-	  pdf_filename="${filename_without_ext}.docx"
-	else
-		pdf_filename="${2}"
-	fi
-
-	pandoc -o "${pdf_filename}" -s "${1}"
-}
-
-md2pdf () {
-	checkDeps
-	if [ -z "${1}" ]; then
-		echo "You need to specify the markdown file"
-		exit 0
-	fi
-
-	if [ -z "${2}" ]; then
-		filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
-	  pdf_filename="${filename_without_ext}.pdf"
-	else
-		pdf_filename="${2}"
-	fi
-
-	pandoc -o "${pdf_filename}" -s "${1}"
-}
+export notifier="$notifier"
+alias notifier="$notifier"
 
 ##############################
 ############ Git #############
@@ -159,5 +124,5 @@ sc() {
 }
 
 emoji() {
-	cat ~/.emoji | fzf | awk '{print $1}'
+	cat ~/.emoji | fzf | awk '{print $1}' | $clipboard && echo "Copied emoji to clipboard!" | $notifier
 }

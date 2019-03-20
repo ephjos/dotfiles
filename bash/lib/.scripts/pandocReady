@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+	require "pandoc"
+	require "xelatex" || echo "Install TexLive (unix) or MacTex (Mac)"
+

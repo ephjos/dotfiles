@@ -31,6 +31,7 @@ rm -rfv \
   ~/.vim \
   ~/.vimrc \
   ~/.config \
+  ~/.doc_templates \
   ~/.aliasrc \
   ~/.bashrc \
   ~/.inputrc \
@@ -52,6 +53,13 @@ cp -v lib/.* ~/
 
 mkdir -p ~/.config
 cp -rv lib/.config/ ~/.config
+
+mkdir -p ~/.doc_templates
+cp -rv lib/.doc_templates/ ~/.doc_templates
+
+mkdir -p ~/.scripts
+cp -rv lib/.scripts/ ~/.scripts
+
 clear
 
 ####################

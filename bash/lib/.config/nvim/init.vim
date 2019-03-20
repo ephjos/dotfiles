@@ -64,11 +64,6 @@
 	set number
 	set relativenumber
 
-" Push F2 to add one &nbsp;
-	map <F2> :r! echo "&nbsp;" && echo<CR>
-
-" Push F3 to make md friendly paragraph indent
-	map <F3> :r! space_indent<CR>
 
 " Reset
 	map <F4> :e<CR> :pc<CR>
@@ -76,6 +71,9 @@
 
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us,es<CR>
+
+" Bind for markdown lists and big tables
+ map <F7> <esc>I<!-- prettier-ignore-start --><CR><!-- prettier-ignore-end --><CR><esc>kkA
 
 " NERDTree
 	let NERDTreeShowHidden=1
@@ -93,6 +91,9 @@
 
 " Automatically deletes all tralling whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
+
+" Force .md filetype
+	au BufReadPost *.md set filetype=markdown
 
 " Use urlview to choose and open a url:
 	:noremap <leader>u :w<Home>silent <End> !urlview<CR>
