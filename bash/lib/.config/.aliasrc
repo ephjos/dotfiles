@@ -124,5 +124,9 @@ sc() {
 }
 
 emoji() {
-	cat ~/.emoji | fzf | awk '{print $1}' | $clipboard && echo "Copied emoji to clipboard!" | $notifier
+	cat ~/.emoji | fzf | awk '{print $1}' > /tmp/emoji && \
+	cat /tmp/emoji | $clipboard && \
+	cat /tmp/emoji && \
+	echo "Copied $(cat /tmp/emoji) to clipboard!" | $notifier
+
 }
