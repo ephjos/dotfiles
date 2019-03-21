@@ -7,7 +7,12 @@
 		exit 0
 	fi
 
+	if [ -z "${2}" ]; then
+		echo "You need to specify a template to use"
+		exit 0
+	fi
+
 	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
   pdf_filename="${filename_without_ext}.pdf"
 
-	pandoc -o "${pdf_filename}" -s "${1}" --template=$HOME/.doc_templates/default.latex
+	pandoc -o "${pdf_filename}" -s "${1}" "${2}"
