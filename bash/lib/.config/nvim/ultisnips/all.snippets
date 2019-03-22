@@ -1,0 +1,61 @@
+
+# Shebang
+snippet #! "Bash"
+#!/bin/bash
+#
+# Author: `git config user.name`
+#
+# Started: `date +"%D"`
+#
+
+$0
+endsnippet
+
+# Starters
+snippet react "React"
+import React from 'react'
+
+export const $1 = (props) => {
+	return ($0)
+}
+
+export default $2
+endsnippet
+
+snippet go "Main"
+package main
+
+import (
+	$1
+)
+
+func main() {
+	$0
+}
+endsnippet
+
+snippet go "Test"
+package main
+
+import (
+	"testing"
+
+	$1
+)
+
+func $2(t *testing.T) {
+	$0
+	t.Errorf("%d tests written\n",0)
+}
+endsnippet
+
+# Comments
+snippet mdpi "MarkdownPrettierIgnore"
+<!-- prettier-ignore-start -->
+
+$1
+
+<!-- prettier-ignore-end -->
+$0
+endsnippet
+

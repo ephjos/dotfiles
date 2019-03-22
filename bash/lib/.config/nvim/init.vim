@@ -8,6 +8,8 @@
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'flazz/vim-colorschemes'
+	Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
 	" Language Tools
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
@@ -20,6 +22,12 @@
 
 " Plugin Options
 	let g:airline_theme='minimalist'
+	let g:UltiSnipsExpandTrigger = '<tab>'
+	let g:UltiSnipsJumpForwardTrigger = '<tab>'
+	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+	let g:UltiSnipsSnippetDir='~/.vim/ultisnips'
+	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 	let g:javascript_plugin_jsdoc = 1
 
@@ -71,9 +79,10 @@
 
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us,es<CR>
+	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " Bind for markdown lists and big tables
- map <F7> <esc>I<!-- prettier-ignore-start --><CR><!-- prettier-ignore-end --><CR><esc>kkA
+  map <F7> <esc>I<!-- prettier-ignore-start --><CR><!-- prettier-ignore-end --><CR><esc>kkA
 
 " NERDTree
 	let NERDTreeShowHidden=1
