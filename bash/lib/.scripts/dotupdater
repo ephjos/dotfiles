@@ -45,6 +45,7 @@ if [ "$CHANGES" ]; then
 	git add -A
 	git commit -m "🤖 Automated Config Update! 🤖"
 	git push
+	printenv
 	echo "🤖 Pushed config updates 🤖" | $(which $notifier)
 fi
 
