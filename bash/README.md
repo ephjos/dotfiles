@@ -18,6 +18,14 @@ From this directory run
 
 Follow the instructions at the end of the install, and you're done!
 
+I use the following cronjob to keep these configs up to date:
+
+```
+*/15 * * * * bash ~/.scripts/dotupdater
+```
+
+This works as long as the repository is cloned using SSH, with an appropriate key.
+
 ---
 
 Usage:
