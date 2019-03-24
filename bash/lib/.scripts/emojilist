@@ -6,3 +6,7 @@
 #
 
 curl -sfLo /tmp/emojilist https://unicode.org/emoji/charts/full-emoji-list.html
+curl -sfLo /tmp/emojimodlist https://unicode.org/emoji/charts/full-emoji-modifiers.html
+
+cat /tmp/emojilist | grep -E '(class=.name.|class=.chars.)' | awk -F "class='(name|chars)'>" '{print $2}' | sed 'N;s/<\/td>//g' | sed 'N;s/\n/ /' > ~/.emoji
+cat /tmp/emojimodlist | grep -E '(class=.name.|class=.chars.)' | awk -F "class='(name|chars)'>" '{print $2}' | sed 'N;s/<\/td>//g' | sed 'N;s/\n/ /' >> ~/.emoji

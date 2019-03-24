@@ -21,6 +21,7 @@ Follow the instructions at the end of the install, and you're done!
 I use the following cronjob to keep these configs up to date:
 
 ```
+MAILTO=""
 */15 * * * * bash ~/.scripts/dotupdater
 ```
 
