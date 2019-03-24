@@ -49,6 +49,7 @@
 	syntax on
 	highlight EndOfBuffer ctermfg=black ctermbg=black
 	colorscheme darkglass
+	autocmd filetype crontab setlocal nobackup nowritebackup
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
