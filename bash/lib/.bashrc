@@ -1,3 +1,4 @@
+# This is a test
 
 # Bring in aliases
 [ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
