@@ -5,6 +5,7 @@
 # 03/24/19
 #
 
+source ~/.profile
 REPO_LOC=$HOME/repos/common-files/bash/lib
 
 # Copy .scripts
