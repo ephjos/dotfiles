@@ -5,7 +5,7 @@ snippet #! "Bash"
 #
 # Author: `git config user.name`
 #
-# Started: `date +"%D"`
+# `date +"%D"`
 #
 
 $0
@@ -58,4 +58,12 @@ $1
 <!-- prettier-ignore-end -->
 $0
 endsnippet
+
+snippet box "Box"
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
 

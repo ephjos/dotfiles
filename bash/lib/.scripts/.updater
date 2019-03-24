@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# Author: Joseph Hines
+#
+# 03/24/19
+#
+
+REPO_LOC=$HOME/repos/common-files/bash/lib
+
+# Copy .scripts
+cp -rv $HOME/.scripts $REPO_LOC
+
+# Copy .config/nvim/init.vim
+# Copy .config/nvim/ultisnips
+cp -v $HOME/.config/nvim/init.vim $REPO_LOC/.config/nvim/init.vim
+cp -rv $HOME/.config/nvim/ultisnips $REPO_LOC/.config/nvim
+
+# Copy .config/ranger
+cp -v $HOME/.config/ranger/rc.conf $REPO_LOC/.config/ranger/rc.conf
+
+# Copy .config/.aliasrc
+cp -v $HOME/.config/.aliasrc $REPO_LOC/.config/.aliasrc
+# Copy .profile
+cp -v $HOME/.profile $REPO_LOC/.profile
+# Copy .inputrc
+cp -v $HOME/.inputrc $REPO_LOC/.inputrc
+# Copy .bashrc
+cp -v $HOME/.bashrc $REPO_LOC/.bashrc
+
+# Copy .doc_templates
+cp -rv $HOME/.doc_templates $REPO_LOC
+
+# Copy .tmux.conf
+cp -v $HOME/.tmux.conf $REPO_LOC/.tmux.conf
+
+# Copy .emoji
+cp -v $HOME/.emoji $REPO_LOC/.emoji
+
+# Push Changes
+cd $REPO_LOC
+
+CHANGES=$(git status -s)
+
+if [ "$CHANGES" ]; then
+	git add -A
+	git commit -m "🤖 Automated Script Update! 🤖"
+	git push
+fi
+
+exit 0
+
