@@ -43,8 +43,9 @@ CHANGES=$(git status -s)
 
 if [ "$CHANGES" ]; then
 	git add -A
-	git commit -m "🤖 Automated Script Update! 🤖"
+	git commit -m "🤖 Automated Config Update! 🤖"
 	git push
+	echo "Pushed config updates!" | $notifier
 fi
 
 exit 0
