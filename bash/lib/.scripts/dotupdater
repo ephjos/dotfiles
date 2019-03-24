@@ -5,8 +5,6 @@
 # 03/24/19
 #
 
-source ~/.profile
-export Display=:0.0
 REPO_LOC=$HOME/repos/common-files/bash/lib
 
 # Copy .scripts
@@ -47,8 +45,6 @@ if [ "$CHANGES" ]; then
 	git add -A
 	git commit -m "🤖 Automated Config Update! 🤖"
 	git push
-	printenv
-	echo "🤖 Pushed config updates 🤖" | $(which $notifier)
 fi
 
 exit 0
