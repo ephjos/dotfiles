@@ -28,7 +28,7 @@ fi
 ##############################
 
 if [ "$CONF_OS" == "mac" ] ; then
-	open="qlmanage -p"
+	open="open"
 elif [ "$CONF_OS" == "linux" ] ; then
 	open="xdg-open"
 else
