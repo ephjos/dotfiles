@@ -120,7 +120,7 @@ sa() {
 }
 
 sc() {
-	grep -r .* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR;
+	grep -r ../* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR;
 }
 
 emoji() {
