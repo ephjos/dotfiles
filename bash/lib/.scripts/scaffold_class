@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Author: Joseph Hines
+#
+# 03/31/19
+#
+
+for i in {1..10}
+do
+	name="W$i";
+	mkdir -p "$name";
+	touch "$name"/_;
+done
+
+git add -A
+git commit -m "Laid out folders"
+git push
+
