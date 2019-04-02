@@ -11,6 +11,9 @@ $endif$
 \usepackage{fancyhdr}
 \pagestyle{plain}
 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 
 $if(fontfamily)$
 \usepackage{$fontfamily$}
