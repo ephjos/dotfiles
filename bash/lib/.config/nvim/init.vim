@@ -45,6 +45,7 @@
 
 " Some basics:
 	set nocompatible
+	set expandtab
 	filetype plugin on
 	syntax on
 	highlight EndOfBuffer ctermfg=black ctermbg=black
