@@ -10,6 +10,8 @@ Use my shell setup!
 
 Install:
 
+Go to `.config/.aliasrc` and set `CONF_OS` to the correct value
+
 From this directory run
 
 ```bash

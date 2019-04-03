@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# mac, linux, or windows
 CONF_OS="mac"
 
 ##############################
