@@ -59,6 +59,18 @@ $1
 $0
 endsnippet
 
+snippet titlepage "Latex Title Page"
+# $1
+
+> Author: `git config user.name` on \today
+
+$2
+
+\pagebreak
+
+$0
+endsnippet
+
 snippet box "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
