@@ -59,12 +59,12 @@ $1
 $0
 endsnippet
 
-snippet titlepage "Latex Title Page"
-# $1
-
-> Author: `git config user.name` on \today
-
-$2
+snippet tp "Latex Title Page"
+---
+title: '$1'
+author: `git config user.name`
+date: \today
+---
 
 \pagebreak
 
