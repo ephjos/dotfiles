@@ -14,4 +14,4 @@
 		pdf_filename="${2}"
 	fi
 
-	pandoc -o "${pdf_filename}" -s "${1}"
+	pandoc --reference-doc=$HOME/.doc_templates/ref.docx -o "${pdf_filename}" -s "${1}"
