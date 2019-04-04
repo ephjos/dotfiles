@@ -9,7 +9,9 @@ for i in {1..10}
 do
 	name="W$i";
 	mkdir -p "$name";
-	touch "$name"/_;
+	touch "$name"/l.md;
+	touch "$name"/r.md;
+	touch "$name"/a.md;
 done
 
 git add -A

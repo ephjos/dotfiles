@@ -131,3 +131,6 @@ emoji() {
 	echo "Copied $(cat /tmp/emoji) to clipboard!" | $notifier
 
 }
+
+alias \
+  all2pdf='for file in *.md; do md2pdf "$file"; done'
