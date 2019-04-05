@@ -10,5 +10,5 @@
 	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
   pdf_filename="${filename_without_ext}.pdf"
 
-	pandoc --pdf-engine=xelatex -f markdown-implicit_figures -o "${pdf_filename}" -s "${1}"
+	pandoc -M documentclass=scrartcl -M papersize=letter --pdf-engine=xelatex -f markdown-implicit_figures -o "${pdf_filename}" -s "${1}"
 	#pandoc --pdf-engine=xelatex -f markdown-implicit_figures -o "${pdf_filename}" -s "${1}" --template=$HOME/.doc_templates/default.latex

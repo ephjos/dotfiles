@@ -59,7 +59,7 @@ $1
 $0
 endsnippet
 
-snippet tp "Latex Title Page"
+snippet nh "Latex Title Page"
 ---
 title: '$1'
 subtitle: '$2'
@@ -70,6 +70,32 @@ papersize: letter
 ---
 
 \pagebreak
+
+$0
+endsnippet
+
+snippet bh "Beamer Header Block"
+---
+title: '$1'
+subtitle: '$2'
+author: `git config user.name`
+date: \today
+theme: Hannover
+colortheme: fly
+fontfamily: noto-sans
+fontsize: 16pt
+slide_level: 2
+---
+
+$0
+endsnippet
+
+snippet bs "Beamer Slide"
+# $1
+
+## $2
+
+$3
 
 $0
 endsnippet
