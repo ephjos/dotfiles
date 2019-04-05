@@ -59,14 +59,12 @@ $1
 $0
 endsnippet
 
-snippet nh "Latex Title Page"
+snippet pandoch "Latex Title Page"
 ---
 title: '$1'
 subtitle: '$2'
 author: `git config user.name`
 date: \today
-documentclass: scrartcl
-papersize: letter
 ---
 
 \pagebreak
@@ -74,21 +72,6 @@ papersize: letter
 $0
 endsnippet
 
-snippet bh "Beamer Header Block"
----
-title: '$1'
-subtitle: '$2'
-author: `git config user.name`
-date: \today
-theme: Hannover
-colortheme: fly
-fontfamily: noto-sans
-fontsize: 16pt
-slide_level: 2
----
-
-$0
-endsnippet
 
 snippet bs "Beamer Slide"
 # $1
