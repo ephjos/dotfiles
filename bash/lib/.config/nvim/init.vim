@@ -80,7 +80,7 @@
 	map <F5> :noh<CR>
 
 " Spell-check set to F6:
-	map <F6> :setlocal spell! spelllang=en_us,es<CR>
+	map <F6> :setlocal spell! spelllang=en_us<CR>
 	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " Bind for markdown lists and big tables
