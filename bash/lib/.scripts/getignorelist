@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Author: Joseph Hines
+#
+# 04/09/19
+#
+
+
+rm -rf /tmp/ignores
+
+git clone git@github.com:github/gitignore.git /tmp/ignores
+
