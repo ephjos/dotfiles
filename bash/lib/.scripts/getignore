@@ -5,6 +5,8 @@
 # 04/09/19
 #
 
+git clone git@github.com:github/gitignore.git /tmp/ignores
 
+type=$(ls -a1 /tmp/ignores | awk -F "." '$0 ~ /.gitignore$/ {print $1}' | fzf)
 
-curl -s https://raw.githubusercontent.com/github/gitignore/master/"$1".gitignore > .gitignore
+curl -s https://raw.githubusercontent.com/github/gitignore/master/"$type".gitignore > .gitignore
