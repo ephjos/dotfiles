@@ -1,0 +1,27 @@
+
+.PHONY: all assignment lecture reading
+
+all:
+	all2pdf
+	all2slides
+
+assignment:
+	md2pdf a.md
+	md2slides a.md
+	open a.pdf
+	open a-slides.pdf
+
+lecture:
+	md2pdf l.md
+	md2slides l.md
+	open l.pdf
+	open l-slides.pdf
+
+reading:
+	md2pdf r.md
+	md2slides r.md
+	open r.pdf
+	open r-slides.pdf
+
+
+
