@@ -50,6 +50,7 @@
 	highlight EndOfBuffer ctermfg=black ctermbg=black
 	colorscheme darkglass
 	autocmd filetype crontab setlocal nobackup nowritebackup
+	autocmd FileType markdown setlocal expandtab
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
