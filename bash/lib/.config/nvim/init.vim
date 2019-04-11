@@ -120,9 +120,9 @@
 	nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
-	inoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
-	vnoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
-	map <leader><Tab> <Esc>/<++><Enter>"_c4l
+	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+	map <leader><leader> <Esc>/<++><Enter>"_c4l
 	inoremap ;gui <++>
 
 " For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)
