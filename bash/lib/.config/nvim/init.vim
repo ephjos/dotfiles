@@ -75,6 +75,10 @@
 	set relativenumber
 
 
+" Pandoc compiles
+	map <F1> :silent ! md2pdf % &<CR>
+	map <F2> :silent ! md2slides % &<CR>
+
 " Reset
 	map <F4> :e<CR> :pc<CR>
 	map <F5> :noh<CR>
