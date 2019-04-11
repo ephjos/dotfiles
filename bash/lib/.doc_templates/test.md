@@ -2,6 +2,7 @@
 title: 'Lecture 1'
 author: Joseph Hines
 date: \today
+toc: false
 ---
 
 \pagebreak
