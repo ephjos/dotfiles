@@ -10,4 +10,5 @@
 	filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
   pdf_filename="${filename_without_ext}-slides.pdf"
 
-	pandoc -M theme=Hannover -M colortheme=fly -M fontfamily=noto-sans -M slide_level=2 -o "${pdf_filename}" -t beamer "${1}"
+	pandoc -M fontfamily=noto-sans -M slide_level=2 -o "${pdf_filename}" -t beamer "${1}" --template=~/.doc_templates/beamer
+	# pandoc -M theme=Copenhagen -M colortheme=fly -M fontfamily=noto-sans -M slide_level=2 -o "${pdf_filename}" -t beamer "${1}"
