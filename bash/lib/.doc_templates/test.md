@@ -2,7 +2,6 @@
 title: 'Lecture 1'
 author: Joseph Hines
 date: \today
-toc: false
 ---
 
 \pagebreak
@@ -24,8 +23,6 @@ Can fall prey to a myriad of optical illusions.
 Goal: _bridge the gap between pixels and meaning._
 
 Computer Vision started as a summer vision project in 1966 at MIT.
-
-##
 
 ![This is a caption](image.png){ height=100px }
 
