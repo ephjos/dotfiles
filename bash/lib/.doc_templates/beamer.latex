@@ -5,24 +5,11 @@
 % 12pt by default; handout if the handout template variable is defined
 \documentclass[$if(fontsize)$$fontsize$,$else$12pt,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
-% Fancy fit image command with optional caption
-\makeatletter
-\newcommand{\fitimage}[2][\@nil]{
-  \begin{figure}
-    \begin{adjustbox}{width=0.9\textwidth, totalheight=\textheight-2\baselineskip-2\baselineskip,keepaspectratio}
-      \includegraphics{#2}
-    \end{adjustbox}
-    \def\tmp{#1}%
-   \ifx\tmp\@nnil
-      \else
-      \caption{#1}
-    \fi
-  \end{figure}
-}
-\makeatother
-
-% theme, colortheme, and fonttheme with sensible defaults
 \usetheme{Warsaw}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{headline}{}
+
 
 \setbeamercolor{normal text}{fg=white,bg=black!90}
 \setbeamercolor{structure}{fg=white}
@@ -44,15 +31,6 @@
 \setbeamercolor*{block title example}{parent=example text,bg=black!15}
 
 
-% if it is a handout show the notes text; otherwise don't
-$if(handout)$
-\setbeameroption{show notes}
-\setbeamertemplate{note page}[plain]
-$else$
-\setbeameroption{hide notes}
-\setbeamertemplate{note page}[plain]
-$endif$
-
 % Don't show things we don't want to see
 \beamertemplatenavigationsymbolsempty
 \hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
@@ -62,9 +40,6 @@ $endif$
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
-
-% Space between paragraphs on notes page
-\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
 
 % Color and shape of bullets
 % \setbeamercolor{item}{fg=gray}
@@ -214,9 +189,6 @@ $for(include-before)$
 $include-before$
 
 $endfor$
-$if(toc)$
-
-$endif$
 $body$
 
 $if(natbib)$
