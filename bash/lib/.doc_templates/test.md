@@ -13,6 +13,8 @@ date: \today
 Human vision is very fast at classification and recognition.
 Especially when motion and animals are involved.
 
+\only<2-3>{- This text appears on the first and third versions of the slide, but not the second.}
+
 Bad at detecting some differences in images, (reflection vs. no-reflection).
 Can fall prey to a myriad of optical illusions.
 
@@ -24,7 +26,7 @@ Goal: _bridge the gap between pixels and meaning._
 
 Computer Vision started as a summer vision project in 1966 at MIT.
 
-![This is a caption](image.png){ height=100px }
+\only<2-2>{![This is a caption](image.png){ height=100px }}
 
 # Processing
 
