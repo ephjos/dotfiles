@@ -15,6 +15,8 @@
 \setbeamertemplate{enumerate items}[default]
 
 
+\setbeamerfont{title}{size=\huge}
+
 \setbeamercolor{normal text}{fg=white,bg=black!90}
 \setbeamercolor{structure}{fg=white}
 
