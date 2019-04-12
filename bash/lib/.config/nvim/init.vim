@@ -83,6 +83,8 @@
 	map <F4> :e<CR> :pc<CR>
 	map <F5> :noh<CR>
 
+	setlocal spell! spelllang=en_us
+
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us<CR>
 	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
