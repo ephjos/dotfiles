@@ -5,10 +5,14 @@
 % 12pt by default; handout if the handout template variable is defined
 \documentclass[$if(fontsize)$$fontsize$,$else$12pt,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 \usetheme{Warsaw}
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{headline}{}
+\setbeamertemplate{enumerate items}[default]
 
 
 \setbeamercolor{normal text}{fg=white,bg=black!90}
