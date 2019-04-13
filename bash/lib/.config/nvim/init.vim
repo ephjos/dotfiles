@@ -76,8 +76,8 @@
 
 
 " Pandoc compiles
-	map <F1> :silent ! md2pdf % &<CR>
-	map <F2> :silent ! md2slides % &<CR>
+	map <F1> :! md2pdf %<CR>
+	map <F2> :! md2slides %<CR>
 
 " Reset
 	map <F4> :e<CR> :pc<CR>
