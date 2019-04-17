@@ -79,6 +79,9 @@
 	map <F1> :! md2pdf %<CR>
 	map <F2> :! md2slides %<CR>
 
+" Bash Buffer Helper
+	map <F3> :r! ls -a1 \| awk 'NR>2 {print $0}'<CR>
+
 " Reset
 	map <F4> :e<CR> :pc<CR>
 	map <F5> :noh<CR>
