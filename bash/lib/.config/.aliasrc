@@ -134,4 +134,6 @@ emoji() {
 
 alias \
   all2pdf='for file in *.md; do md2pdf "$file"; done' \
-  all2slides='for file in *.md; do md2pdf "$file"; md2slides "$file"; done'
+  all2slides='for file in *.md; do md2pdf "$file"; md2slides "$file"; done' \
+	penva='source venv/bin/activate' \
+	penvd='deactivate'
