@@ -92,8 +92,8 @@
 	map <F6> :setlocal spell! spelllang=en_us<CR>
 	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-" Bind for markdown lists and big tables
-  map <F7> <esc>I<!-- prettier-ignore-start --><CR><!-- prettier-ignore-end --><CR><esc>kkA
+" Compile and run c program
+	map <F7> :! gcc % -o %.out && chmod +x %.out && ./%.out<CR>
 
 " NERDTree
 	let NERDTreeShowHidden=1
