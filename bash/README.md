@@ -1,5 +1,7 @@
 Use my shell setup!
 
+### Pre Install
+
 - Required
   - [NeoVIM](https://neovim.io/)
   - [Yarn](https://yarnpkg.com/en/docs/install#mac-stable)
@@ -7,6 +9,13 @@ Use my shell setup!
   - Shell Programs
     - tmux
     - watch
+
+Install:
+
+- python3 and pip3
+- nodejs and npm
+- cmake
+- pip install neovim
 
 Install:
 
