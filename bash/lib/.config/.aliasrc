@@ -1,0 +1,139 @@
+#!/bin/bash
+
+# mac, linux, or windows
+CONF_OS="mac"
+
+##############################
+##### Generic Shortcuts ######
+##############################
+
+if [ "$CONF_OS" == "mac" ] ; then
+alias \
+	l="ls -ACG" \
+	ll="ls -alG" \
+	reload="source ~/.profile"
+elif [ "$CONF_OS" == "linux" ] ; then
+alias \
+	l="ls -AC --color=auto" \
+	ll="ls -al --color=auto" \
+	reload="source ~/.profile"
+else
+alias \
+	l="ls -AC --color=auto" \
+	ll="ls -al --color=auto" \
+	reload="source ~/.profile"
+fi
+
+##############################
+########### Opener ###########
+##############################
+
+if [ "$CONF_OS" == "mac" ] ; then
+	open="open"
+elif [ "$CONF_OS" == "linux" ] ; then
+	open="xdg-open"
+else
+	open="cmd.exe /C start"
+fi
+
+export open="$open"
+alias open="$open"
+
+##############################
+######### Clipboard ##########
+##############################
+
+if [ "$CONF_OS" == "mac" ] ; then
+	clipboard="pbcopy"
+elif [ "$CONF_OS" == "linux" ] ; then
+	clipboard="xclip"
+else
+	clipboard="clip.exe"
+fi
+
+export clipboard="$clipboard"
+alias clipboard="$clipboard"
+
+##############################
+########## Notifier ##########
+##############################
+
+if [ "$CONF_OS" == "mac" ] ; then
+	notifier="terminal-notifier"
+elif [ "$CONF_OS" == "linux" ] ; then
+	notifier="notify-send"
+else
+	echo "https://codelearn.me/2019/01/13/wsl-windows-toast.html"
+	$open "https://codelearn.me/2019/01/13/wsl-windows-toast.html"
+	notifier="wsl-notify"
+fi
+
+export notifier="$notifier"
+alias notifier="$notifier"
+
+##############################
+############ Git #############
+##############################
+alias \
+	gs="git status -sb" \
+  gsv="git status -vvb" \
+  ga="git add" \
+  gr="git rm" \
+  gcm="git commit -m" \
+  gp="git push" \
+  gm="git merge" \
+  gc="git checkout" \
+  gcb="git checkout -b" \
+  gb="git branch -v" \
+  gbd="git branch -D" \
+  gd="git diff --color-words" \
+  gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+##############################
+######## Git Watchers ########
+##############################
+alias \
+	gsw="watch 'git status -sb'" \
+	gbw="watch 'git branch -v'"
+
+##############################
+############ Yarn ############
+##############################
+alias \
+	y='yarn' \
+  ya='yarn add' \
+  yrm='yarn remove' \
+  yu='yarn upgrade-interactive --latest' \
+  yga='yarn global add' \
+  ygrm='yarn global remove' \
+  ygu='yarn global upgrade-interactive --latest'
+
+##############################
+######### Use Neovim #########
+##############################
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+##############################
+########## Commands ##########
+##############################
+function sa {
+		du -a 2> /dev/null | awk '{print $2}' | fzf | xargs $EDITOR;
+}
+
+function sc {
+	grep -r ../* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR;
+}
+
+function emoji {
+	cat ~/.emoji | fzf | awk '{print $1}' > /tmp/emoji && \
+	cat /tmp/emoji | $clipboard && \
+	cat /tmp/emoji && \
+	echo "Copied $(cat /tmp/emoji) to clipboard!" | $notifier
+
+}
+
+alias \
+  all2pdf='for file in *.md; do md2pdf "$file"; done' \
+  all2slides='for file in *.md; do md2pdf "$file"; md2slides "$file"; done' \
+	penva='source venv/bin/activate' \
+	penvd='deactivate'
