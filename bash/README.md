@@ -58,3 +58,18 @@ Host <alias>
 ```
 
 then `ssh <alias>` will use the information from that record.
+
+### RSYNC
+
+```
+rsync \
+  --exclude '*vscode*' \
+  --exclude '*node_modules*' \
+  --exclude '*cache*' \
+  --exclude '*Library*' \
+  -vrzP \
+  --port <port> \
+  -e ssh \
+  <source> \
+  <hostname>:<target>
+```
