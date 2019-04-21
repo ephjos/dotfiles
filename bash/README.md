@@ -1,6 +1,6 @@
 Use my shell setup!
 
-### Pre Install
+## Pre Install
 
 - Required
   - [NeoVIM](https://neovim.io/)
@@ -10,14 +10,12 @@ Use my shell setup!
     - tmux
     - watch
 
-Install:
+## Install
 
 - python3 and pip3
 - nodejs and npm
 - cmake
 - pip install neovim
-
-Install:
 
 Go to `.config/.aliasrc` and set `CONF_OS` to the correct value
 
@@ -38,8 +36,25 @@ MAILTO=""
 
 This works as long as the repository is cloned using SSH, with an appropriate key.
 
----
-
-Usage:
+## Usage
 
 Find keybindings in [BINDINGS](./BINDINGS.md)
+
+## Notes
+
+### SSH
+
+`ssh-keygen -t rsa` to make ssh key-pair.
+
+`ssh-copy-id user@server` to send public key
+
+Add an entry to `.ssh/config` of the form
+
+```
+Host <alias>
+	User <user>
+	HostName <hostname>
+	Port <port>
+```
+
+then `ssh <alias>` will use the information from that record.

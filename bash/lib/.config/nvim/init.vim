@@ -10,6 +10,7 @@
 	Plug 'flazz/vim-colorschemes'
 	Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+	Plug 'vimwiki/vimwiki'
 	" Language Tools
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
