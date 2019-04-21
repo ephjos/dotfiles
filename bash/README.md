@@ -71,5 +71,5 @@ rsync \
   --port <port> \
   -e ssh \
   <source> \
-  <hostname>:<target>
+  <hostname>:<target>_$(date +"%m-%y")
 ```
