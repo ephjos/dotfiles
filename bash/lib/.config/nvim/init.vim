@@ -9,7 +9,7 @@
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'flazz/vim-colorschemes'
 	Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+	Plug 'honza/vim-snippets'
 	Plug 'vimwiki/vimwiki'
 	" Language Tools
 	Plug 'leafgarland/typescript-vim'
@@ -23,12 +23,13 @@
 
 " Plugin Options
 	let g:airline_theme='minimalist'
+	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+	let g:SuperTabDefaultCompletionType = '<C-n>'
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 	let g:UltiSnipsSnippetDir='~/.vim/ultisnips'
-	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 	let g:javascript_plugin_jsdoc = 1
 
@@ -51,7 +52,6 @@
 	highlight EndOfBuffer ctermfg=black ctermbg=black
 	colorscheme darkglass
 	autocmd filetype crontab setlocal nobackup nowritebackup
-	autocmd FileType markdown setlocal expandtab
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
