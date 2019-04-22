@@ -26,9 +26,9 @@
 	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 	let g:SuperTabDefaultCompletionType = '<C-n>'
-	let g:UltiSnipsExpandTrigger = '<tab>'
-	let g:UltiSnipsJumpForwardTrigger = '<tab>'
-	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+	let g:UltiSnipsExpandTrigger = '<F3>'
+	let g:UltiSnipsJumpForwardTrigger = '<F3>'
+	let g:UltiSnipsJumpBackwardTrigger = '<s-F3>'
 	let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/ultisnips']
 
 	let g:javascript_plugin_jsdoc = 1
@@ -79,9 +79,6 @@
 " Pandoc compiles
 	map <F1> :! md2pdf %<CR>
 	map <F2> :! md2slides %<CR>
-
-" Bash Buffer Helper
-	map <F3> :r! ls -a1 \| awk 'NR>2 {print $0}'<CR>
 
 " Reset
 	map <F4> :e<CR> :pc<CR>
