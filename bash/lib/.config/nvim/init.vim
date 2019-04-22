@@ -29,7 +29,7 @@
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-	let g:UltiSnipsSnippetDir='~/.vim/ultisnips'
+	let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/ultisnips']
 
 	let g:javascript_plugin_jsdoc = 1
 
