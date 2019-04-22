@@ -87,6 +87,25 @@ $3
 $0
 endsnippet
 
+snippet eq "Latex Equation List"
+\begin{align}
+$1 \\\\
+$2
+\end{align}
+$0
+endsnippet
+
+snippet mat "Latex Matrix"
+\begin{bmatrix}
+$1 \\\\
+\end{bmatrix}
+$0
+endsnippet
+
+snippet mnl "Latex Math Empty Line"
+\\notag\\\\$0
+endsnippet
+
 snippet box "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
