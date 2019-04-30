@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Author: Joseph Hines
+#
+# 04/30/19
+#
+
+for class in $(ls -1 ~/school); do
+	echo "$class";
+done
