@@ -49,6 +49,7 @@
 	set nocompatible
 	filetype plugin on
 	syntax on
+	let mapleader = ","
 	highlight EndOfBuffer ctermfg=black ctermbg=black
 	colorscheme darkglass
 	autocmd filetype crontab setlocal nobackup nowritebackup
