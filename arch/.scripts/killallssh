@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ps -e | grep ssh-agent | awk '{print $1}' | while read line; do kill $line; done
