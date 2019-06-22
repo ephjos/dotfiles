@@ -7,7 +7,7 @@ LOCAL_TAG=local-josephthomashines/dev
 build:
 	sudo docker build -t ${LOCAL_TAG} .
 
-publish:
+help:
 	-@echo 'You must log in with:'
 	-@echo '    docker login --username=yourhubusername --email=youremail@company.com'
 	-@echo 'Then run:'

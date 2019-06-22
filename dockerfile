@@ -19,7 +19,19 @@ RUN \
 	pip3 install virtualenv && \
 	npm install -g yarn
 
+# Copy dotfiles
 COPY ./bash/lib/ /root
+WORKDIR /root
+
+# Install dotfiles
+RUN \
+	ln -sv ~/.config/nvim .vim && \
+	ln -sv ~/.config/nvim/init.vim .vimrc && \
+	ln -sv ~/.profile ~/.bash_profile
+
+RUN \
+	yes | curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 WORKDIR /mounted
 
