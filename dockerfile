@@ -9,7 +9,7 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget && \
-  apt-get install -y neovim nodejs npm python3 python3-pip python && \
+  apt-get install -y neovim nodejs npm cmake python3 python python3-pip python-dev && \
   rm -rf /var/lib/apt/lists/*
 
 # Custom installs/setup
