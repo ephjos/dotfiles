@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Author: Joseph Hines
+#
+# 05/06/19
+#
+
+MSG=""
+WALL="$HOME/.config/wall.png"
+PICS="$HOME/Pictures/*"
+
+CHOICE=$(ls -a1 $PICS | sxiv -tio | head -n1)
+
+if [[ "$CHOICE" ]]; then
+
+	NAME=$(printf $CHOICE | awk -F"." '{print $1;}')
+	EXT=$(printf $CHOICE | awk -F"." '{print $2;}')
+
+	if [[ "$EXT" != "png" ]]; then
+		convert "$CHOICE" "$WALL"
+		MSG=$(printf "Converted %s to %s" "$CHOICE" "$WALL")
+	else
+		cp "$CHOICE" "$WALL"
+		MSG=$(printf "Copied %s to %s" "$CHOICE" "$WALL")
+	fi
+
+	printf "%s\n" "$MSG"
+fi
+
+

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # mac, linux, or windows
-CONF_OS="mac"
+CONF_OS="linux"
 
 ##############################
 ##### Generic Shortcuts ######
@@ -14,9 +14,10 @@ alias \
 	reload="source ~/.profile"
 elif [ "$CONF_OS" == "linux" ] ; then
 alias \
-	l="ls -AC --color=auto" \
+	l="ls -ACu --color=auto" \
 	ll="ls -al --color=auto" \
-	reload="source ~/.profile"
+	reload="source ~/.profile" \
+	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev"
 else
 alias \
 	l="ls -AC --color=auto" \
@@ -68,6 +69,12 @@ else
 	notifier="wsl-notify"
 fi
 
+pnotifier () {
+	while read line; do
+		$notifier "$line";
+	done
+}
+
 export notifier="$notifier"
 alias notifier="$notifier"
 
@@ -81,6 +88,7 @@ alias \
   gr="git rm" \
   gcm="git commit -m" \
   gp="git push" \
+  GP="git add -A && git commit -m'.' && git push" \
   gm="git merge" \
   gc="git checkout" \
   gcb="git checkout -b" \
@@ -120,7 +128,7 @@ function sa {
 		du -a 2> /dev/null | awk '{print $2}' | fzf | xargs $EDITOR;
 }
 
-function sc {
+function SC {
 	grep -r ../* | fzf | awk -F ":" '{print $1}' | xargs $EDITOR;
 }
 
@@ -132,8 +140,27 @@ function emoji {
 
 }
 
+function findman {
+	apropos . | fzf-tmux -e | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+}
+
 alias \
   all2pdf='for file in *.md; do md2pdf "$file"; done' \
   all2slides='for file in *.md; do md2pdf "$file"; md2slides "$file"; done' \
 	penva='source venv/bin/activate' \
 	penvd='deactivate'
+
+alias \
+	pia="bash ~/.local/share/pia.run" \
+	val="valgrind -v --leak-check=full --track-origins=yes --show-leak-kinds=all " \
+	tree='tree -C -I "*node*|*venv*|*cache*|*dist*|*CMakeFiles*"'
+	hn="haxor-news" \
+	idiff="icdiff -WN"
+
+#####################
+# Add docker aliases
+
+if [ -f ~/.config/.docker_aliases ]; then
+	. ~/.config/.docker_aliases
+fi
+

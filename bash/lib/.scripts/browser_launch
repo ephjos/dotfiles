@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Author: Joseph Hines
+#
+# 05/01/19
+#
+
+require "$BROWSER"
+
+for url in $(cat ./browser_tabs); do
+	firefox "$url";
+done

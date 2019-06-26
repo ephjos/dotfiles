@@ -1,4 +1,0 @@
-#!/bin/bash
-#killall compton && sleep .3
-scrot && sleep .3
-#compton -b && sleep .3
