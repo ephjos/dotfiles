@@ -16,7 +16,7 @@ RUN \
 RUN \
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && \
 	~/.fzf/install && \
-	pip3 install virtualenv && \
+	pip3 install virtualenv future && \
 	npm install -g yarn
 
 # Copy dotfiles
