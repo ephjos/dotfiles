@@ -9,8 +9,8 @@ CONF_OS="mac"
 
 if [ "$CONF_OS" == "mac" ] ; then
 alias \
-	l="ls -ACG" \
-	ll="ls -alG" \
+	l="gls -a --color=auto --group-directories-first" \
+	ll="gls -al --color=auto --group-directories-first" \
 	reload="source ~/.profile" \
 	dev="sudo docker run -it --network host -v $HOME:/mounted josephthomashines/dev"
 elif [ "$CONF_OS" == "linux" ] ; then
