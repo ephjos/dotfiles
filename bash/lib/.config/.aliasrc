@@ -12,7 +12,7 @@ alias \
 	l="ls -ACG" \
 	ll="ls -alG" \
 	reload="source ~/.profile" \
-	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev"
+	dev="sudo docker run -it --network host -v $HOME:/mounted josephthomashines/dev"
 elif [ "$CONF_OS" == "linux" ] ; then
 alias \
 	l="ls -ACu --color=auto" \
@@ -165,3 +165,4 @@ if [ -f ~/.config/.docker_aliases ]; then
 	. ~/.config/.docker_aliases
 fi
 
+alias xxx='xset r rate 200 100'
