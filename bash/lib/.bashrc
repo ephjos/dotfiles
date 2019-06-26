@@ -1,8 +1,6 @@
 # Bring in aliases
 [ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
 
-umask 000
-
 # Define the prompt
 GIT_PROMPT="false"
 

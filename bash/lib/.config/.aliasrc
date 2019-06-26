@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # mac, linux, or windows
-CONF_OS="linux"
+CONF_OS="mac"
 
 ##############################
 ##### Generic Shortcuts ######
@@ -11,7 +11,8 @@ if [ "$CONF_OS" == "mac" ] ; then
 alias \
 	l="ls -ACG" \
 	ll="ls -alG" \
-	reload="source ~/.profile"
+	reload="source ~/.profile" \
+	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev"
 elif [ "$CONF_OS" == "linux" ] ; then
 alias \
 	l="ls -ACu --color=auto" \
