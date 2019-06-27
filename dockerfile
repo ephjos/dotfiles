@@ -9,7 +9,7 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget && \
-  apt-get install -y neovim nodejs npm cmake python3 python python3-pip python-dev && \
+  apt-get install -y neovim nodejs npm cmake python3 python python3-pip python-dev mit-scheme haskell-platform && \
   rm -rf /var/lib/apt/lists/*
 
 # Custom installs/setup
@@ -32,6 +32,10 @@ RUN \
 RUN \
 	yes | curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Final update
+
+RUN apt-get update
 
 WORKDIR /mounted
 
