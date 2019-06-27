@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # mac, linux, or windows
-CONF_OS="mac"
+CONF_OS="linux"
 
 ##############################
 ##### Generic Shortcuts ######
@@ -15,8 +15,8 @@ alias \
 	dev="sudo docker run -it --network host -v $HOME:/mounted josephthomashines/dev"
 elif [ "$CONF_OS" == "linux" ] ; then
 alias \
-	l="ls -ACu --color=auto" \
-	ll="ls -al --color=auto" \
+	l="ls -ACu --color=auto --group-directories-first" \
+	ll="ls -al --color=auto --group-directories-first" \
 	reload="source ~/.profile" \
 	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev"
 else
