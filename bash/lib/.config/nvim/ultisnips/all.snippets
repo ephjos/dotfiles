@@ -106,7 +106,7 @@ snippet mnl "Latex Math Empty Line"
 \\notag\\\\$0
 endsnippet
 
-snippet lst "Latex Starter Template"
+snippet ltemp "Latex Starter Template"
 \date{}
 \documentclass[12pt]{article}
 \usepackage{titling}
@@ -122,15 +122,22 @@ snippet lst "Latex Starter Template"
     \vskip0.5em}%
 }
 
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
 \title{\textbf{$1
-\\{\Large $2}}}
+		\\\\{\Large $2}}}
 \subtitle{$3}
-\author{$4}
+\author{Joseph Hines \textbf{($4)}}
+\date{\today}
 
 \begin{document}
-
+\begin{titlingpage}
 \maketitle
+\end{titlingpage}
+
 $0
+
 \end{document}
 
 endsnippet
