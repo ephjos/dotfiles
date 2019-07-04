@@ -107,18 +107,28 @@ snippet mnl "Latex Math Empty Line"
 endsnippet
 
 snippet lst "Latex Starter Template"
-\title{$1}
-\author{
-        $2
-}
 \date{}
 \documentclass[12pt]{article}
+\usepackage{titling}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath}
 
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\LARGE#1\end{center}
+    \vskip0.5em}%
+}
+
+\title{\textbf{$1
+\\{\Large $2}}}
+\subtitle{$3}
+\author{$4}
+
 \begin{document}
+
 \maketitle
 $0
 \end{document}
