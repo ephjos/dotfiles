@@ -59,7 +59,7 @@ $1
 $0
 endsnippet
 
-snippet phead "Latex Title Page"
+snippet phead "Pandoc Title Page"
 ---
 title: '$1'
 subtitle: '$2'
@@ -104,6 +104,51 @@ endsnippet
 
 snippet mnl "Latex Math Empty Line"
 \\notag\\\\$0
+endsnippet
+
+snippet lst "Latex Starter Template"
+\title{$1}
+\author{
+        $2
+}
+\date{}
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+$0
+\end{document}
+
+endsnippet
+
+snippet lsc "Latex Section"
+\section*{$1}
+$0
+endsnippet
+
+snippet lnoi "Latex No Indent"
+\noindent
+$0
+endsnippet
+
+snippet llist "Latex List"
+\begin{itemize}
+$1
+\end{itemize}
+$0
+endsnippet
+
+snippet li "Latex List Item"
+\item $1
+$0
+endsnippet
+
+snippet lbold "Latex Bold"
+\textbf{$1} $
 endsnippet
 
 snippet box "Box"
