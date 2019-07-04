@@ -148,7 +148,33 @@ $0
 endsnippet
 
 snippet lbold "Latex Bold"
-\textbf{$1} $
+\textbf{$1} $0
+endsnippet
+
+snippet lital "Latex Italic"
+\emph{$1} $0
+endsnippet
+
+snippet lcenter "Latex Center Block"
+\begin{center}
+$1
+\end{center}
+$0
+endsnippet
+
+snippet lfig "Latex Figure"
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{$1}
+\caption{$2}
+\label{$3}
+\end{center}
+\end{figure}
+$0
+endsnippet
+
+snippet lref "Latex Figure"
+\ref{$1}$0
 endsnippet
 
 snippet box "Box"
