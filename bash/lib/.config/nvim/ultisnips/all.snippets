@@ -1,4 +1,4 @@
-
+c
 # Shebang
 snippet #! "Bash"
 #!/bin/bash
@@ -118,6 +118,7 @@ snippet ltemp "Latex Starter Template"
 \usepackage[english]{babel}
 \usepackage{indentfirst}
 \usepackage{multicol}
+\usepackage{adjustbox}
 
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
@@ -209,8 +210,18 @@ snippet lfig "Latex Figure"
 $0
 endsnippet
 
-snippet lref "Latex Figure"
+snippet lref "Latex Reference"
 \ref{$1}$0
+endsnippet
+
+snippet ltab "Latex Table"
+\begin{tabular}{|$1|}
+	\toprule
+	$2 \\
+	\hline
+	$3 \\
+	\bottomrule
+\end{tabular}
 endsnippet
 
 snippet box "Box"
