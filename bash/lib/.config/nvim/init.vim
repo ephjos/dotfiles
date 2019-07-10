@@ -82,7 +82,7 @@
 	map <F2> :! pdflatex %<CR>
 
 " Reset
-	map <F4> :e<CR> :pc<CR>
+	map <F4> :! scheme < %<CR>
 	map <F5> :noh<CR>
 
 	setlocal spell! spelllang=en_us
