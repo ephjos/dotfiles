@@ -85,7 +85,7 @@
 	map <F4> :! scheme < %<CR>
 	map <F5> :noh<CR>
 
-	setlocal spell! spelllang=en_us
+	" setlocal spell! spelllang=en_us
 
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us<CR>
