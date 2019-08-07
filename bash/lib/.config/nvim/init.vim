@@ -18,7 +18,7 @@
 	Plug 'sheerun/vim-polyglot'
 	Plug 'wlangstroth/vim-racket'
 	" Formatting
-	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+	" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	call plug#end()
 
 " Plugin Options
