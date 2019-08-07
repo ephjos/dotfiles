@@ -18,7 +18,7 @@
 	Plug 'sheerun/vim-polyglot'
 	Plug 'wlangstroth/vim-racket'
 	" Formatting
-	" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	call plug#end()
 
 " Plugin Options
@@ -34,7 +34,7 @@
 	let g:javascript_plugin_jsdoc = 1
 
 	let g:prettier#autoformat = 0
-	autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
+	" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 	let g:prettier#config#print_width = 80
 	let g:prettier#config#tab_width = 2
 	let g:prettier#config#use_tabs = 'false'
