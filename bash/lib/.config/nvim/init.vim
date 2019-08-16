@@ -124,6 +124,8 @@
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 	autocmd BufRead,BufNewFile *.hs set expandtab
+	autocmd BufRead,BufNewFile *.pl set filetype=prolog
+	autocmd BufRead,BufNewFile *.perl set filetype=perl
 
 " C-T for new tab
 	nnoremap <C-t> :tabnew<cr>
