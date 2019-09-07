@@ -4,7 +4,6 @@
 	" Vim Tools
 	Plug 'scrooloose/nerdtree'
 	Plug 'junegunn/goyo.vim'
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'flazz/vim-colorschemes'
@@ -23,8 +22,6 @@
 
 " Plugin Options
 	let g:airline_theme='minimalist'
-	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 	let g:SuperTabDefaultCompletionType = '<C-n>'
 	let g:UltiSnipsExpandTrigger = '<F3>'
 	let g:UltiSnipsJumpForwardTrigger = '<F3>'
