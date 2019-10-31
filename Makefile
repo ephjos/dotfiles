@@ -1,8 +1,8 @@
 SHELL := /bin/bash
 
-LOCAL_TAG=local-josephthomashines/dev
+LOCAL_TAG=dev
 
-.PHONY: build
+.PHONY: build help test run
 
 build:
 	sudo docker build -t ${LOCAL_TAG} .
@@ -23,4 +23,4 @@ test:
 
 # This spins up a container with all ports exposed, mounted on the current directory
 run:
-	sudo docker run -it --rm --network host -v $(shell pwd):/home josephthomashines/dev
+	sudo docker run -it --rm --network host -v $(shell pwd):/home josephthomashines/${LOCAL_TAG}
