@@ -29,12 +29,7 @@ RUN \
 	ln -sv .config/nvim/init.vim .vimrc && \
 	ln -sv .profile .bash_profile
 
-RUN \
-	yes | curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 # Final update
-
 RUN apt-get update
 
 WORKDIR /mounted

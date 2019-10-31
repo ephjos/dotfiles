@@ -1,4 +1,12 @@
 
+	"
+	if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+		echo "Downloading junegunn/vim-plug to manage plugins..."
+		silent !mkdir -p ~/.config/nvim/autoload/
+		silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+		autocmd VimEnter * PlugInstall
+	endif
+
 " vim-plug
 	call plug#begin('~/.config/nvim/plugged')
 	" Vim Tools
@@ -26,7 +34,7 @@
 	let g:UltiSnipsExpandTrigger = '<F3>'
 	let g:UltiSnipsJumpForwardTrigger = '<F3>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-F3>'
-	let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/ultisnips']
+	let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
 
 	let g:javascript_plugin_jsdoc = 1
 
