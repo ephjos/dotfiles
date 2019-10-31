@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # mac, linux, or windows
-CONF_OS="linux"
+CONF_OS="mac"
 
 ##############################
 ##### Generic Shortcuts ######
