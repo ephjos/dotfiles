@@ -1,8 +1,4 @@
 
-	if ! filereadable(expand('~/.config/nvim/nerdtree/CHANGELOG.md'))
-		autocmd VimEnter * PlugInstall
-	endif
-
 " vim-plug
 	call plug#begin('~/.config/nvim/plugged')
 	" Vim Tools
