@@ -23,12 +23,16 @@
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'pangloss/vim-javascript'
 	Plug 'sheerun/vim-polyglot'
-	Plug 'wlangstroth/vim-racket'
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	" Formatting
 	" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	call plug#end()
 
 " Plugin Options
+" format with goimports instead of gofmt
+	let g:go_fmt_command = "goimports"
+	let g:go_auto_type_info = 1
+	let g:go_def_mode='godef'
 	let g:airline_theme='minimalist'
 	let g:SuperTabDefaultCompletionType = '<C-n>'
 	let g:UltiSnipsExpandTrigger = '<F3>'
