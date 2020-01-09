@@ -20,9 +20,9 @@ endif
 
 let mapleader = ","
 
-source $HOME/.config/nvim/config.vim
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/plug_config.vim
+source $HOME/.config/nvim/config.vim
 source $HOME/.config/nvim/keys.vim
 
 
