@@ -1,3 +1,9 @@
-# common-files
+# dotfiles
 
-These are files that I find myself needing everywhere that I try to develop.
+my dotfiles :)
+
+# TODO
+
+- Update dockerfile
+- Redeploy docker image
+- Update and redeploy resume image

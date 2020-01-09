@@ -2,9 +2,6 @@
 # ~/.bash_profile
 #
 
-set -o vi
-stty -ixon
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 [[ -f ~/.ghcup/env ]] && . ~/.ghcup/env
 
@@ -16,11 +13,6 @@ export PATH=$PATH:/opt/ghdl/bin:$HOME/.cabal/bin:$HOME/.ghcup/bin:/Library/Postg
 export EDITOR="vim"
 
 command -v nvim >/dev/null && export EDITOR="nvim"
-
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
 
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave

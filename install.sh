@@ -38,7 +38,6 @@ rm -rfv \
   ~/.profile \
   ~/.fzf \
   ~/.bash_profile
-clear
 
 ###############
 ### Install ###
@@ -60,7 +59,6 @@ cp -rv lib/.doc_templates/ ~/.doc_templates
 mkdir -p ~/.scripts
 cp -rv lib/.scripts/ ~/.scripts
 
-clear
 
 ####################
 ### Post Install ###
@@ -76,7 +74,6 @@ echo "-------------------------- Linking vim files --------------------------"
 echo "-----------------------------------------------------------------------"
 ln -sv ~/.config/nvim .vim
 ln -sv ~/.config/nvim/init.vim .vimrc
-clear
 
 # Link .bash_profile to .profile
 echo
@@ -85,25 +82,6 @@ echo "------------------------ Linking bash_profile -------------------------"
 echo "-----------------------------------------------------------------------"
 ln -sv ~/.profile ~/.bash_profile
 source ~/.bash_profile
-clear
-
-# Install Vim-Plug
-echo
-echo "-----------------------------------------------------------------------"
-echo "------------------------- Installing vim-plug -------------------------"
-echo "-----------------------------------------------------------------------"
-yes | curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-clear
-
-# Install fzf
-echo
-echo "-----------------------------------------------------------------------"
-echo "--------------------------- Installing fzf ----------------------------"
-echo "-----------------------------------------------------------------------"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-yes | ~/.fzf/install
-clear
 
 # Instructions to finish
 echo
@@ -111,6 +89,5 @@ echo "-----------------------------------------------------------------------"
 echo "-------------------------- Install finished! --------------------------"
 echo "-----------------------------------------------------------------------"
 echo "    1: Launch vim"
-echo "    2: Run :PlugInstall"
-echo "    3: Quit vim"
+echo "    2: Profit!"
 echo ""
