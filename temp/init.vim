@@ -25,6 +25,7 @@
 	Plug 'vimwiki/vimwiki'
 
 	" Language Tools
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'sheerun/vim-polyglot'
   Plug 'dense-analysis/ale'
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -38,63 +39,32 @@
 
   nnoremap <Leader>t :BTags<CR>
   nnoremap <Leader>T :Tags<CR>
+
   let g:gutentags_cache_dir = expand('/tmp/.cache/vim/ctags/')
-  "set tags+='/tmp/.cache/vim/ctags/'
   let g:gutentags_generate_on_new = 1
   let g:gutentags_generate_on_missing = 1
   let g:gutentags_generate_on_write = 1
   let g:gutentags_generate_on_empty_buffer = 0
-  let g:gutentags_ctags_exclude = [
-      \ '*.git', '*.svg', '*.hg',
-      \ '*/tests/*',
-      \ 'build',
-      \ 'dist',
-      \ '*sites/*/files/*',
-      \ 'bin',
-      \ 'node_modules',
-      \ 'bower_components',
-      \ 'cache',
-      \ 'compiled',
-      \ 'docs',
-      \ 'example',
-      \ 'bundle',
-      \ 'vendor',
-      \ '*.md',
-      \ '*-lock.json',
-      \ '*.lock',
-      \ '*bundle*.js',
-      \ '*build*.js',
-      \ '.*rc*',
-      \ '.*rc',
-      \ '*rc',
-      \ '.*profile*',
-      \ '*.json',
-      \ '*.min.*',
-      \ '*.map',
-      \ '*.bak',
-      \ '*.zip',
-      \ '*.pyc',
-      \ '*.class',
-      \ '*.sln',
-      \ '*.Master',
-      \ '*.csproj',
-      \ '*.tmp',
-      \ '*.csproj.user',
-      \ '*.cache',
-      \ '*.pdb',
-      \ 'tags*',
-      \ 'cscope.*',
-      \ '*.css',
-      \ '*.less',
-      \ '*.scss',
-      \ '*.exe', '*.dll',
-      \ '*.mp3', '*.ogg', '*.flac',
-      \ '*.swp', '*.swo',
-      \ '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png',
-      \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
-      \ '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
-      \ ]
-
+  let g:gutentags_exclude_filetypes=[
+        \ 'css',
+        \ 'json',
+        \ 'vim',
+        \ 'vimwiki',
+        \ 'tex',
+        \ 'pdf',
+        \ 'markdown',
+        \]
+  let g:gutentags_exclude=[
+        \ '*.css',
+        \ '*.json',
+        \ '*.*rc*',
+        \]
+  let g:gutentags_ctags_extra_args=[
+        \ '--langmap=javascript:.js.es6.es.jsx',
+        \ '--langmap=typescript:.ts.es6.es.tsx',
+        \ '--javascript-kinds=-c-f-m-p-v',
+        \]
+  set statusline+=%{gutentags#statusline()}
 
 	let g:airline_theme='minimalist'
 
@@ -116,9 +86,27 @@
   \}
   let g:ale_fix_on_save = 1
 
-	let g:go_fmt_command = "goimports"
-	let g:go_auto_type_info = 1
-	let g:go_def_mode='godef'
+  let g:go_highlight_build_constraints = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_types = 1
+
+" Automatically import packages on save
+  let g:go_fmt_command = "goimports"
+  let g:go_def_mode='godef'
+
+" Prevent errors from opening the location list
+  let g:go_fmt_fail_silently = 1
+
+" Automatically get signature/type info for object under cursor
+  let g:go_auto_type_info = 1
+
+" Open local documentation
+  let g:go_doc_url = 'http://localhost:6060'
 
 " Some basics:
 	set nocompatible
@@ -133,8 +121,25 @@
 	set softtabstop=2
 	set expandtab
 	set encoding=utf-8
-	set number
-	set relativenumber
+  set path+=**
+  set wildmenu
+  "set wildignore+=**/node_modules/**,**/dist/**,**_site/**,*.swp,*.png,*.jpg,*.gif,*.webp,*.jpeg,*.map
+  set clipboard=unnamedplus
+  set number relativenumber
+  set list
+  set listchars=tab:→→,eol:¬,space:.
+  set hidden
+  set nrformats=
+  set hlsearch
+  set smartcase
+  set incsearch
+  set noswapfile
+  set nobackup
+  set nowritebackup
+  set updatetime=300
+
+  hi NonText ctermfg=DarkGrey guifg=#4a4a59
+  hi SpecialKey ctermfg=DarkGrey guifg=#4a4a59
 
 " don't use arrowkeys
 	noremap <Up> <NOP>
@@ -153,12 +158,10 @@
 	map <F2> :! pdflatex %<CR>
 
 " Reset
-	map <F4> :! scheme < %<CR>
 	map <F5> :noh<CR>
 
-	" setlocal spell! spelllang=en_us
-
 " Spell-check set to F6:
+	" setlocal spell! spelllang=en_us
 	map <F6> :setlocal spell! spelllang=en_us<CR>
 	inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
