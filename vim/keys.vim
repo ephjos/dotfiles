@@ -71,7 +71,7 @@ function! TermToggle(height)
     try
       exec "buffer " . g:term_buf
     catch
-      call termopen($SHELL, {"detach": 0})
+      call termopen("/bin/bash", {"detach": 0})
       let g:term_buf = bufnr("")
       set nonumber
       set norelativenumber

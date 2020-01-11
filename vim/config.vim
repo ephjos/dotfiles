@@ -7,8 +7,8 @@
 set nocompatible
 filetype plugin on
 syntax on
+colorscheme Tomorrow-Night-Eighties
 highlight EndOfBuffer ctermfg=black ctermbg=black
-colorscheme darkglass
 autocmd filetype crontab setlocal nobackup nowritebackup
 
 set tabstop=2
@@ -49,6 +49,7 @@ autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd BufRead,BufNewFile *.hs set expandtab
 autocmd BufRead,BufNewFile *.pl set filetype=prolog
 autocmd BufRead,BufNewFile *.perl set filetype=perl
+autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
 
 " Skeleton Template Setup
 "if has("autocmd")

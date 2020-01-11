@@ -1,26 +1,21 @@
 
-FROM ubuntu:18.04
+FROM archlinux
 
 # Install packages
 RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
-  apt-get update && \
-  apt-get -y upgrade && \
-  apt-get install -y build-essential && \
-  apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget && \
-  apt-get install -y neovim nodejs npm cmake python3 python python3-pip python-dev mit-scheme haskell-platform && \
-  rm -rf /var/lib/apt/lists/*
+  pacman -Sy --noconfirm \
+    base-devel curl git htop man unzip vim wget \
+    neovim nodejs npm cmake python3 python python-pip ghc
 
 # Custom installs/setup
 RUN \
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && \
-	~/.fzf/install && \
-	pip3 install virtualenv future && \
-	npm install -g yarn
+	pip3 install virtualenv future neovim
 
 # Copy dotfiles
-COPY ./bash/lib/ /root
+COPY ./bash/ /root
+COPY ./vim/ /root/.config/nvim
+COPY ./scripts/ /root/.local/bin
+
 WORKDIR /root
 
 # Install dotfiles
@@ -30,7 +25,7 @@ RUN \
 	ln -sv .profile .bash_profile
 
 # Final update
-RUN apt-get update
+RUN pacman -Syyuu --noconfirm
 
 WORKDIR /mounted
 
