@@ -15,8 +15,8 @@ cp -v bash/.* ~/
 mkdir -p ~/.config/nvim
 cp -rv vim/* ~/.config/nvim
 
-mkdir -p ~/.local/bin
-cp -rv scripts/* ~/.local/bin
+mkdir -p ~/.local/bin/myscripts
+cp -rv scripts/* ~/.local/bin/myscripts
 
 ####################
 ### Post Install ###
