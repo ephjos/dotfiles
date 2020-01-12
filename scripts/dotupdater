@@ -1,51 +1,18 @@
 #!/bin/bash
 #
-# Author: Joseph Hines
-#
-# 03/24/19
-#
 
-REPO_LOC=$HOME/repos/common-files/bash/lib
+REPO_LOC=$HOME/repos/dotfiles
 
-# Copy .scripts
-cp -rv $HOME/.scripts $REPO_LOC
+mkdir -p REPO_LOC
 
-# Copy .config/nvim/init.vim
-# Copy .config/nvim/ultisnips
-cp -v $HOME/.config/nvim/init.vim $REPO_LOC/.config/nvim/init.vim
-cp -rv $HOME/.config/nvim/ultisnips $REPO_LOC/.config/nvim
+cp -v ~/.aliasrc $REPO_LOC/bash/
+cp -v ~/.bashrc $REPO_LOC/bash/
+cp -v ~/.inputrc $REPO_LOC/bash/
+cp -v ~/.profile $REPO_LOC/bash/
 
-# Copy .config/ranger
-cp -v $HOME/.config/ranger/rc.conf $REPO_LOC/.config/ranger/rc.conf
+cp -v ~/.config/nvim/* $REPO_LOC/vim/
+cp -rv ~/.config/nvim/ultisnips $REPO_LOC/vim/
+cp -rv ~/.config/nvim/templates $REPO_LOC/vim/
 
-# Copy .config/.aliasrc
-cp -v $HOME/.config/.aliasrc $REPO_LOC/.config/.aliasrc
-# Copy .profile
-cp -v $HOME/.profile $REPO_LOC/.profile
-# Copy .inputrc
-cp -v $HOME/.inputrc $REPO_LOC/.inputrc
-# Copy .bashrc
-cp -v $HOME/.bashrc $REPO_LOC/.bashrc
-
-# Copy .doc_templates
-cp -rv $HOME/.doc_templates $REPO_LOC
-
-# Copy .tmux.conf
-cp -v $HOME/.tmux.conf $REPO_LOC/.tmux.conf
-
-# Copy .emoji
-cp -v $HOME/.emoji $REPO_LOC/.emoji
-
-# Push Changes
-cd $REPO_LOC
-
-CHANGES=$(git status -s)
-
-if [ "$CHANGES" ]; then
-	git add -A
-	git commit -m "🤖 Automated Config Update! 🤖"
-	git push
-fi
-
-exit 0
+cp -rv ~/.local/bin/myscripts/* $REPO_LOC/scripts/
 
