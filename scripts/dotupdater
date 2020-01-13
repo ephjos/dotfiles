@@ -3,7 +3,7 @@
 
 REPO_LOC=$HOME/repos/dotfiles
 
-mkdir -p REPO_LOC
+mkdir -p $REPO_LOC
 
 cp -v ~/.aliasrc $REPO_LOC/bash/
 cp -v ~/.bashrc $REPO_LOC/bash/

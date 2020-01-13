@@ -52,9 +52,13 @@ autocmd BufRead,BufNewFile *.perl set filetype=perl
 autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
 
 " Skeleton Template Setup
-"if has("autocmd")
-"augroup templates
-"autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-"augroup END
-"endif
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+    autocmd BufNewFile *.hs 0r ~/.vim/templates/skeleton.hs
+    autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json
+    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+    autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
+  augroup END
+endif
 
