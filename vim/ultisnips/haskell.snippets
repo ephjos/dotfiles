@@ -9,3 +9,20 @@ split delim str
   where
     (as, bs) = break (\x -> x == delim) str
 endsnippet
+
+snippet imain "Interactive Main"
+main :: IO ()
+main = interact $ (++"\n")
+									. show
+									. (\x -> 1)
+									. map (map (read::String->Int) . words)
+									. tail
+									. lines
+endsnippet
+
+snippet getIntsLine "Read line from STDIN and convert to [Int]"
+getIntsLine :: IO [Int]
+getIntsLine = do
+  line <- getLine
+  return $ map read $ words line
+endsnippet
