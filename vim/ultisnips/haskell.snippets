@@ -1,0 +1,11 @@
+
+snippet split "Split string by Char"
+split :: Char -> String -> [String]
+split _ [] = []
+split _ " " = []
+split delim str
+  | bs /= []  = [as] ++ split delim (tail bs)
+  | otherwise = [as]
+  where
+    (as, bs) = break (\x -> x == delim) str
+endsnippet

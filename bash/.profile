@@ -1,5 +1,5 @@
 #
-# ~/.bash_profile
+# ~/.profile
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
@@ -12,6 +12,8 @@ export PATH=$PATH:/opt/ghdl/bin:$HOME/.cabal/bin:$HOME/.ghcup/bin:/Library/Postg
 export PATH="$(du $HOME/.local/bin/ | cut -f2 | tr '\n' ':')$PATH"
 
 export EDITOR="vim"
+export FILE="ranger"
+export TERMINAL="st"
 
 command -v nvim >/dev/null && export EDITOR="nvim"
 
@@ -19,3 +21,7 @@ command -v nvim >/dev/null && export EDITOR="nvim"
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
+
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
