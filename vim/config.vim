@@ -23,7 +23,7 @@ set clipboard=unnamedplus
 set number relativenumber
 set list
 "set listchars=tab:→→,eol:¬,space:.
-set listchars=tab:→→,space:.
+set listchars=tab:→→
 set hidden
 set nrformats=
 set hlsearch
