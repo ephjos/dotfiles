@@ -26,3 +26,10 @@ getIntsLine = do
   line <- getLine
   return $ map read $ words line
 endsnippet
+
+snippet fold "Fold list with function"
+fold :: (a -> a -> a) -> [a] -> a
+fold f []      = error "Can't fold empty list"
+fold f [x]     = x
+fold f (x:xs)  = f x (fold f xs)
+endsnippet
