@@ -1,0 +1,117 @@
+
+snippet eq "Latex Equation List"
+\begin{align}
+$1 \\\\
+\end{align}
+$0
+endsnippet
+
+snippet mat "Latex Matrix"
+\begin{bmatrix}
+$1 \\\\
+\end{bmatrix}
+$0
+endsnippet
+
+snippet mnl "Latex Math Empty Line"
+\\notag\\\\$0
+endsnippet
+
+snippet lsec "Latex Section"
+\section*{$1}
+
+$0
+endsnippet
+
+snippet lnoi "Latex No Indent"
+\noindent
+$0
+endsnippet
+
+snippet llist "Latex List"
+\begin{itemize}
+\setlength\itemsep{1em}
+$1
+\end{itemize}
+$0
+endsnippet
+
+snippet lmulti "Latex Multicol"
+\begin{multicols}{$1}
+$2
+\columnbreak
+$3
+\end{multicols}
+$0
+endsnippet
+
+snippet li "Latex List Item"
+\item $1
+$0
+endsnippet
+
+snippet lbold "Latex Bold"
+\textbf{$1} $0
+endsnippet
+
+snippet lital "Latex Italic"
+\emph{$1} $0
+endsnippet
+
+snippet lcenter "Latex Center Block"
+\begin{center}
+$1
+\end{center}
+$0
+endsnippet
+
+snippet lfig "Latex Figure"
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{$1}
+\caption{$2}
+\label{$3}
+\end{center}
+\end{figure}
+$0
+endsnippet
+
+snippet lref "Latex Reference"
+\ref{$1}$0
+endsnippet
+
+snippet ltab "Latex Table"
+\begin{tabular}{|$1|}
+	\toprule
+	$2 \\
+	\hline
+	$3 \\
+	\bottomrule
+\end{tabular}
+$0
+endsnippet
+
+snippet lside "Latex Sideways"
+\begin{adjustbox}{angle=90}
+$1
+\end{adjustbox}
+$0
+endsnippet
+
+snippet lcode "Latex Code File"
+\lstinputlisting[language=$1]{$2}
+$0
+endsnippet
+
+snippet llst "Latex Code Block"
+\begin{lstlisting}[language=$1]
+$2
+\end{lstlisting}
+$0
+endsnippet
+
+snippet llstset "Latex Code Set Language"
+\lstset{language=$1}
+$0
+endsnippet
+
