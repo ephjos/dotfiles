@@ -30,8 +30,11 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " Compile and run c program
 map <F7> :! gcc % -o %.out && chmod +x %.out && ./%.out<CR>
 
+" Collapse CSV
+map <F8> :%!sed 's/","/\&/' \| sed 's/ *,/,/g'<CR>
+
 " Format CSV nicely
-map <F9> :!sed 's/","/\&/' | column -t -s '&'<CR>
+map <F9> :%!sed 's/","/\&/' \| column -t -s ',' --output-separator ","<CR>
 
 " Goyo plugin makes text more readable when writing prose:
 map <F10> :Goyo<CR>
