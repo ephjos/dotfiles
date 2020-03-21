@@ -15,6 +15,7 @@ RUN \
 COPY ./bash/ /root
 COPY ./vim/ /root/.config/nvim
 COPY ./scripts/ /root/.local/bin
+COPY ./.cabal/ /root/.cabal
 
 WORKDIR /root
 
