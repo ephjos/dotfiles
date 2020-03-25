@@ -15,11 +15,11 @@ Dminus = 0.67
 F = 0
 
 # Total before
-quality_points = 526.35
-credit_hours = 138
+quality_points = 549.99
+credit_hours = 145
 
 # Current term
-current_credit_hours = 19
+current_credit_hours = 15
 average_gpa = Bminus
 current_quality_points = current_credit_hours * average_gpa
 

@@ -166,3 +166,6 @@ if [ -f ~/.config/.docker_aliases ]; then
 fi
 
 alias xxx='defaults write -g ApplePressAndHoldEnabled -bool false && xset r rate 200 100'
+
+alias gameon='sudo cpupower frequency-set -g performance'
+alias gameoff='sudo cpupower frequency-set -g powersave'
