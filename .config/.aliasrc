@@ -1,0 +1,65 @@
+#!/bin/bash
+
+##############################
+##### Generic Shortcuts ######
+##############################
+
+alias \
+	l="ls -a --color=auto --group-directories-first" \
+	ll="ls -al --color=auto --group-directories-first" \
+	reload="source ~/.profile" \
+	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev"
+
+##############################
+############ Git #############
+##############################
+alias \
+	gs="git status -sb" \
+  gsv="git status -vvb" \
+  ga="git add" \
+  gr="git rm" \
+  gcm="git commit -m" \
+  gp="git push" \
+  GP="git add -A && git commit -m'.' && git push" \
+  gm="git merge" \
+  gc="git checkout" \
+  gcb="git checkout -b" \
+  gb="git branch -v" \
+  gbd="git branch -D" \
+  gd="git diff --color-words" \
+  gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+##############################
+######## Git Watchers ########
+##############################
+alias \
+	gsw="watch 'git status -sb'" \
+	gbw="watch 'git branch -v'"
+
+##############################
+######### Use Neovim #########
+##############################
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+##############################
+########## Commands ##########
+##############################
+
+# Search all system manuals and render selected as PDF
+function findman {
+	apropos . | fzf-tmux -e | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+}
+
+# Virtual env shortcuts
+alias \
+	va='source venv/bin/activate' \
+	vd='deactivate' \
+
+# Misc
+alias \
+	val="valgrind -v --leak-check=full --track-origins=yes --show-leak-kinds=all " \
+	tree='tree -C -I "*node*|*venv*|*cache*|*dist*|*CMakeFiles*"'
+
+# Performance toggling for games
+alias gameon='sudo cpupower frequency-set -g performance'
+alias gameoff='sudo cpupower frequency-set -g powersave'
