@@ -5,6 +5,7 @@
 
 " Plugin Options
 nnoremap <C-p> :Files<CR>
+nnoremap <S-p> :Rg
 
 let g:UltiSnipsExpandTrigger = '<F3>'
 let g:UltiSnipsJumpForwardTrigger = '<F3>'

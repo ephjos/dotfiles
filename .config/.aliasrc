@@ -8,7 +8,8 @@ alias \
 	l="ls -a --color=auto --group-directories-first" \
 	ll="ls -al --color=auto --group-directories-first" \
 	reload="source ~/.profile" \
-	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev"
+	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev" \
+  h="(st &); disown -a;"
 
 ##############################
 ############ Git #############
