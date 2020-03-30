@@ -13,10 +13,10 @@ endif
 
 " Check if Coc Plugins are installed
 " and install them if not
-if ! filereadable(expand('~/.config/coc/extensions/package.json'))
-  echo "Downloading coc plugins..."
-  autocmd VimEnter * CocInstall coc-tsserver coc-json
-endif
+"if ! filereadable(expand('~/.config/coc/extensions/package.json'))
+"  echo "Downloading coc plugins..."
+"  autocmd VimEnter * CocInstall coc-tsserver coc-json
+"endif
 
 let mapleader = ","
 
