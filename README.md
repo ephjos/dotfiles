@@ -1,7 +1,9 @@
 # dotfiles
 
-my dotfiles :)
+my dotfiles
+
+>i use arch btw
 
 # TODO
 
-- Refactor and improve snips
+nothing for now 😀
