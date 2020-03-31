@@ -15,6 +15,7 @@ command! -bang -nargs=* Rg
   \   fzf#vim#with_preview(), <bang>0)
 
 nnoremap <C-p> :Files<CR>
+nnoremap <C-s> :Snippets<CR>
 nnoremap <Leader>fa :Rg
 nnoremap <Leader>fw :Rg <C-R><C-W><space>
 
