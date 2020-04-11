@@ -38,7 +38,7 @@ world-file: /home/joseph/.cabal/world
 -- program-prefix:
 -- program-suffix:
 -- library-vanilla: True
--- library-profiling:
+  library-profiling: True
 -- shared:
 -- static:
 -- executable-dynamic: False
