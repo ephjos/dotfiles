@@ -53,6 +53,8 @@ autocmd BufRead,BufNewFile *.hs set expandtab
 autocmd BufRead,BufNewFile *.pl set filetype=prolog
 autocmd BufRead,BufNewFile *.perl set filetype=perl
 autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
+autocmd BufRead,BufNewFile *.c,*.h set noexpandtab
+autocmd BufRead,BufNewFile *.b set filetype=c
 
 " Skeleton Template Setup
 if has("autocmd")

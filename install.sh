@@ -14,7 +14,3 @@ mkdir -p $HOME/.local/bin
 cp -rv ./.local/bin/* $HOME/.local/bin
 cp -rv ./.local/bin/.* $HOME/.local/bin
 
-mkdir -p $HOME/.cabal
-cp -rv ./.cabal/* $HOME/.cabal
-cp -rv ./.cabal/.* $HOME/.cabal
-

@@ -10,6 +10,7 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 export PATH=$PATH:/usr/local/share:$HOME/.config/Scripts:$HOME/.scripts:/usr/lib/jvm/java-8-openjdk/bin/
 export PATH=$PATH:/opt/ghdl/bin:$HOME/.cabal/bin:$HOME/.ghcup/bin:/Library/PostgreSQL/12/scripts
 export PATH="$(du $HOME/.local/bin/ | cut -f2 | tr '\n' ':')$PATH"
+export PATH=$PATH:$HOME/school/cs543/inferno-os/Linux/386/bin
 
 # Default applications
 export EDITOR="vim"
