@@ -1,16 +1,17 @@
 #!/bin/bash
 
+[[ -f "$HOME/.config/.dockerrc" ]] && source "$HOME/.config/.dockerrc"
+[[ -f "$HOME/.config/.fzfrc" ]] && source "$HOME/.config/.fzfrc"
+
 # Generic Shortcuts
 alias \
 	l="ls -a --color=auto --group-directories-first" \
 	ll="ls -al --color=auto --group-directories-first" \
 	reload="source ~/.profile" \
 	dev="sudo docker run -it --rm --network host -v $HOME:/mounted josephthomashines/dev" \
-  h="(st &); disown -a;"
-
-alias \
-  brpl="fzf --multi --preview='bash -c {q}' --preview-window=up:70"
-  # TODO: More fzf aliases
+  h="(st &); disown -a;" \
+  sudosu="sudo -E bash" \
+  grep="grep --color" \
 
 # Git
 alias \

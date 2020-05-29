@@ -26,11 +26,11 @@ USER $user
 WORKDIR $HOMEDIR
 
 # Copy dotfiles
-COPY ./.bashrc $HOMEDIR
-COPY ./.profile $HOMEDIR
-COPY ./.config/ $HOMEDIR/.config
-COPY ./.local/ $HOMEDIR/.local
-COPY ./.cabal/ $HOMEDIR/.cabal
+# COPY ./.bashrc $HOMEDIR
+# COPY ./.profile $HOMEDIR
+# COPY ./.config/ $HOMEDIR/.config
+# COPY ./.local/ $HOMEDIR/.local
+COPY . $HOMEDIR
 
 # Ensure $user owns their files
 USER root

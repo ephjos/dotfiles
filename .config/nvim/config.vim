@@ -7,7 +7,7 @@
 set nocompatible
 filetype plugin on
 syntax on
-colorscheme Tomorrow-Night-Eighties
+colorscheme miramare
 highlight EndOfBuffer ctermfg=black ctermbg=black
 autocmd filetype crontab setlocal nobackup nowritebackup
 

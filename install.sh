@@ -1,16 +1,13 @@
 #!/bin/bash
 
-cp -rv ./.bashrc $HOME/
-cp -rv ./.profile $HOME/
-ln -sv $HOME/.profile $HOME/.bash_profile
+# Copy all files
+cp -rv . $HOME
 
-mkdir -p $HOME/.config/nvim
-cp -rv ./.config/nvim/* $HOME/.config/nvim
-cp -rv ./.config/nvim/.* $HOME/.config/nvim
-ln -sv $HOME/.config/nvim $HOME/.vim
-ln -sv $HOME/.config/nvim/init.vim $HOME/.vimrc
+# Link vim + nvim config files together for portability
+[ -e $HOME/.vim ] || ln -sv $HOME/.config/nvim $HOME/.vim
+[ -e $HOME/.vimrc ] || ln -sv $HOME/.config/nvim/init.vim $HOME/.vimrc
 
-mkdir -p $HOME/.local/bin
-cp -rv ./.local/bin/* $HOME/.local/bin
-cp -rv ./.local/bin/.* $HOME/.local/bin
+# Cleanup extra copies
+rm -rfv $HOME/{.git,dockerfile,LICENSE,install.sh,Makefile,README.md}
+
 

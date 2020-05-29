@@ -2,7 +2,9 @@
 # ~/.profile
 #
 
-[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
+[[ -f "$HOME/.config/.cleanrc" ]] && source "$HOME/.config/.cleanrc"
+
+[[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
 bind -f "$HOME/.config/.inputrc"
 

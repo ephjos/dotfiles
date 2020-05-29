@@ -21,4 +21,3 @@ export BROWSER="chromium"
 # Program configs
 export FZF_DEFAULT_COMMAND="find ."
 
-[[ -f ~/.ghcup/env ]] && . ~/.ghcup/env
