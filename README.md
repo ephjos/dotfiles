@@ -6,4 +6,7 @@ my dotfiles
 
 # TODO
 
-nothing for now 😀
+- Install script
+  - tux is being weird
+    - nvim?
+  - try to get fzf working
