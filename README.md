@@ -2,7 +2,7 @@
 
 my dotfiles
 
->i use arch btw
+>i use arch btw 😎
 
 # TODO
 
