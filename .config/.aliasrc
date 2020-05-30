@@ -2,6 +2,7 @@
 
 [[ -f "$HOME/.config/.dockerrc" ]] && source "$HOME/.config/.dockerrc"
 [[ -f "$HOME/.config/.fzfrc" ]] && source "$HOME/.config/.fzfrc"
+[[ -f "$HOME/.config/.cleanrc" ]] && source "$HOME/.config/.cleanrc"
 
 # Generic Shortcuts
 alias \

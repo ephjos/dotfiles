@@ -55,6 +55,7 @@ autocmd BufRead,BufNewFile *.perl set filetype=perl
 autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
 autocmd BufRead,BufNewFile *.c,*.h set noexpandtab
 autocmd BufRead,BufNewFile *.b set filetype=c
+autocmd BufRead,BufNewFile *.sent set filetype=markdown
 
 " Skeleton Template Setup
 if has("autocmd")
