@@ -13,6 +13,7 @@ alias \
   h="(st &); disown -a;" \
   sudosu="sudo -E bash" \
   grep="grep --color" \
+  alertme="notify-send '✅ Script finished successfully' || notify-send '❌ Script failed' " \
 
 # Git
 alias \
