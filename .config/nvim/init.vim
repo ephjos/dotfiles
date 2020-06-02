@@ -13,12 +13,10 @@ endif
 
 " Check if Coc Plugins are installed
 " and install them if not
-"if ! filereadable(expand('~/.config/coc/extensions/package.json'))
-"  echo "Downloading coc plugins..."
-"  autocmd VimEnter * CocInstall coc-tsserver coc-json
-"endif
-
-let mapleader = ","
+if ! filereadable(expand('~/.config/coc/extensions/package.json'))
+  echo "Downloading coc plugins..."
+  autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python
+endif
 
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/plug_config.vim

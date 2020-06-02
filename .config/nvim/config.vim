@@ -7,8 +7,8 @@
 set nocompatible
 filetype plugin on
 syntax on
-colorscheme miramare
-highlight EndOfBuffer ctermfg=black ctermbg=black
+colorscheme gruvbox
+"highlight EndOfBuffer ctermfg=black ctermbg=black
 autocmd filetype crontab setlocal nobackup nowritebackup
 
 set tabstop=2
@@ -18,24 +18,24 @@ set expandtab
 set encoding=utf-8
 set path+=**
 set wildmenu
-"set wildignore+=**/node_modules/**,**/dist/**,**_site/**,*.swp,*.png,*.jpg,*.gif,*.webp,*.jpeg,*.map
 set clipboard=unnamedplus
 set number relativenumber
 set list
-"set listchars=tab:→→,eol:¬,space:.
 set listchars=tab:→→
 set hidden
 set nrformats=
 set hlsearch
 set smartcase
 set incsearch
-set noswapfile
 set nobackup
 set nowritebackup
 set updatetime=300
 
 hi NonText ctermfg=DarkGrey guifg=#4a4a59
 hi SpecialKey ctermfg=DarkGrey guifg=#4a4a59
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 
 " Automatically deletes all tralling whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
@@ -53,7 +53,7 @@ autocmd BufRead,BufNewFile *.hs set expandtab
 autocmd BufRead,BufNewFile *.pl set filetype=prolog
 autocmd BufRead,BufNewFile *.perl set filetype=perl
 autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
-autocmd BufRead,BufNewFile *.c,*.h set noexpandtab
+autocmd BufRead,BufNewFile *.c,*.h,*.go set noexpandtab
 autocmd BufRead,BufNewFile *.b set filetype=c
 autocmd BufRead,BufNewFile *.sent set filetype=markdown
 

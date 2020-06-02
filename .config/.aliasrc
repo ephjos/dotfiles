@@ -3,6 +3,7 @@
 [[ -f "$HOME/.config/.dockerrc" ]] && source "$HOME/.config/.dockerrc"
 [[ -f "$HOME/.config/.fzfrc" ]] && source "$HOME/.config/.fzfrc"
 [[ -f "$HOME/.config/.cleanrc" ]] && source "$HOME/.config/.cleanrc"
+[[ -f "$HOME/.config/.secret_aliases" ]] && source "$HOME/.config/.secret_aliases"
 
 # Generic Shortcuts
 alias \
@@ -13,7 +14,6 @@ alias \
   h="(st &); disown -a;" \
   sudosu="sudo -E bash" \
   grep="grep --color" \
-  alertme="notify-send '✅ Script finished successfully' || notify-send '❌ Script failed' " \
 
 # Git
 alias \
@@ -45,6 +45,8 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 function findman {
 	apropos . | fzf-tmux -e | awk '{print $1}' | xargs -r man -Tpdf | zathura -
 }
+
+watch() { while inotifywait --exclude .swp -e modify -r . &> /dev/null; do clear; $@; done; }
 
 # Virtual env shortcuts
 alias \
