@@ -34,9 +34,6 @@ set updatetime=300
 hi NonText ctermfg=DarkGrey guifg=#4a4a59
 hi SpecialKey ctermfg=DarkGrey guifg=#4a4a59
 
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-
 " Automatically deletes all tralling whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
