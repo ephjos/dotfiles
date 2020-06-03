@@ -10,7 +10,7 @@ sudo docker login
 
 # Build the tag
 TAG_NAME="$1"
-sudo docker build -t "$TAG_NAME" .
+sudo docker build --no-cache -t "$TAG_NAME" .
 
 # Get the tag ID from the name
 TAG_ID=$(sudo docker images | awk -v tag=$TAG_NAME '$1==tag{print $3}')

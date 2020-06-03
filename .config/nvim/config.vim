@@ -8,6 +8,7 @@ set nocompatible
 filetype plugin on
 syntax on
 colorscheme gruvbox
+set background=dark
 "highlight EndOfBuffer ctermfg=black ctermbg=black
 autocmd filetype crontab setlocal nobackup nowritebackup
 

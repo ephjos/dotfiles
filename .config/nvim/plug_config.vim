@@ -14,6 +14,8 @@ command! -bang -nargs=* Rg
   \   'rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
+let g:coc_disable_startup_warning = 1
+
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nmap <leader>gd <Plug>(coc-definition)
