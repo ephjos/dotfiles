@@ -15,7 +15,7 @@ endif
 " and install them if not
 if ! filereadable(expand('~/.config/coc/extensions/package.json'))
   echo "Downloading coc plugins..."
-  autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python
+  autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python coc-clangd
 endif
 
 source $HOME/.config/nvim/plug.vim

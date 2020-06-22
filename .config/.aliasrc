@@ -14,6 +14,7 @@ alias \
   h="(st &); disown -a;" \
   sudosu="sudo -E bash" \
   grep="grep --color" \
+  todo="vim /tmp/TODO" \
 
 # Git
 alias \
