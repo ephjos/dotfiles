@@ -19,5 +19,3 @@
 # check the i3blocks line above.
 ssh-agent dwm
 # ssh-agent i3
-
-setbg
