@@ -9,13 +9,9 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   silent !mkdir -p ~/.config/nvim/autoload/
   silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
   autocmd VimEnter * PlugInstall
-endif
 
-" Check if Coc Plugins are installed
-" and install them if not
-if ! filereadable(expand('~/.config/coc/extensions/package.json'))
   echo "Downloading coc plugins..."
-  autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python coc-clangd
+  autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python coc-clangd coc-html coc-css
 endif
 
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
