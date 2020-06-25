@@ -10,7 +10,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'franbach/miramare'
-Plug 'morhetz/gruvbox'
+
+"Plug 'morhetz/gruvbox'
+Plug 'kaicataldo/material.vim'
+
 Plug 'SirVer/ultisnips'
 " Language Tools
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

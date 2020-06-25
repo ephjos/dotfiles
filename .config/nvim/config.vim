@@ -7,8 +7,12 @@
 set nocompatible
 filetype plugin on
 syntax on
-colorscheme gruvbox
-set background=dark
+
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'palenight'
+colorscheme material
+
+"set background=dark
 "highlight EndOfBuffer ctermfg=black ctermbg=black
 autocmd filetype crontab setlocal nobackup nowritebackup
 
