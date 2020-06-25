@@ -1,0 +1,10 @@
+#!/bin/bash
+
+repo_dir="$HOME/repos"
+
+for repo in $(ls -1 "$repo_dir" | grep -v "dotfiles"); do
+  cd "$repo_dir/$repo"
+  git add -u
+  git commit -m "Automatic update from script 🤖"
+  git push
+done
