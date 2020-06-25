@@ -1,0 +1,7 @@
+#!/bin/bash
+
+choice=$(echo -e "No\nYes\n" | rofi -dmenu -p "Shutdown now?")
+
+[[ "$choice" == "Yes" ]] && \
+  shutdown now
+
