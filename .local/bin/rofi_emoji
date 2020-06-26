@@ -1,0 +1,12 @@
+#!/bin/bash
+
+EMOJI="$HOME/.local/share/.emoji"
+
+[[ -f "$EMOJI" ]] && {
+  cat $EMOJI | \
+  rofi -dmenu -p "Emoji Picker" | \
+  awk -F"|" '{print $1}' | \
+  xclip -in -selection clipboard
+}
+
+
