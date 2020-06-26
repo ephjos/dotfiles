@@ -16,12 +16,17 @@ export PATH=$PATH:$HOME/.local/share/npm/bin
 export EDITOR="vim"
 export FILE="ranger"
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="brave"
 
 # Program configs
 export FZF_DEFAULT_COMMAND="find ."
 
+# Nicer setting for viewing dot status
 git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME \
   config --local status.showUntrackedFiles no
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Ensure vim and nvim configs linked
+[[ ! -e "$HOME/.vimrc" ]] && \
+  ln -s "$HOME/.config/nvim/init.vim" "$HOME/.vimrc" &&
+  ln -s "$HOME/.config/nvim" "$HOME/.vim"
+
