@@ -1,0 +1,8 @@
+set shell bash
+set hidden
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set color256
+set icons
+set period 1
