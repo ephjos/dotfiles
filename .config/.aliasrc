@@ -16,6 +16,7 @@ alias \
   grep="grep --color" \
   todo="vim /tmp/TODO" \
 
+# Dotfiles
 alias \
   dots='git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME' \
 

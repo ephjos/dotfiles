@@ -21,3 +21,7 @@ export BROWSER="chromium"
 # Program configs
 export FZF_DEFAULT_COMMAND="find ."
 
+git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME \
+  config --local status.showUntrackedFiles no
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
