@@ -3,5 +3,5 @@
 rm -f *.log *.aux
 exec docker run --rm -i --network host \
   -v $(pwd):/mounted josephthomashines/tex \
-  xelatex "$@"
+  xelatex -interaction nonstopmode "$@"
 
