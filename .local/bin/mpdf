@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -f *.log *.aux
-exec docker run --rm -i --network host \
-  -v $(pwd):/mounted josephthomashines/tex \
-  xelatex -interaction nonstopmode "$@"
+# To compile file.tex, run mpdf file.tex
+
+rm -f *.log *.aux *.blg *.bbl
+mtex xelatex -interaction nonstopmode $@
 
