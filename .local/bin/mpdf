@@ -2,6 +2,7 @@
 
 # To compile file.tex, run mpdf file.tex
 
-rm -f *.log *.aux *.blg *.bbl
+mclean
+
 mtex xelatex -interaction nonstopmode $@
 

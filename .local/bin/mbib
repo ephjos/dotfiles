@@ -2,7 +2,7 @@
 
 # To compile file.tex with bib file.bib, run mbib file
 
-rm -f *.log *.aux *.blg *.bbl
+mclean
 
 mtex xelatex -interaction nonstopmode "$1.tex"
 mtex bibtex "$1"
