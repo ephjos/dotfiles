@@ -12,7 +12,8 @@ Plug 'junegunn/fzf.vim'
 
 "Plug 'franbach/miramare'
 "Plug 'morhetz/gruvbox'
-Plug 'kaicataldo/material.vim'
+"Plug 'kaicataldo/material.vim'
+Plug 'tomasiser/vim-code-dark'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'

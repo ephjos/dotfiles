@@ -8,9 +8,10 @@ set nocompatible
 filetype plugin on
 syntax on
 
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
-colorscheme material
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'palenight'
+"colorscheme material
+colorscheme codedark
 
 "set background=dark
 "highlight EndOfBuffer ctermfg=black ctermbg=black
