@@ -1,0 +1,11 @@
+#!/bin/bash
+
+kill $(pidof ffmpeg) &> /dev/null
+
+# Wait until closed to signal bar
+while [ 1 -lt 2 ]
+do
+  [[ $(ps -aux | grep ffmpeg | grep -Ev "(grep|defunct)" | wc -l) != 0 ]] || break
+done
+
+kill -44 $(pidof dwmblocks) &> /dev/null
