@@ -26,3 +26,13 @@ export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
+# Personal Dirs
+export DESKTOP="$HOME/dk"
+export DOCUMENTS="$HOME/dx"
+export DOWNLOAD="$HOME/dl"
+export MUSIC="$HOME/mx"
+export PICTURES="$HOME/px"
+export PUBLICSHARE="$HOME/pl"
+export TEMPLATES="$HOME/tl"
+export VIDEOS="$HOME/vd"
+
