@@ -19,5 +19,4 @@
 # ssh-agent i3
 
 . ~/.xprofile # Source xprofile
-setxkbmap -option caps:escape # Rebind caps to escape
 startdwm

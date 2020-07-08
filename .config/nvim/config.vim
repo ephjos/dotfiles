@@ -11,6 +11,9 @@ syntax on
 "let g:material_terminal_italics = 1
 "let g:material_theme_style = 'palenight'
 "colorscheme material
+
+set t_Co=256
+set t_ut=
 colorscheme codedark
 
 "set background=dark
