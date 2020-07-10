@@ -31,7 +31,7 @@ color article white default bold
 
 browser brave
 macro , open-in-browser
-macro v set browser "setsid -f mpv" ; open-in-browser ; set browser brave
+macro v set browser "setsid -f st -e mpv" ; open-in-browser ; set browser brave
 macro a set browser "tsp youtube-dl --add-metadata -ic -o '~/vd/newsboat/%(uploader)s/%(title)s.%(ext)s'" ; open-in-browser ; set browser brave
 
 highlight all "---.*---" yellow
