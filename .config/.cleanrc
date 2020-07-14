@@ -14,7 +14,7 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PLTUSERHOME="$XDG_DATA_HOME"/racket
 export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
-export HISTFILE="$XDG_DATA_HOME"/bash/history
+export HISTFILE="$XDG_DATA_HOME"/history
 export LESSHISTFILE=-
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 echo hsts-file \= "$XDG_CACHE_HOME"/wget-hsts >> "$XDG_CONFIG_HOME/wgetrc"
