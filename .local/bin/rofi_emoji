@@ -6,6 +6,7 @@ EMOJI="$HOME/.local/share/.emoji"
   cat $EMOJI | \
   rofi -dmenu -p "Emoji Picker" | \
   awk -F"|" '{print $1}' | \
+  tr -d '\n' | \
   xclip -in -selection clipboard
 }
 
