@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ping -c 1 archlinux.org &> /dev/null
+
+internet_status=""
+[[ "$?" == 0 ]] && {
+  internet_status="✅ Connected"
+} || {
+  internet_status="❌ Not connected"
+}
+
+notify-send -u low "🖥 Internet Status" "$internet_status"
