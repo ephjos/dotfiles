@@ -9,3 +9,4 @@ do
 done
 
 kill -44 $(pidof dwmblocks) &> /dev/null
+dunst_on
