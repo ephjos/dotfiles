@@ -1,0 +1,3 @@
+#!/bin/bash
+
+firejail --x11 --xephyr-screen=1280x720 --noprofile openbox --startup "zoom"
