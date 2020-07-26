@@ -4,7 +4,7 @@
 source "$HOME/.config/.aliasrc"
 
 # Prompt
-export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+#export PS1="$(tput bold)$(tput setaf 1)$(tput setaf 3)\u$(tput setaf 2) in $(tput setaf 4)$(tput setaf 5)\W$(tput setaf 1)$(tput setaf 7) \\$ $(tput sgr0)"
 
 # Path config
 export PATH=$PATH:/usr/local/share:$HOME/.config/Scripts:$HOME/.scripts:/usr/lib/jvm/java-8-openjdk/bin/
@@ -30,3 +30,11 @@ git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME \
   ln -s "$HOME/.config/nvim/init.vim" "$HOME/.vimrc" &&
   ln -s "$HOME/.config/nvim" "$HOME/.vim"
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ "`id -u`" -eq 0 ]; then
+    PS1="\H\[\e[36m\]\[\e[49m\]\W \[\e[1;31m\]-> \[\e[0m\]"
+else
+    PS1="\[\e[35m\]\H\[\e[0m\]:\[\e[36m\]\W \[\e[1;32m\]-> \[\e[0m\]"
+fi
