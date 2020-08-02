@@ -34,7 +34,7 @@ git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME \
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ "`id -u`" -eq 0 ]; then
-    PS1="\H\[\e[36m\]\[\e[49m\]\W \[\e[1;31m\]-> \[\e[0m\]"
+    PS1="\[\e[35m\]\H\[\e[0m\]:\[\e[36m\]\W \[\e[1;31m\]--> \[\e[0m\]"
 else
     PS1="\[\e[35m\]\H\[\e[0m\]:\[\e[36m\]\W \[\e[1;32m\]-> \[\e[0m\]"
 fi
