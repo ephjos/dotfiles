@@ -15,6 +15,7 @@ alias \
   sudosu="sudo -E bash" \
   grep="grep --color" \
   todo="vim /tmp/TODO" \
+  llc="source llc_script"
 
 # Dotfiles
 alias \
