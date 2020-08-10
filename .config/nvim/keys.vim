@@ -49,10 +49,6 @@ vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 map <leader><leader> <Esc>/<++><Enter>"_c4l
 inoremap ;gui <++>
 
-" For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)
-inoremap jw <Esc>
-inoremap wj <Esc>
-
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
 map <C-j> <C-w>j

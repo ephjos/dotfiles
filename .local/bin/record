@@ -4,7 +4,7 @@ mkdir -p "$HOME/vd"
 dunst_off
 
 ffmpeg \
-  -video_size $(xrandr | grep "*" | awk '{print $1}' | tr -d " ") \
+  -video_size $(xrandr | grep "primary" | awk '{print $4}' | awk -F"+" '{print $1}' | tr -d " ") \
   -framerate 30 \
   -f x11grab \
   -i :0.0 \
@@ -15,7 +15,6 @@ ffmpeg \
   "$HOME/vd/$(date "+%s").mp4" &> "$XDG_CACHE_HOME/record.log" &
 
 kill -44 $(pidof dwmblocks) &> /dev/null
-dunst_on
 
 
 
