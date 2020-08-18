@@ -72,6 +72,7 @@ if has("autocmd")
     autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
     autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
     autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
+    autocmd BufNewFile *.mom 0r ~/.vim/templates/skeleton.mom
   augroup END
 endif
 
