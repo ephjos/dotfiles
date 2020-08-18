@@ -11,5 +11,5 @@ filename_without_ext=`rev <<< "${1}" | cut -d"." -f2- | rev`
 echo "$1"
 echo "$filename_without_ext"
 
-groff -Tpdf -mom "$1" > "$filename_without_ext".pdf
+groff -Tpdf -R -mom "$1" > "$filename_without_ext".pdf
 
