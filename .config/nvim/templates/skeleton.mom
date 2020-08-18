@@ -1,0 +1,49 @@
+.TITLE     ""
+.SUBTITLE  ""
+.AUTHOR    ""
+.MISC      ""
+\#
+\# Docstyle macros
+\#
+.DOCTYPE    DEFAULT
+.DOCHEADER  OFF
+.COPYSTYLE  FINAL
+\#
+\# Additional style macros--general type parameters
+\#
+.PRINTSTYLE   TYPESET
+.T_MARGIN     1i
+.B_MARGIN     1i
+.L_MARGIN     1i
+.R_MARGIN     1i
+.PT_SIZE      12
+.AUTOLEAD     1.5 FACTOR
+\#
+\# Additional style macros--change mom's default behaviour
+\#
+\#.RECTO_VERSO \" Flip margins & headers on odd and even pages
+\#
+\#.COLUMNS           2 1P+6p
+.SUBTITLE_SIZE     +1.5
+.AUTHOR_SIZE       +.5
+.DOCHEADER_LEAD    +2p
+.HEADER_SIZE       +1
+.PARA_INDENT       1P
+.QUOTE_INDENT      2
+.BLOCKQUOTE_STYLE \
+  INDENT 2 \
+  FAMILY H \
+  SIZE   -2
+.HEADING_STYLE 1 \
+  SIZE +.5 \
+  BASELINE_ADJUST 2p
+.HEADERS      OFF
+\#.HEADER_LEFT ""
+\#
+.COVER TITLE SUBTITLE AUTHOR MISC
+\#
+.START
+.PP
+.PP
+.FINAL
+
