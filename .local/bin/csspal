@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# csspal < main.css
+#   outputs an html file that lets you preview html
+#   color variables and the colors the represent
+#
+
+if [ -z "${1}" ]; then
+  echo "You need to specify the css file"
+  exit 0
+fi
+
+echo -e "<html>\n  <head><style>div { padding: 10px; width: 100%; box-sizing: border-box; }</style></head>\n  <body>"
+
+awk '$0 ~ /^\s.*--.*#/ { print $0 }' "$1" | tr -d " " | \
+  awk -F ":" '{ print "    <div style=\"border-left: 100px solid "$2"\">"$1"</div>" }'
+
+echo -e "  </body>\n</html>"
