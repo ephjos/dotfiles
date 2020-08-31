@@ -53,7 +53,7 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 # Functions
 dots() {
   if [[ -e "$HOME/repos/dotfiles" ]]; then
-    git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME $@
+    git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME "$@"
   else
     echo "Must clone github.com/ephjos/dotfiles to ~/repos/dotfiles"
   fi
