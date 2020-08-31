@@ -11,8 +11,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "Plug 'franbach/miramare'
-"Plug 'morhetz/gruvbox'
 "Plug 'kaicataldo/material.vim'
+Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 
 Plug 'SirVer/ultisnips'

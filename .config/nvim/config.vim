@@ -14,7 +14,7 @@ syntax on
 
 set t_Co=256
 set t_ut=
-colorscheme codedark
+colorscheme gruvbox
 
 "set background=dark
 "highlight EndOfBuffer ctermfg=black ctermbg=black
@@ -39,6 +39,12 @@ set incsearch
 set nobackup
 set nowritebackup
 set updatetime=300
+set nocindent
+set nosmartindent
+set noautoindent
+set indentexpr=
+filetype indent off
+filetype plugin indent off
 
 hi NonText ctermfg=DarkGrey guifg=#4a4a59
 hi SpecialKey ctermfg=DarkGrey guifg=#4a4a59
