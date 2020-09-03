@@ -39,10 +39,6 @@ set incsearch
 set nobackup
 set nowritebackup
 set updatetime=300
-set nocindent
-set nosmartindent
-set noautoindent
-set indentexpr=
 filetype indent off
 filetype plugin indent off
 
