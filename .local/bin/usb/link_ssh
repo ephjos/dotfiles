@@ -2,6 +2,7 @@
 #
 
 if [ -e "$HOME/.ssh" ]; then
+  rm -rf "$HOME/.ssh.bak"
   mv "$HOME/.ssh" "$HOME/.ssh.bak"
 fi
 
