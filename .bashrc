@@ -8,6 +8,7 @@ export PATH=$PATH:/usr/local/share:$HOME/.config/Scripts:$HOME/.scripts:/usr/lib
 export PATH=$PATH:/opt/ghdl/bin:$HOME/.cabal/bin:$HOME/.ghcup/bin:/Library/PostgreSQL/12/scripts
 export PATH="$(du $HOME/.local/bin/ | cut -f2 | tr '\n' ':')$PATH"
 export PATH=$PATH:$HOME/.local/share/npm/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Default applications
 export EDITOR="vim"

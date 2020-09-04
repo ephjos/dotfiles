@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+
+require "veracrypt"
+mnt_point="/mnt/keychain"
+
+if [ -e "$mnt_point" ]; then
+  echo "Already mounted..."
+  exit 0
+fi
+
+lsblk -p
+read -p "Enter drive: " drive
+sudo mkdir -p "$mnt_point"
+veracrypt -t --mount "$drive" "$mnt_point" || sudo rm -rf "$mnt_point"
+echo "Mounted encrypted drive $drive to $mnt_point"
+
