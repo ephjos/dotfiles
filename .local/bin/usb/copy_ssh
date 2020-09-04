@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+
+if [ -e "$HOME/.ssh" ]; then
+  mv "$HOME/.ssh" "$HOME/.ssh.bak"
+fi
+
+cp -r /mnt/keychain/.ssh "$HOME"
