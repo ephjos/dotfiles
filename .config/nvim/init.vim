@@ -90,8 +90,10 @@ let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <C-p> :GitFiles<CR>
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-s> :Snippets<CR>
-nnoremap <Leader>fa :Rg
-nnoremap <Leader>fw :Rg <C-R><C-W><space>
+
+nnoremap <leader>ghw :h <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
 
 let g:UltiSnipsExpandTrigger = '<F3>'
 let g:UltiSnipsJumpForwardTrigger = '<F3>'
@@ -242,6 +244,7 @@ map <C-l> <C-w>l
 nnoremap S :%s//g<Left><Left>
 vnoremap S noop
 vnoremap S :s//g<Left><Left>
+nnoremap <leader>S :%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 
 " Terminal Function
 let g:term_buf = 0
@@ -274,5 +277,4 @@ tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap :q! <C-\><C-n>:q!<CR>
-
 
