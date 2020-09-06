@@ -29,8 +29,6 @@ export FZF_DEFAULT_COMMAND="find ."
   ln -s "$HOME/.config/nvim/init.vim" "$HOME/.vimrc" && \
   ln -s "$HOME/.config/nvim" "$HOME/.vim"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 c="\[\e[0m\]"
 pink="\[\e[38;5;168m\]"
 cyan="\[\e[38;5;51m\]"
