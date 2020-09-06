@@ -7,28 +7,30 @@
 " init
 "
 
+let mapleader = " "
+
 " On first run, install plug and packages
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	source ~/.vimrc
-	autocmd VimEnter * PlugInstall 
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    source ~/.vimrc
+    autocmd VimEnter * PlugInstall
 endif
 
 if empty(glob('~/.config/coc/extensions/node_modules'))
-	autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python coc-clangd coc-html coc-css
+    autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python coc-clangd coc-html coc-css
 endif
 
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+    let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
 " For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
 " Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
 " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
 if (has('termguicolors'))
-  set termguicolors
+    set termguicolors
 endif
 
 
@@ -56,12 +58,12 @@ call plug#end()
 "
 " Include preview in :Files
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " Include preview and hidden files in :Rg
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+            \ call fzf#vim#grep(
+            \   'rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+            \   fzf#vim#with_preview(), <bang>0)
 
 let g:coc_disable_startup_warning = 1
 
@@ -72,14 +74,14 @@ nmap <leader>gr <Plug>(coc-references)
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ coc#refresh()
 
 " use <c-space>for trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -176,15 +178,15 @@ autocmd BufRead,BufNewFile *.sent set filetype=markdown
 
 " Skeleton Template Setup
 if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.hs 0r ~/.vim/templates/skeleton.hs
-    autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json
-    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
-    autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
-    autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
-    autocmd BufNewFile *.mom 0r ~/.vim/templates/skeleton.mom
-  augroup END
+    augroup templates
+        autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+        autocmd BufNewFile *.hs 0r ~/.vim/templates/skeleton.hs
+        autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json
+        autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+        autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
+        autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
+        autocmd BufNewFile *.mom 0r ~/.vim/templates/skeleton.mom
+    augroup END
 endif
 
 
@@ -232,10 +234,8 @@ inoremap <F10> <esc>:Goyo<CR>a
 nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
-inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-map <leader><leader> <Esc>/<++><Enter>"_c4l
-inoremap ;gui <++>
+nnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -254,23 +254,23 @@ nnoremap <leader>S :%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 let g:term_buf = 0
 let g:term_win = 0
 function! TermToggle(height)
-  if win_gotoid(g:term_win)
-    hide
-  else
-    botright new
-    exec "resize " . a:height
-    try
-      exec "buffer " . g:term_buf
-    catch
-      call termopen("/bin/bash", {"detach": 0})
-      let g:term_buf = bufnr("")
-      set nonumber
-      set norelativenumber
-      set signcolumn=no
-    endtry
-    startinsert!
-    let g:term_win = win_getid()
-  endif
+    if win_gotoid(g:term_win)
+        hide
+    else
+        botright new
+        exec "resize " . a:height
+        try
+            exec "buffer " . g:term_buf
+        catch
+            call termopen("/bin/bash", {"detach": 0})
+            let g:term_buf = bufnr("")
+            set nonumber
+            set norelativenumber
+            set signcolumn=no
+        endtry
+        startinsert!
+        let g:term_win = win_getid()
+    endif
 endfunction
 
 " Toggle terminal on/off (neovim)
