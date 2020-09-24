@@ -18,7 +18,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 if empty(glob('~/.config/coc/extensions/node_modules'))
-    autocmd VimEnter * CocInstall coc-tsserver coc-json coc-go coc-python coc-clangd coc-html coc-css
+    autocmd VimEnter * CocInstall coc-tsserver coc-json coc-python coc-clangd coc-html coc-css
 endif
 
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
@@ -49,6 +49,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -106,6 +107,14 @@ let g:UltiSnipsJumpForwardTrigger = '<F3>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-F3>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
 
+set autowrite
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 "
 " config
