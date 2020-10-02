@@ -38,7 +38,6 @@ endif
 " vim-plug
 "
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -214,30 +213,10 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-" Pandoc compiles
-map <F1> :! md2pdf %<CR>
-map <F2> :! pdflatex %<CR>
-
-" Reset highlighting
-map <F5> :noh<CR>
-
 " Spell-check set to F6:
 " setlocal spell! spelllang=en_us
 map <F6> :setlocal spell! spelllang=en_us<CR>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
-" Compile and run c program
-map <F7> :! gcc % -o %.out && chmod +x %.out && ./%.out<CR>
-
-" Collapse CSV
-map <F8> :%!sed 's/","/\&/' \| sed 's/ *,/,/g'<CR>
-
-" Format CSV nicely
-map <F9> :%!sed 's/","/\&/' \| column -t -s ',' --output-separator ","<CR>
-
-" Goyo plugin makes text more readable when writing prose:
-map <F10> :Goyo<CR>
-inoremap <F10> <esc>:Goyo<CR>a
 
 " C-T for new tab
 nnoremap <C-t> :tabnew<cr>
@@ -252,8 +231,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Replace all is aliased to S. Visual mode shortcut doesn't work yet for some
-" reason...
+" Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 vnoremap S noop
 vnoremap S :s//g<Left><Left>
