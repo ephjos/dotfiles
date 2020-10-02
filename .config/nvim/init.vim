@@ -17,13 +17,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall
 endif
 
-if empty(glob('~/.config/coc/extensions/node_modules'))
-    autocmd VimEnter * CocInstall coc-tsserver coc-json coc-python coc-clangd coc-html coc-css
-endif
-
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+    if empty(glob('~/.config/coc/extensions/node_modules'))
+        autocmd VimEnter * CocInstall coc-tsserver coc-json coc-python coc-clangd coc-html coc-css
+    endif
 endif
 
 " For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
