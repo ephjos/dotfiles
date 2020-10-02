@@ -2,8 +2,15 @@
 
 my dotfiles
 
->i use arch btw 😎
+## Installation
 
-# TODO
+From bash
 
-nothing, for now 😄
+```bash
+cd ~;
+mkdir -p repos;
+git clone git@github.com:ephjos/dotfiles.git ~/repos/dotfiles;
+source ~/repos/dotfiles/.config/.aliasrc;
+dots checkout -- .;
+reload;
+```
