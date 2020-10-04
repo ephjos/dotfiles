@@ -92,13 +92,12 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-nnoremap <C-p> :GitFiles<CR>
-nnoremap <Leader>p :Files<CR>
-nnoremap <C-s> :Snippets<CR>
-
-nnoremap <leader>ghw :h <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>gf :GitFiles<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>cs :CocSearch
+nnoremap <leader>csw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>rgw :Rg <C-R>=expand("<cword>")<CR><CR>
 
 let g:UltiSnipsExpandTrigger = '<F3>'
 let g:UltiSnipsJumpForwardTrigger = '<F3>'
@@ -197,7 +196,6 @@ if has("autocmd")
     augroup END
 endif
 
-
 "
 " keys
 "
@@ -222,8 +220,8 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
-vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-nnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+vnoremap <leader>ng <Esc>/<++><Enter>"_c4l
+nnoremap <leader>ng <Esc>/<++><Enter>"_c4l
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -236,6 +234,9 @@ nnoremap S :%s//g<Left><Left>
 vnoremap S noop
 vnoremap S :s//g<Left><Left>
 nnoremap <leader>S :%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
+
+" Clear highlight when pressing enter
+" nnoremap <silent> <cr> :noh<CR><CR>
 
 command WQ wq
 command Wq wq
