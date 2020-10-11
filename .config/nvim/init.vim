@@ -158,6 +158,7 @@ set nowrap
 set scrolloff=8
 set noshowmode
 set colorcolumn=80
+set textwidth=80
 set updatetime=300
 
 hi NonText ctermfg=DarkGrey guifg=#4a4a59
@@ -236,7 +237,7 @@ vnoremap S :s//g<Left><Left>
 nnoremap <leader>S :%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 
 " Clear highlight when pressing enter
-" nnoremap <silent> <cr> :noh<CR><CR>
+nnoremap <silent> <ESC> :noh<CR><CR>
 
 command WQ wq
 command Wq wq
