@@ -237,7 +237,7 @@ vnoremap S :s//g<Left><Left>
 nnoremap <leader>S :%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 
 " Clear highlight when pressing enter
-nnoremap <silent> <ESC> :noh<CR><CR>
+nnoremap <silent> <ESC> :noh<CR>
 
 command WQ wq
 command Wq wq
