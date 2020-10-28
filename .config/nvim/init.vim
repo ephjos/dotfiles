@@ -153,8 +153,8 @@ set undodir=/tmp/undodir
 set undofile
 set incsearch
 set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set smartcase
@@ -185,7 +185,7 @@ autocmd BufRead,BufNewFile *.hs set expandtab
 autocmd BufRead,BufNewFile *.pl set filetype=prolog
 autocmd BufRead,BufNewFile *.perl set filetype=perl
 autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
-" autocmd BufRead,BufNewFile *.c,*.h,*.go set noexpandtab
+autocmd BufRead,BufNewFile *.c,*.h,*.go set noexpandtab
 autocmd BufRead,BufNewFile *.b set filetype=c
 autocmd BufRead,BufNewFile *.sent set filetype=markdown
 
