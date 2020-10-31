@@ -44,6 +44,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 
 Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
@@ -243,6 +244,9 @@ nnoremap <leader>S :%s/<C-R>=expand("<cword>")<CR>//g<Left><Left>
 
 " Clear highlight when pressing enter
 nnoremap <silent> <ESC> :noh<CR>
+
+map <F10> :Goyo<CR>
+inoremap <F10> <esc>:Goyo<CR>a
 
 command WQ wq
 command Wq wq
