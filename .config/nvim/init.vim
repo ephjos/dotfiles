@@ -186,7 +186,7 @@ autocmd BufRead,BufNewFile *.hs set expandtab
 autocmd BufRead,BufNewFile *.pl set filetype=prolog
 autocmd BufRead,BufNewFile *.perl set filetype=perl
 autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
-autocmd BufRead,BufNewFile *.c,*.h,*.go set noexpandtab
+autocmd BufRead,BufNewFile *.c,*.h,*.go,*.cpp set noexpandtab
 autocmd BufRead,BufNewFile *.b set filetype=c
 autocmd BufRead,BufNewFile *.sent set filetype=markdown
 

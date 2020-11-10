@@ -29,10 +29,6 @@ export FZF_DEFAULT_COMMAND="find ."
   ln -s "$HOME/.config/nvim/init.vim" "$HOME/.vimrc" && \
   ln -s "$HOME/.config/nvim" "$HOME/.vim"
 
-# Ensure vim and nvim configs linked
-[[ ! -e "$HOME/.local/share/tmux-resurrect" ]] && \
-  git clone https://github.com/tmux-plugins/tmux-resurrect "$HOME/.local/share/tmux-resurrect"
-
 c="\[\e[0m\]"
 pink="\[\e[38;5;168m\]"
 cyan="\[\e[38;5;51m\]"

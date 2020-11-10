@@ -1,0 +1,15 @@
+#!/bin/sh
+tmux new-session -n tm-sys \; \
+  send-keys 'htop' C-m \; \
+  split-window -h \; \
+  select-pane -L \; \
+  split-window -v \; \
+  send-keys 'watch -n2 nvidia-smi' C-m \; \
+  select-pane -R \; \
+  send-keys 'tail -f $XDG_CACHE_HOME/.dwm.log' C-m \; \
+  split-window -v \; \
+  select-pane -U \; \
+  split-window -v \; \
+  send-keys 'tail -f $XDG_CACHE_HOME/.dwmblocks.log' C-m \; \
+  select-pane -D \; \
+  send-keys 'watch -n2 sensors' C-m \; \
