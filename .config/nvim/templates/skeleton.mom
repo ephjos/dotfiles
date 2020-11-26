@@ -41,9 +41,25 @@
 \#.HEADER_LEFT ""
 \#
 .COVER TITLE SUBTITLE AUTHOR MISC
+\# .R1
+\# label "T"
+\# bracket-label " (" ")" ", "
+\# join-authors ", and " ", " ", and "
+\# move-punctuation
+\# reverse A1
+\# sort A1Q1T1B1E1
+\# database ./refs.db
+\# .R2
+\# .BIBLIOGRAPHY_TYPE LIST
 \#
 .START
 .PP
 .PP
+
+\# .BIBLIOGRAPHY
+\# .[
+\# $LIST$
+\# .]
+\# .BIBLIOGRAPHY OFF
 .FINAL
 
