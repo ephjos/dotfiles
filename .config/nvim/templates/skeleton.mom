@@ -24,6 +24,7 @@
 \#.RECTO_VERSO \" Flip margins & headers on odd and even pages
 \#
 \#.COLUMNS           2 1P+6p
+.INDENT_FIRST_PARAS
 .SUBTITLE_SIZE     +1.5
 .AUTHOR_SIZE       +.5
 .DOCHEADER_LEAD    +2p
