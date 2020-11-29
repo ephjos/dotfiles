@@ -16,4 +16,4 @@ xset s off &
 unclutter &		# Remove mouse when idle
 setxkbmap -option caps:escape # Rebind caps to escape
 #mpd &			# music player daemon-you might prefer it as a service though
-#pulseaudio & # Ensure pulseaudio is running
+pulseaudio --start # Ensure pulseaudio is running
