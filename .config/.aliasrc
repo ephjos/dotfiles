@@ -9,6 +9,7 @@
 alias \
   l="ls -a --color=auto --group-directories-first" \
   ll="ls -al --color=auto --group-directories-first" \
+  lc="ls -alC --color=auto --group-directories-first" \
   reload="source ~/.profile" \
   sudosu="sudo -E bash" \
   grep="grep --color" \

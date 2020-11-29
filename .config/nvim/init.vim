@@ -189,6 +189,7 @@ autocmd BufRead,BufNewFile dockerfile set filetype=Dockerfile
 autocmd BufRead,BufNewFile *.c,*.h,*.go,*.cpp set noexpandtab
 autocmd BufRead,BufNewFile *.b set filetype=c
 autocmd BufRead,BufNewFile *.sent set filetype=markdown
+autocmd BufRead,BufNewFile *.lst set filetype=asm
 
 " Skeleton Template Setup
 if has("autocmd")
