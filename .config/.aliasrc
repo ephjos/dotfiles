@@ -34,7 +34,7 @@ alias \
   gr="git rm" \
   gcm="git commit -m" \
   gp="git push" \
-  GP="git add -A && git commit -m'.' && git push" \
+  GP="git add -A && git commit -m'🙄 being lazy and pushing with an alias 🙄' && git push" \
   gm="git merge" \
   gc="git checkout" \
   gcb="git checkout -b" \
