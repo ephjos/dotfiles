@@ -21,7 +21,7 @@ endif
 if (has('nvim'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
     if empty(glob('~/.config/coc/extensions/node_modules'))
-        autocmd VimEnter * CocInstall coc-tsserver coc-json coc-python coc-clangd coc-html coc-css
+        autocmd VimEnter * CocInstall coc-tsserver coc-json coc-jedi coc-clangd coc-html coc-css
     endif
 endif
 
@@ -37,12 +37,11 @@ if (has('termguicolors'))
 endif
 
 
-
 "
 " vim-plug
 "
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 
