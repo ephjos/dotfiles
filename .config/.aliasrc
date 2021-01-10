@@ -14,7 +14,8 @@ alias \
   sudosu="sudo -E bash" \
   grep="grep --color" \
   todo="vim /tmp/TODO" \
-  llc="source llc_script"
+  llc="source llc_script" \
+  rm="rm -i "
 
 # Virtual env shortcuts
 alias \
@@ -24,7 +25,7 @@ alias \
 # Misc
 alias \
   val="valgrind -v --leak-check=full --track-origins=yes --show-leak-kinds=all " \
-  tree='tree -C -I "*node*|*venv*|*cache*|*dist*|*CMakeFiles*"'
+  tree='tree -C -I "*node*|*venv*|*cache*|*dist*|*CMakeFiles*|*Target*|*target*"'
 
 # Git
 alias \

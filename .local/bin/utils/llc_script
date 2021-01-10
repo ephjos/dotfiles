@@ -1,4 +1,8 @@
 #!/bin/bash
 
-cd "$(cat /tmp/storedloc)"
+if [ -f "/tmp/storedloc" ]; then
+  cd "$(cat /tmp/storedloc)";
+else
+  echo "No location saved yet, make sure to use slc to store a location...";
+fi
 
