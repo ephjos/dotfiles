@@ -150,7 +150,8 @@ set nrformats=
 set hlsearch
 set incsearch
 set noswapfile
-set nobackup
+" set nobackup
+set backupcopy=yes
 set undodir=/tmp/undodir
 set undofile
 set incsearch
