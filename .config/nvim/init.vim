@@ -11,18 +11,18 @@ let mapleader = " "
 
 " On first run, install plug and packages
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    source ~/.vimrc
-    autocmd VimEnter * PlugInstall
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  source ~/.vimrc
+  autocmd VimEnter * PlugInstall
 endif
 
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-    if empty(glob('~/.config/coc/extensions/node_modules'))
-        autocmd VimEnter * CocInstall coc-tsserver coc-json coc-jedi coc-clangd coc-html coc-css
-    endif
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+  if empty(glob('~/.config/coc/extensions/node_modules'))
+    autocmd VimEnter * CocInstall coc-tsserver coc-json coc-jedi coc-clangd coc-html coc-css
+  endif
 endif
 
 if has('nvim') && !empty($CONDA_PREFIX)
@@ -33,7 +33,7 @@ endif
 " Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
 " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
 if (has('termguicolors'))
-    set termguicolors
+  set termguicolors
 endif
 
 
@@ -47,6 +47,7 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
+Plug 'nightsense/snow'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -54,6 +55,8 @@ Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
+Plug 'jonsmithers/vim-html-template-literals'
+Plug 'tpope/vim-commentary'
 
 Plug 'rust-lang/rust.vim'
 call plug#end()
@@ -64,30 +67,43 @@ call plug#end()
 "
 " Include preview in :Files
 command! -bang -nargs=? -complete=dir Files
-            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " Include preview and hidden files in :Rg
 command! -bang -nargs=* Rg
-            \ call fzf#vim#grep(
-            \   'rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-            \   fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#grep(
+      \   'rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+      \   fzf#vim#with_preview(), <bang>0)
 
 let g:coc_disable_startup_warning = 1
 
-inoremap <silent><expr> <c-space> coc#refresh()
-
 nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<Tab>" :
-            \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 " use <c-space>for trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -129,8 +145,8 @@ syntax on
 
 set t_Co=256
 set t_ut=
-colorscheme gruvbox
 set background=dark
+colorscheme snow
 
 autocmd filetype crontab setlocal nobackup nowritebackup
 
@@ -161,11 +177,14 @@ set expandtab
 set smartindent
 set smartcase
 set nu
-set nowrap
+set wrap
+set linebreak
+set nolist
+" set nowrap
 set scrolloff=8
 set noshowmode
 set colorcolumn=80
-set textwidth=80
+" set textwidth=80
 set updatetime=300
 
 hi NonText ctermfg=DarkGrey guifg=#4a4a59
@@ -194,15 +213,15 @@ autocmd BufRead,BufNewFile *.lst set filetype=asm
 
 " Skeleton Template Setup
 if has("autocmd")
-    augroup templates
-        autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-        autocmd BufNewFile *.hs 0r ~/.vim/templates/skeleton.hs
-        autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json
-        autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
-        autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
-        autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
-        autocmd BufNewFile *.mom 0r ~/.vim/templates/skeleton.mom
-    augroup END
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+    autocmd BufNewFile *.hs 0r ~/.vim/templates/skeleton.hs
+    autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json
+    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+    autocmd BufNewFile *.go 0r ~/.vim/templates/skeleton.go
+    autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
+    autocmd BufNewFile *.mom 0r ~/.vim/templates/skeleton.mom
+  augroup END
 endif
 
 "
