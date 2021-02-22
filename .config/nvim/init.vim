@@ -160,7 +160,7 @@ set wildmenu
 set clipboard=unnamedplus
 set number relativenumber
 set list
-set listchars=tab:→→
+set listchars=tab:>-
 set hidden
 set nrformats=
 set hlsearch
@@ -180,7 +180,7 @@ set smartcase
 set nu
 set wrap
 set linebreak
-set nolist
+" set nolist
 " set nowrap
 set scrolloff=8
 set noshowmode
