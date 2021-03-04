@@ -1,0 +1,21 @@
+#!/bin/bash
+
+fetch_notify()
+{
+  DIR="$1";
+  cd "$DIR";
+  echo "$(date '+%Y-%m-%d %H:%M:%S%p') Fetching $DIR";
+  FETCHED=$(git fetch --all | wc -l);
+
+  if [ $FETCHED -gt 1 ]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S%p') Updated $DIR!";
+    notify-send "$(DIR)" "$(FETCHED)";
+  fi
+}
+
+export -f fetch_notify
+
+find ~/repos -type d -execdir [ -d '{}/.git' ]  \; -print -prune | \
+  parallel --gnu --keep-order \
+  "fetch_notify {}" >> ~/.cache/git-fetch-notify.log
+

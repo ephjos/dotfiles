@@ -31,18 +31,16 @@ alias \
 alias \
   gs="git status -sb" \
   gsv="git status -vvb" \
-  ga="git add" \
-  gr="git rm" \
-  gcm="git commit -m" \
-  gp="git push" \
-  GP="git add -A && git commit -m'🙄 being lazy and pushing with an alias 🙄' && git push" \
-  gm="git merge" \
-  gc="git checkout" \
-  gcb="git checkout -b" \
-  gb="git branch -v" \
-  gbd="git branch -D" \
   gd="git diff --color-words" \
   gl="git log --graph --abbrev-commit --decorate --date=relative --all"
+
+gci() {
+  git status &> /dev/null || { echo "Not in a git repo"; return; }
+  git branch -a | cut -d" " -f2- | xargs -I{} basename {} | sort | uniq | \
+    fzf -0 --reverse --prompt "Checkout ($(git branch --show-current)): " \
+        --preview "git diff --color=always HEAD {}" --preview-window up | \
+        xargs -I{} git checkout {}
+}
 
 # Git Watchers
 alias \
@@ -62,7 +60,7 @@ dots() {
 }
 
 findman() {
-  apropos . | fzf -e | awk '{print $1}' | xargs -ri bash -c "man -Tpdf '{}' | zathura -"
+  apropos . | fzf -0 -e | awk '{print $1}' | xargs -ri bash -c "man -Tpdf '{}' | zathura -"
 }
 
 filewatch() {
