@@ -1,16 +1,16 @@
 #!/bin/bash
+#
+# Added to a cronjob like:
+#   */30 * * * * /full/path/to/git-fetch-notify > /dev/null 2>&1
+#
 
 fetch_notify()
 {
   DIR="$1";
-  cd "$DIR";
+  pushd "$DIR";
   echo "$(date '+%Y-%m-%d %H:%M:%S%p') Fetching $DIR";
-  FETCHED=$(git fetch --all | wc -l);
-
-  if [ $FETCHED -gt 1 ]; then
-    echo "$(date '+%Y-%m-%d %H:%M:%S%p') Updated $DIR!";
-    notify-send "$(DIR)" "$(FETCHED)";
-  fi
+  git fetch --all || notify-send "Error fetching $DIR";
+  popd "$DIR";
 }
 
 export -f fetch_notify
