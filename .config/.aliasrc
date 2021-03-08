@@ -15,7 +15,7 @@ alias \
   grep="grep --color" \
   todo="vim /tmp/TODO" \
   llc="source llc_script" \
-  rm="rm -i "
+  d="mv -t /tmp"
 
 # Virtual env shortcuts
 alias \
