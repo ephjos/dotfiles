@@ -41,26 +41,30 @@ endif
 " vim-plug
 "
 call plug#begin('~/.config/nvim/plugged')
+" Quality of Life plugins
 Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 
+" Syntax highlighting support
+Plug 'sheerun/vim-polyglot'
+
+" Syntax highlighting themes
 Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 Plug 'nightsense/snow'
 
+" General tools
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'sheerun/vim-polyglot'
-Plug 'jonsmithers/vim-html-template-literals'
 Plug 'tpope/vim-commentary'
 
+" Language Specific plugins
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+Plug 'jonsmithers/vim-html-template-literals'
 call plug#end()
-
 
 "
 " vim-plug config
@@ -137,6 +141,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
+let g:htl_css_templates = 1
+
 "
 " config
 "
@@ -146,7 +152,7 @@ syntax on
 set t_Co=256
 set t_ut=
 set background=dark
-colorscheme snow
+colorscheme gruvbox
 
 autocmd filetype crontab setlocal nobackup nowritebackup
 
