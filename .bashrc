@@ -62,3 +62,14 @@ fi
 # Key bindings
 # ------------
 source "$HOME/.config/.fzf/shell/key-bindings.bash"
+
+# NVM
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Keychain
+command -v keychain >/dev/null \
+  && eval $(keychain --eval --quiet --nogui \
+       $(ls -1 $HOME/.ssh | egrep -v "(\.|known_hosts|config)")) \
+  || echo "keychain not installed...";
