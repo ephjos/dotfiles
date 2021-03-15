@@ -7,4 +7,11 @@
 command -v nvim >/dev/null && export EDITOR="nvim"
 
 # Copy .base files
-find ~ -type f -name '*.efbase' -print0 2> /dev/null | sed -ze "p;s/.efbase$//" | xargs -0 -r -n2 cp -nv
+copy_base() {
+  BASE="$1";
+  REAL="$(echo "$1" | sed -e 's/.base$//')";
+  cp -nv "$BASE" "$REAL";
+}
+
+copy_base ~/.config/npm/npmrc.base
+copy_base ~/.config/user-dirs.dirs.base
