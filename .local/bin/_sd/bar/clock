@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Display the date and time
+
+set -euo pipefail
+
+date "+%a %b %d %I:%M%p"

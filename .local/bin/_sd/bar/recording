@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Recording indicator
+
+set -euo pipefail
+
+[[ $(ps -aux | grep ffmpeg | grep -Ev "(grep|defunct)" | wc -l) != 0 ]] \
+  && echo "🔴 Recording"
+

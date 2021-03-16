@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Copy ssh keys off of veracrypt drive
+
+set -euo pipefail
+
+if [ -e "$HOME/.ssh" ]; then
+  rm -rf "$HOME/.ssh.bak"
+  mv "$HOME/.ssh" "$HOME/.ssh.bak"
+fi
+
+cp -r /mnt/keychain/.ssh "$HOME"
+

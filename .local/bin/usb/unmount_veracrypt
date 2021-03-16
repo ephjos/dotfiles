@@ -1,7 +1,0 @@
-#!/bin/bash
-#
-
-require "veracrypt"
-
-veracrypt -t -d
-sudo rm -rf /mnt/keychain

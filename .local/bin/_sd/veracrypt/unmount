@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Encrypt and unmount a veracrypt drive
+
+set -euo pipefail
+
+veracrypt -t -d
+sudo rm -rf /mnt/keychain

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-
-[[ $(ps -aux | grep ffmpeg | grep -Ev "(grep|defunct)" | wc -l) != 0 ]] && echo "🔴 Recording"
-
