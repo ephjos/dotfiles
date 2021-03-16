@@ -31,4 +31,4 @@ function _sd_complete () {
 
 }
 
-complete -F _sd_complete sd
+complete -o default -F _sd_complete sd
