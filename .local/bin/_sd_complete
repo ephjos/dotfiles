@@ -3,7 +3,13 @@
 dir=${SD_ROOT:-"$HOME/.local/bin/_sd"}
 
 function _sd_complete () {
-  if [ "help" == "${COMP_WORDS[1]}" ]; then
+  if \
+    [ "cat" == "${COMP_WORDS[1]}" ] || \
+    [ "edit" == "${COMP_WORDS[1]}" ] || \
+    [ "help" == "${COMP_WORDS[1]}" ] || \
+    [ "new" == "${COMP_WORDS[1]}" ] || \
+    [ "which" == "${COMP_WORDS[1]}" ] \
+    ; then
     unset "COMP_WORDS[1]";
     COMP_WORDS=("${COMP_WORDS[@]}")
   fi
