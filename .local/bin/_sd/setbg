@@ -4,9 +4,10 @@
 
 set -euo pipefail
 
-[ ! -z "$1" ] && \
-  cp "$1" ~/.config/wall.png && \
-  notify-send -i "$HOME/.config/wall.png" "Wallpaper changed."
+if [ $# -eq 1 ]; then
+  cp "$1" ~/.config/wall.png;
+  notify-send -i "$HOME/.config/wall.png" "Wallpaper changed.";
+fi
 
 xwallpaper --zoom ~/.config/wall.png
 
