@@ -2,10 +2,6 @@
 # ~/.profile
 #
 
-[[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
-
-command -v nvim >/dev/null && export EDITOR="nvim"
-
 # Copy .base files
 copy_base() {
   BASE="$1";
@@ -15,3 +11,4 @@ copy_base() {
 
 copy_base ~/.config/npm/npmrc.base
 copy_base ~/.config/user-dirs.dirs.base
+

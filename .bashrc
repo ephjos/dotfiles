@@ -23,7 +23,9 @@ addpath "$HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
 
 # Default applications
-export EDITOR="nvim"
+export EDITOR="vim"
+command -v nvim >/dev/null && export EDITOR="nvim"
+
 export FILE="ranger"
 export TERMINAL="st"
 export BROWSER="brave"
