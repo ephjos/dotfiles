@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# To compile file.tex, run mpdf file.tex
-
-mclean
-
-mtex xelatex -interaction nonstopmode $@
-

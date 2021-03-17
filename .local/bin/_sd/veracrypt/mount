@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Mount and decrypt a veracrypt drive
+
+set -euo pipefail
+
+mnt_point="/mnt/keychain"
+
+if [ -e "$mnt_point" ]; then
+  echo "Already mounted..."
+  exit 0
+fi
+
+lsblk -p
+read -p "Enter drive: " drive
+sudo mkdir -p "$mnt_point"
+veracrypt -t -k "" --pim=0 --protect-hidden=no "$drive" "$mnt_point" ||
+    sudo rm -rf "$mnt_point"
+
+echo "Mounted encrypted drive $drive to $mnt_point"
+

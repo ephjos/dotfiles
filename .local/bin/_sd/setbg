@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Sets the background. If given an argument, will set file as background.
+
+set -euo pipefail
+
+if [ $# -eq 1 ]; then
+  cp "$1" ~/.config/wall.png;
+  notify-send -i "$HOME/.config/wall.png" "Wallpaper changed.";
+fi
+
+xwallpaper --zoom ~/.config/wall.png
+

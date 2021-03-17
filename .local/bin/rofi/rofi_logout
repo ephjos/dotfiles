@@ -1,7 +1,0 @@
-#!/bin/bash
-
-choice=$(echo -e "No\nYes\n" | rofi -dmenu -p "Logout now?")
-
-[[ "$choice" == "Yes" ]] && \
-  killall xinit
-

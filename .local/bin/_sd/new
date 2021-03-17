@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+script=$(sd which "$@")
+
+if [ -e "$script" ]; then
+  echo "$script exists, press  enter to edit..."
+  read
+  sd edit "$@"
+  exit 0
+fi
+
+mkdir -p "$(dirname "$script")"
+cat > "$script" <<EOF
+#!/usr/bin/env bash
+
+set -euo pipefail
+EOF
+
+chmod +x "$script"
+sd edit "$@"

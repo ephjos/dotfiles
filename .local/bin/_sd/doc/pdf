@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Make a pdf using latex:
+#   `sd doc pdf file.tex`
+
+set -euo pipefail
+
+dir="$(dirname $0)"
+
+$dir/clean
+
+$dir/tex xelatex -interaction nonstopmode $@
+

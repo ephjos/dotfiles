@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Temperature bar module
+
+set -euo pipefail
+
+sensors | awk '/^temp1:/{print $2}'
+

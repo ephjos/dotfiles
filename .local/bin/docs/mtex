@@ -1,6 +1,0 @@
-#!/bin/bash
-
-exec docker run --rm -i --network host \
-  -v $(pwd):/mounted josephthomashines/tex \
-  $@
-
