@@ -13,6 +13,10 @@ fetch_notify()
   popd;
 }
 
+{
+  . ~/.keychain/*-sh;
+}
+
 export -f fetch_notify
 
 find ~/repos -type d -execdir [ -d '{}/.git' ]  \; -print -prune | \
