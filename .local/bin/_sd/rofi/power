@@ -4,13 +4,13 @@
 
 set -euo pipefail
 
-function logout {
+function logout_prompt {
   choice=$(echo -e "No\nYes" | rofi -dmenu -p "Logout now?")
   [[ "$choice" == "Yes" ]] && \
     killall xinit
 }
 
-function shutdown {
+function shutdown_prompt {
   choice=$(echo -e "No\nYes" | rofi -dmenu -p "Shutdown now?")
   [[ "$choice" == "Yes" ]] && \
     shutdown now
@@ -19,7 +19,7 @@ function shutdown {
 choice=$(echo -e "Cancel\nLogout\nShutdown" | rofi -dmenu -p "Power menu")
 case "$choice" in
   "Logout") \
-    logout ;;
+    logout_prompt ;;
   "Shutdown") \
-    shutdown ;;
+    shutdown_prompt ;;
 esac
