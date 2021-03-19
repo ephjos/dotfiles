@@ -1,0 +1,79 @@
+#!/usr/bin/env perl
+
+# A perl script to create a simple tmux layout
+# Call the script with a filename like:
+#   `sd tmux load FILE`
+#
+# Where FILE is structured as follows:
+#   1. Each line is a window. Fields on the line are the commands to run in a
+#      pane on that window, separated by 4 spaces "    ".
+#   2. The first line will be the first window, the second line will be the
+#      second window, etc.
+#   3. Panes are laid out using the "tiled" layout, which tries to give each
+#      pane equal space.
+#
+# Example file:
+# htop    neofetch
+# echo "Hello, world!"    ls
+#
+# This file will open two windows with two panes each, running all of the above
+# commands. htop and neofetch will run on the first, echo and ls on the second.
+#
+# The script will prompt the user to verify the tmux command before running it,
+# also providing an opportunity to copy the command to a bash script.
+
+use strict;
+use warnings;
+
+# Get arg count
+my $argc = $#ARGV + 1;
+
+# Confirm we have a filename passed in
+if ($argc != 1) {
+  print "No file to parse...\n";
+  exit;
+}
+
+my $filename = $ARGV[0];
+
+# Try to open the file into in
+open(my $in,  "<",  $filename)  or die "Can't open $filename: $!";
+
+# Parse the file, building tmux command
+my $cmd = "tmux new-session -n $filename \\;\n    ";
+my @words;
+while (<$in>) {
+  chomp;
+  @words = split("    ");
+  my $l = $#words;
+  for (my $i = 0; $i <= $l; $i++) {
+    my $word = $words[$i];
+    $cmd .= "send-keys '$word' C-m \\;\n      select-layout tiled \\;\n    ";
+    if ($i+1 <= $l) {
+      $cmd .= "  split-window -h \\; \n    ";
+    } else {
+      $cmd .= "\n    ";
+    }
+  }
+  $cmd .= "new-window \\;\n    ";
+}
+$cmd .= "kill-window \\;\n";
+
+# Prompt user to check command
+print "Generated command: \n  $cmd\n";
+print "Run the command? [yN]";
+my $ans = <STDIN>;
+chomp $ans;
+
+if ($ans ne "y") {
+  exit 1;
+}
+
+# Remove superfluous newlines
+$cmd =~ s/\n//g;
+
+# Run the command
+system("$cmd")
+
+
+
