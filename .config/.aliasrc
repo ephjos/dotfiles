@@ -13,8 +13,8 @@ alias \
   reload="source ~/.profile" \
   sudosu="sudo -E bash" \
   grep="grep --color" \
+  egrep="egrep --color" \
   todo="vim /tmp/TODO" \
-  llc="source llc_script" \
   d="mv -t /tmp"
 
 # Virtual env shortcuts
