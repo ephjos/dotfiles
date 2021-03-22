@@ -67,20 +67,18 @@ else # User
 fi
 
 # Setup fzf
-[[ $- == *i* ]] && source "$HOME/.config/.fzf/shell/completion.bash" 2> /dev/null
-
 source "$HOME/.config/.fzf/shell/key-bindings.bash"
 
-# NVM
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# FNM
+FNM_DIR="$HOME/.config/fnm"
+mkdir -p "$FNM_DIR"
+addpath "$FNM_DIR"
+command -v fnm &> /dev/null || \
+  (curl -fsSL https://fnm.vercel.app/install | \
+    bash -s -- --install-dir "$FNM_DIR" --skip-shell)
+eval "`fnm env`"
 
 # sd completion
 [[ -e "$HOME/.local/bin/_sd_complete" ]] && \
   source "$HOME/.local/bin/_sd_complete"
 
-# Keychain
-command -v keychain >/dev/null \
-  && eval $(keychain --eval --quiet --nogui \
-    $(find ~/.ssh -name "*.pub" | sed 's/.pub$//' | tr '\n' ' '));
