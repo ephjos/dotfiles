@@ -30,7 +30,7 @@ export TERMINAL="st"
 export BROWSER="brave"
 
 # Program configs
-export FZF_DEFAULT_COMMAND="find ."
+export FZF_DEFAULT_COMMAND="rg --files --hidden --no-heading --follow --glob '!.git'"
 
 export LESS="-R"
 export LESS_TERMCAP_mb=$'\E[1;31m'
