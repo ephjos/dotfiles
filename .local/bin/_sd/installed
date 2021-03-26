@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Checks if a program is installed using which
+
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+    echo "You need to specify the program to look for";
+    exit 0;
+fi
+
+if which "$1" &> /dev/null; then
+  exit 0;
+else
+  echo "$1 not installed";
+  exit 1;
+fi
