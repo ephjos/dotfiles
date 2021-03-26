@@ -18,8 +18,7 @@ addpath "/usr/sbin"
 addpath "./node_modules/.bin"
 addpath "$HOME/.local/bin"
 addpath "$HOME/.local/share/npm/bin"
-addpath "$HOME/.cargo/bin"
-addpath "$HOME/bin"
+addpath "$CARGO_HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
 
 # Default applications
