@@ -53,6 +53,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 Plug 'nightsense/snow'
+Plug 'joshdick/onedark.vim'
 
 " General tools
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -152,7 +153,7 @@ syntax on
 set t_Co=256
 set t_ut=
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 
 autocmd filetype crontab setlocal nobackup nowritebackup
 
