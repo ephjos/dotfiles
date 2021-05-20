@@ -5,5 +5,5 @@
 
 set -euo pipefail
 
-echo $((($(date +%s --date "2076-07-25")-$(date +%s))/(3600*24))) days
+echo $((($(date +%s --date "2076-07-25")-$(date +%s))/(3600*24)))
 

@@ -19,7 +19,7 @@
 ☺|smiling face
 😚|kissing face with closed eyes
 😙|kissing face with smiling eyes
-🥲|⊛ smiling face with tear
+🥲|smiling face with tear
 😋|face savoring food
 😛|face with tongue
 😜|winking face with tongue
@@ -35,10 +35,12 @@
 😐|neutral face
 😑|expressionless face
 😶|face without mouth
+😶‍🌫️|⊛ face in clouds
 😏|smirking face
 😒|unamused face
 🙄|face with rolling eyes
 😬|grimacing face
+😮‍💨|⊛ face exhaling
 🤥|lying face
 😌|relieved face
 😔|pensive face
@@ -54,11 +56,12 @@
 🥵|hot face
 🥶|cold face
 🥴|woozy face
-😵|dizzy face
+😵|knocked-out face
+😵‍💫|⊛ face with spiral eyes
 🤯|exploding head
 🤠|cowboy hat face
 🥳|partying face
-🥸|⊛ disguised face
+🥸|disguised face
 😎|smiling face with sunglasses
 🤓|nerd face
 🧐|face with monocle
@@ -126,6 +129,8 @@
 💟|heart decoration
 ❣|heart exclamation
 💔|broken heart
+❤️‍🔥|⊛ heart on fire
+❤️‍🩹|⊛ mending heart
 ❤|red heart
 🧡|orange heart
 💛|yellow heart
@@ -155,7 +160,7 @@
 ✋|raised hand
 🖖|vulcan salute
 👌|OK hand
-🤌|⊛ pinched fingers
+🤌|pinched fingers
 🤏|pinching hand
 ✌|victory hand
 🤞|crossed fingers
@@ -192,8 +197,8 @@
 🦻|ear with hearing aid
 👃|nose
 🧠|brain
-🫀|⊛ anatomical heart
-🫁|⊛ lungs
+🫀|anatomical heart
+🫁|lungs
 🦷|tooth
 🦴|bone
 👀|eyes
@@ -207,7 +212,9 @@
 🧑|person
 👱|person: blond hair
 👨|man
-🧔|man: beard
+🧔|person: beard
+🧔‍♂️|⊛ man: beard
+🧔‍♀️|⊛ woman: beard
 👨‍🦰|man: red hair
 👨‍🦱|man: curly hair
 👨‍🦳|man: white hair
@@ -313,7 +320,7 @@
 💂|guard
 💂‍♂️|man guard
 💂‍♀️|woman guard
-🥷|⊛ ninja
+🥷|ninja
 👷|construction worker
 👷‍♂️|man construction worker
 👷‍♀️|woman construction worker
@@ -325,20 +332,20 @@
 👲|person with skullcap
 🧕|woman with headscarf
 🤵|person in tuxedo
-🤵‍♂️|⊛ man in tuxedo
-🤵‍♀️|⊛ woman in tuxedo
+🤵‍♂️|man in tuxedo
+🤵‍♀️|woman in tuxedo
 👰|person with veil
-👰‍♂️|⊛ man with veil
-👰‍♀️|⊛ woman with veil
+👰‍♂️|man with veil
+👰‍♀️|woman with veil
 🤰|pregnant woman
 🤱|breast-feeding
-👩‍🍼|⊛ woman feeding baby
-👨‍🍼|⊛ man feeding baby
-🧑‍🍼|⊛ person feeding baby
+👩‍🍼|woman feeding baby
+👨‍🍼|man feeding baby
+🧑‍🍼|person feeding baby
 👼|baby angel
 🎅|Santa Claus
 🤶|Mrs. Claus
-🧑‍🎄|⊛ mx claus
+🧑‍🎄|mx claus
 🦸|superhero
 🦸‍♂️|man superhero
 🦸‍♀️|woman superhero
@@ -494,7 +501,7 @@
 🗣|speaking head
 👤|bust in silhouette
 👥|busts in silhouette
-🫂|⊛ people hugging
+🫂|people hugging
 👣|footprints
 🦰|red hair
 🦱|curly hair
@@ -514,7 +521,7 @@
 🦝|raccoon
 🐱|cat face
 🐈|cat
-🐈‍⬛|⊛ black cat
+🐈‍⬛|black cat
 🦁|lion
 🐯|tiger face
 🐅|tiger
@@ -524,7 +531,7 @@
 🦄|unicorn
 🦓|zebra
 🦌|deer
-🦬|⊛ bison
+🦬|bison
 🐮|cow face
 🐂|ox
 🐃|water buffalo
@@ -541,7 +548,7 @@
 🦙|llama
 🦒|giraffe
 🐘|elephant
-🦣|⊛ mammoth
+🦣|mammoth
 🦏|rhinoceros
 🦛|hippopotamus
 🐭|mouse face
@@ -551,11 +558,11 @@
 🐰|rabbit face
 🐇|rabbit
 🐿|chipmunk
-🦫|⊛ beaver
+🦫|beaver
 🦔|hedgehog
 🦇|bat
 🐻|bear
-🐻‍❄️|⊛ polar bear
+🐻‍❄️|polar bear
 🐨|koala
 🐼|panda
 🦥|sloth
@@ -577,8 +584,8 @@
 🦆|duck
 🦢|swan
 🦉|owl
-🦤|⊛ dodo
-🪶|⊛ feather
+🦤|dodo
+🪶|feather
 🦩|flamingo
 🦚|peacock
 🦜|parrot
@@ -594,7 +601,7 @@
 🐳|spouting whale
 🐋|whale
 🐬|dolphin
-🦭|⊛ seal
+🦭|seal
 🐟|fish
 🐠|tropical fish
 🐡|blowfish
@@ -606,16 +613,16 @@
 🐛|bug
 🐜|ant
 🐝|honeybee
-🪲|⊛ beetle
+🪲|beetle
 🐞|lady beetle
 🦗|cricket
-🪳|⊛ cockroach
+🪳|cockroach
 🕷|spider
 🕸|spider web
 🦂|scorpion
 🦟|mosquito
-🪰|⊛ fly
-🪱|⊛ worm
+🪰|fly
+🪱|worm
 🦠|microbe
 💐|bouquet
 🌸|cherry blossom
@@ -628,7 +635,7 @@
 🌼|blossom
 🌷|tulip
 🌱|seedling
-🪴|⊛ potted plant
+🪴|potted plant
 🌲|evergreen tree
 🌳|deciduous tree
 🌴|palm tree
@@ -654,10 +661,10 @@
 🍑|peach
 🍒|cherries
 🍓|strawberry
-🫐|⊛ blueberries
+🫐|blueberries
 🥝|kiwi fruit
 🍅|tomato
-🫒|⊛ olive
+🫒|olive
 🥥|coconut
 🥑|avocado
 🍆|eggplant
@@ -665,7 +672,7 @@
 🥕|carrot
 🌽|ear of corn
 🌶|hot pepper
-🫑|⊛ bell pepper
+🫑|bell pepper
 🥒|cucumber
 🥬|leafy green
 🥦|broccoli
@@ -677,7 +684,7 @@
 🍞|bread
 🥐|croissant
 🥖|baguette bread
-🫓|⊛ flatbread
+🫓|flatbread
 🥨|pretzel
 🥯|bagel
 🥞|pancakes
@@ -694,14 +701,14 @@
 🥪|sandwich
 🌮|taco
 🌯|burrito
-🫔|⊛ tamale
+🫔|tamale
 🥙|stuffed flatbread
 🧆|falafel
 🥚|egg
 🍳|cooking
 🥘|shallow pan of food
 🍲|pot of food
-🫕|⊛ fondue
+🫕|fondue
 🥣|bowl with spoon
 🥗|green salad
 🍿|popcorn
@@ -747,7 +754,7 @@
 🍼|baby bottle
 🥛|glass of milk
 ☕|hot beverage
-🫖|⊛ teapot
+🫖|teapot
 🍵|teacup without handle
 🍶|sake
 🍾|bottle with popping cork
@@ -759,7 +766,7 @@
 🥂|clinking glasses
 🥃|tumbler glass
 🥤|cup with straw
-🧋|⊛ bubble tea
+🧋|bubble tea
 🧃|beverage box
 🧉|mate
 🧊|ice
@@ -789,9 +796,9 @@
 🏛|classical building
 🏗|building construction
 🧱|brick
-🪨|⊛ rock
-🪵|⊛ wood
-🛖|⊛ hut
+🪨|rock
+🪵|wood
+🛖|hut
 🏘|houses
 🏚|derelict house
 🏠|house
@@ -859,7 +866,7 @@
 🚗|automobile
 🚘|oncoming automobile
 🚙|sport utility vehicle
-🛻|⊛ pickup truck
+🛻|pickup truck
 🚚|delivery truck
 🚛|articulated lorry
 🚜|tractor
@@ -872,7 +879,7 @@
 🚲|bicycle
 🛴|kick scooter
 🛹|skateboard
-🛼|⊛ roller skate
+🛼|roller skate
 🚏|bus stop
 🛣|motorway
 🛤|railway track
@@ -1038,12 +1045,12 @@
 🎿|skis
 🛷|sled
 🥌|curling stone
-🎯|direct hit
+🎯|bullseye
 🪀|yo-yo
 🪁|kite
 🎱|pool 8 ball
 🔮|crystal ball
-🪄|⊛ magic wand
+🪄|magic wand
 🧿|nazar amulet
 🎮|video game
 🕹|joystick
@@ -1051,8 +1058,8 @@
 🎲|game die
 🧩|puzzle piece
 🧸|teddy bear
-🪅|⊛ piñata
-🪆|⊛ nesting dolls
+🪅|piñata
+🪆|nesting dolls
 ♠|spade suit
 ♥|heart suit
 ♦|diamond suit
@@ -1065,9 +1072,9 @@
 🖼|framed picture
 🎨|artist palette
 🧵|thread
-🪡|⊛ sewing needle
+🪡|sewing needle
 🧶|yarn
-🪢|⊛ knot
+🪢|knot
 👓|glasses
 🕶|sunglasses
 🥽|goggles
@@ -1093,7 +1100,7 @@
 👝|clutch bag
 🛍|shopping bags
 🎒|backpack
-🩴|⊛ thong sandal
+🩴|thong sandal
 👞|man’s shoe
 👟|running shoe
 🥾|hiking boot
@@ -1107,7 +1114,7 @@
 🎩|top hat
 🎓|graduation cap
 🧢|billed cap
-🪖|⊛ military helmet
+🪖|military helmet
 ⛑|rescue worker’s helmet
 📿|prayer beads
 💄|lipstick
@@ -1132,14 +1139,14 @@
 🎧|headphone
 📻|radio
 🎷|saxophone
-🪗|⊛ accordion
+🪗|accordion
 🎸|guitar
 🎹|musical keyboard
 🎺|trumpet
 🎻|violin
 🪕|banjo
 🥁|drum
-🪘|⊛ long drum
+🪘|long drum
 📱|mobile phone
 📲|mobile phone with arrow
 ☎|telephone
@@ -1193,7 +1200,7 @@
 🔖|bookmark
 🏷|label
 💰|money bag
-🪙|⊛ coin
+🪙|coin
 💴|yen banknote
 💵|dollar banknote
 💶|euro banknote
@@ -1258,13 +1265,13 @@
 🛠|hammer and wrench
 🗡|dagger
 ⚔|crossed swords
-🔫|pistol
-🪃|⊛ boomerang
+🔫|water pistol
+🪃|boomerang
 🏹|bow and arrow
 🛡|shield
-🪚|⊛ carpentry saw
+🪚|carpentry saw
 🔧|wrench
-🪛|⊛ screwdriver
+🪛|screwdriver
 🔩|nut and bolt
 ⚙|gear
 🗜|clamp
@@ -1272,10 +1279,10 @@
 🦯|white cane
 🔗|link
 ⛓|chains
-🪝|⊛ hook
+🪝|hook
 🧰|toolbox
 🧲|magnet
-🪜|⊛ ladder
+🪜|ladder
 ⚗|alembic
 🧪|test tube
 🧫|petri dish
@@ -1289,35 +1296,35 @@
 🩹|adhesive bandage
 🩺|stethoscope
 🚪|door
-🛗|⊛ elevator
-🪞|⊛ mirror
-🪟|⊛ window
+🛗|elevator
+🪞|mirror
+🪟|window
 🛏|bed
 🛋|couch and lamp
 🪑|chair
 🚽|toilet
-🪠|⊛ plunger
+🪠|plunger
 🚿|shower
 🛁|bathtub
-🪤|⊛ mouse trap
+🪤|mouse trap
 🪒|razor
 🧴|lotion bottle
 🧷|safety pin
 🧹|broom
 🧺|basket
 🧻|roll of paper
-🪣|⊛ bucket
+🪣|bucket
 🧼|soap
-🪥|⊛ toothbrush
+🪥|toothbrush
 🧽|sponge
 🧯|fire extinguisher
 🛒|shopping cart
 🚬|cigarette
 ⚰|coffin
-🪦|⊛ headstone
+🪦|headstone
 ⚱|funeral urn
 🗿|moai
-🪧|⊛ placard
+🪧|placard
 🏧|ATM sign
 🚮|litter in bin sign
 🚰|potable water
@@ -1416,7 +1423,7 @@
 📴|mobile phone off
 ♀|female sign
 ♂|male sign
-⚧|⊛ transgender symbol
+⚧|transgender symbol
 ✖|multiply
 ➕|plus
 ➖|minus
@@ -1424,10 +1431,10 @@
 ♾|infinity
 ‼|double exclamation mark
 ⁉|exclamation question mark
-❓|question mark
+❓|red question mark
 ❔|white question mark
 ❕|white exclamation mark
-❗|exclamation mark
+❗|red exclamation mark
 〰|wavy dash
 💱|currency exchange
 💲|heavy dollar sign
@@ -1544,7 +1551,7 @@
 🏴|black flag
 🏳|white flag
 🏳️‍🌈|rainbow flag
-🏳️‍⚧️|⊛ transgender flag
+🏳️‍⚧️|transgender flag
 🏴‍☠️|pirate flag
 🇦🇨|flag: Ascension Island
 🇦🇩|flag: Andorra
