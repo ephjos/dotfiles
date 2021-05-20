@@ -4,5 +4,5 @@
 
 set -euo pipefail
 
-sensors | awk '/^temp1:/{print $2}'
+sensors | awk '/Core 0/ {print "" $3}'
 

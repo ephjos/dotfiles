@@ -20,6 +20,7 @@ addpath "$HOME/.local/bin"
 addpath "$HOME/.local/share/npm/bin"
 addpath "$CARGO_HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
+addpath "$HOME/.dotnet/tools"
 
 # Default applications
 export EDITOR="vim"

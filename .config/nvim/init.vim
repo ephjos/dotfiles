@@ -52,7 +52,7 @@ Plug 'sheerun/vim-polyglot'
 " Syntax highlighting themes
 Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
-Plug 'nightsense/snow'
+"Plug 'nightsense/snow'
 Plug 'joshdick/onedark.vim'
 
 " General tools
@@ -65,6 +65,7 @@ Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'jonsmithers/vim-html-template-literals'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 call plug#end()
 
 "
@@ -120,8 +121,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-nnoremap <leader>gf :GitFiles<CR>
+" nnoremap <leader>gf :GitFiles<CR>
 nnoremap <leader>ff :Files<CR>
+nnoremap <leader>ss :Snippets<CR>
 nnoremap <leader>cs :CocSearch
 nnoremap <leader>csw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>rg :Rg<CR>
@@ -153,7 +155,7 @@ syntax on
 set t_Co=256
 set t_ut=
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 
 autocmd filetype crontab setlocal nobackup nowritebackup
 

@@ -18,6 +18,7 @@
 .R_MARGIN     1i
 .PT_SIZE      12
 .AUTOLEAD     1.5 FACTOR
+.KERN ON
 \#
 \# Additional style macros--change mom's default behaviour
 \#
