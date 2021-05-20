@@ -15,7 +15,9 @@ alias \
   grep="grep --color" \
   egrep="egrep --color" \
   todo="vim /tmp/TODO" \
-  d="mv -t /tmp"
+  d="mv -t /tmp" \
+  brightness="redshift -l 39.57:75.9 -P -r -o -b"
+
 
 # Virtual env shortcuts
 alias \
