@@ -15,9 +15,8 @@ alias \
   grep="grep --color" \
   egrep="egrep --color" \
   todo="vim /tmp/TODO" \
-  d="mv -t /tmp" \
-  brightness="redshift -l 39.57:75.9 -P -r -o -b"
-
+  screens="vim $HOME/.config/.screens" \
+  x="vim $HOME/.config/.screens && read -p '> Push ENTER to startx ' && startx"
 
 # Virtual env shortcuts
 alias \

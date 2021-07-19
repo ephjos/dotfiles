@@ -177,7 +177,7 @@ set incsearch
 set noswapfile
 " set nobackup
 set backupcopy=yes
-set undodir=/tmp/undodir
+set undodir=/tmp/undos/$USER
 set undofile
 set incsearch
 set noerrorbells
