@@ -17,8 +17,9 @@ alias \
   todo="vim /tmp/TODO" \
   nonet="firejail --noprofile --net=none " \
   screens="vim $HOME/.config/.screens" \
-  x="vim $HOME/.config/.screens && read -p '> Push ENTER to startx ' && startx" \
-  skey='sudo screenkey --persist --timeout 1 --mods-mode tux -M --multiline -p fixed -g $(slop -n -f "%g")'
+  x="vim $HOME/.config/.screens && clear && read -p '> Push ENTER to startx ' && startx" \
+  sks='sudo screenkey --persist --timeout 1 --mods-mode tux -M --multiline -p fixed -g $(slop -n -f "%g")' \
+  skw='sudo screenkey --persist --timeout 1 --mods-mode tux -M --multiline -p bottom -g $(slop -f "%g")'
 
 # Virtual env shortcuts
 alias \

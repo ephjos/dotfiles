@@ -4,8 +4,14 @@
 
 set -euo pipefail
 
-function timestamp {
-  echo "$HOME/$1-$(date '+%y%m%d-%H%M-%S').png";
+# Create output dir
+DEST=""
+
+[ ! -z "$PICTURES" ] && DEST="$PICTURES/screenshots" || DEST="$HOME/Pictures/screenshots"
+mkdir -p "$DEST"
+
+function output {
+  [ ! -z "$2" ] && echo "$DEST/$2.png" || echo "$DEST/$1-$(date '+%y%m%d-%H%M-%S').png";
 }
 
 function shadow {
@@ -19,17 +25,28 @@ function shadow {
 options="\
 a selected area
 pick window
-full screen";
+full screen
+a selected area (shadow)
+pick window (shadow)
+full screen (shadow)";
 
 choice="$(echo -e "$options" | rofi -dmenu -p "Screenshot which area?")";
 
+name="$(rofi -dmenu -p "Enter filename (without extension) or leave empty for timestamp")";
+
 case "$choice" in
-	"a selected area") \
-    maim -su | shadow > "$(timestamp "sel")" ;;
-	"pick window") \
-    maim -i "$(xdotool selectwindow)" | shadow > "$(timestamp "window")" ;;
-	"full screen")
-    maim | shadow > "$(timestamp "screen")" ;;
+  "a selected area") \
+    maim -su > "$(output "sel" "$name")" ;;
+  "pick window") \
+    maim -i "$(xdotool selectwindow)" > "$(output "window" "$name")" ;;
+  "full screen")
+    maim > "$(output "screen")" ;;
+  "a selected area (shadow)") \
+    maim -su | shadow > "$(output "sel" "$name")" ;;
+  "pick window (shadow)") \
+    maim -i "$(xdotool selectwindow)" | shadow > "$(output "window" "$name")" ;;
+  "full screen (shadow)")
+    maim | shadow > "$(output "screen" "$name")" ;;
   *) \
     notify-send "make image failed" "Unknown option: $option" ;;
 esac
