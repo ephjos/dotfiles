@@ -1,137 +1,123 @@
-/*
- * ROFI Color theme
- * A red variation of Arc-Dark theme by leofa, based on arc-theme-Red (https://github.com/mclmza/arc-theme-Red)
- * User: wikwg9
- */
+
+configuration {
+    show-icons: false;
+    font: "mono 14";
+    disable-history: false;
+    sidebar-mode: false;
+}
+
 * {
-    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
-    foreground:                  rgba ( 196, 203, 212, 100 % );
-    normal-foreground:           @foreground;
-    alternate-normal-background: rgba ( 64, 69, 82, 59 % );
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-foreground:           rgba ( 204, 102, 102, 100 % );
-    alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
-    active-foreground:           rgba ( 220, 140, 160, 100 % );
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
-    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
-    alternate-active-background: rgba ( 75, 81, 96, 89 % );
-    background:                  rgba ( 45, 48, 59, 95 % );
-    alternate-normal-foreground: @foreground;
-    normal-background:           @background;
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 204, 87, 93, 100 % );
-    border-color:                rgba ( 137, 131, 124, 100 % );
-    spacing:                     2;
-    separatorcolor:              rgba ( 29, 31, 33, 100 % );
-    urgent-background:           rgba ( 29, 31, 33, 17 % );
-    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
-    alternate-urgent-foreground: @urgent-foreground;
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 29, 31, 33, 17 % );
-    selected-active-background:  rgba ( 204, 87, 93, 100 % );
-}
-#window {
+    accent: #eeeeee;
+    background: #222222;
+    background-light: #444444;
+    foreground: #93a1a1;
+    on: #5BB462;
+    off: #DE635E;
     background-color: @background;
-    padding:          5;
-}
-#mainbox {
-    border:  0;
-    padding: 0;
-}
-#message {
-    border:       2px 0px 0px ;
-    border-color: @separatorcolor;
-    padding:      1px ;
-}
-#textbox {
     text-color: @foreground;
 }
-#listview {
-    fixed-height: 0;
-    border:       2px 0px 0px ;
-    border-color: @separatorcolor;
-    spacing:      2px ;
-    scrollbar:    false;
-    padding:      2px 0px 0px ;
+
+window {
+    transparency: "real";
+    border-radius: 0px;
+    location: center;
+    width: 950px;
+    x-offset: 0px;
+    y-offset: 0px;
 }
-#element {
-    border:  0;
-    padding: 1px ;
+
+prompt {
+    enabled: true;
+    padding: 10px;
+    background-color: @background-light;
+    text-color: @accent;
+    border: 2px 2px 2px 2px;
+    border-radius: 0px;
+    border-color: @accent;
 }
-#element.normal.normal {
-    background-color: @normal-background;
-    text-color:       @normal-foreground;
+
+entry {
+    enabled: true;
+    padding: 10px;
+    background-color: @background-light;
+    text-color: @accent;
+    border: 0px;
 }
-#element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+
+inputbar {
+    spacing: 0px;
+    background-color: @background;
+    text-color: @foreground;
+    expand: false;
+    border: 0px;
+    border-radius: 0px;
+    border-color: @accent;
+    margin: 0px 0px 0px 0px;
+    border: 2px 2px 2px 2px;
+    padding: 10px;
+    position: center;
 }
-#element.normal.active {
-    background-color: @active-background;
-    text-color:       @active-foreground;
+
+listview {
+    columns: 1;
+    lines: 5;
+    spacing: 15px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
 }
-#element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+
+mainbox {
+    background-color: @background;
+    children: [ inputbar, listview ];
+    spacing: 15px;
+    margin: 40px;
 }
-#element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @selected-urgent-foreground;
+
+element {
+    background-color: @background-light;
+    text-color: @foreground;
+    orientation: vertical;
+    border-radius: 0px;
 }
-#element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @selected-active-foreground;
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    font: "feather 16";
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 10px 0px 10px 0px;
 }
-#element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: @off;
+    text-color: @background;
+    border-radius: 0px;
 }
-#element.alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
+
+element normal.active,
+element alternate.active {
+    background-color: @on;
+    text-color: @background;
 }
-#element.alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
+
+element selected {
+    background-color: @accent;
+    text-color: @background;
+    border: 0px;
+    border-radius: 0px;
+    border-color: @border;
 }
-#mode-switcher {
-    border:       2px 0px 0px ;
-    border-color: @separatorcolor;
+
+element selected.urgent {
+    background-color: @on;
+    text-color: @background;
 }
-#button {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-#button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-#inputbar {
-    spacing:    0;
-    text-color: @normal-foreground;
-    padding:    1px ;
-}
-#case-indicator {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-#entry {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-#prompt {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-#inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-#textbox-prompt-colon {
-    expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @normal-foreground;
+
+element selected.active {
+    background-color: @off;
+    color: @background;
 }
