@@ -10,9 +10,7 @@ configuration {
     accent: #eeeeee;
     background: #222222;
     background-light: #444444;
-    foreground: #93a1a1;
-    on: #5BB462;
-    off: #DE635E;
+    foreground: #a7a7a7;
     background-color: @background;
     text-color: @foreground;
 }
