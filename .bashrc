@@ -26,8 +26,9 @@ addpath "$HOME/.dotnet/tools"
 export EDITOR="vim"
 command -v nvim >/dev/null && export EDITOR="nvim"
 
-export FILE="ranger"
+export FILE="lf"
 export TERMINAL="st"
+export TERM="st"
 export BROWSER="brave"
 
 # Program configs
