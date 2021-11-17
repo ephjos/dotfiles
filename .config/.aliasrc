@@ -70,3 +70,9 @@ findman() {
 filewatch() {
   while inotifywait --exclude .swp -e modify -r . &> /dev/null; do clear; $@; done;
 }
+
+nmgui() {
+  nm-applet    2>&1 > /dev/null &
+  stalonetray  -bg "#333" 2>&1 > /dev/null
+  killall nm-applet
+}

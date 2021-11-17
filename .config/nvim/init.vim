@@ -62,7 +62,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
 
 " Language Specific plugins
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'jonsmithers/vim-html-template-literals'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
