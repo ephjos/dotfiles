@@ -68,7 +68,8 @@ findman() {
 }
 
 filewatch() {
-  while inotifywait --exclude .swp -e modify -r . &> /dev/null; do clear; $@; done;
+  bash -c "$@";
+  while inotifywait --exclude .swp -e modify -r . &> /dev/null; do clear; bash -c "$@"; done;
 }
 
 nmgui() {
