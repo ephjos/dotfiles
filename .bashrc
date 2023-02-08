@@ -22,13 +22,22 @@ addpath "$CARGO_HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
 addpath "$HOME/.dotnet/tools"
 
+# Add all gnu coreutils overrides to path when on Mac
+# https://apple.stackexchange.com/a/371984
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX=$(brew --prefix)
+  for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
+  for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
+fi
+
+
 # Default applications
 export EDITOR="vim"
 command -v nvim >/dev/null && export EDITOR="nvim"
 
 export FILE="lf"
-export TERMINAL="st"
-export TERM="st"
+export TERMINAL="xterm-256color"
+export TERM="xterm-256color"
 export BROWSER="brave"
 
 # Program configs
