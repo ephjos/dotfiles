@@ -30,6 +30,7 @@ if type brew &>/dev/null; then
   for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
 fi
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Default applications
 export EDITOR="nvim"
