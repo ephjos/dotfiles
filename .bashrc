@@ -32,8 +32,9 @@ fi
 
 
 # Default applications
-export EDITOR="vim"
-command -v nvim >/dev/null && export EDITOR="nvim"
+export EDITOR="nvim"
+alias vim="nvim"
+alias vi="nvim"
 
 export FILE="lf"
 export TERMINAL="xterm-256color"
@@ -56,11 +57,6 @@ export LESS_TERMCAP_ue=$'\E[0m'
 [[ -e "$HOME/repos/dotfiles" ]] && \
   git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME \
     config --local status.showUntrackedFiles no
-
-# Ensure vim and nvim configs linked
-[[ ! -e "$HOME/.vimrc" ]] && \
-  ln -s "$HOME/.config/nvim/init.vim" "$HOME/.vimrc" && \
-  ln -s "$HOME/.config/nvim" "$HOME/.vim"
 
 # Prompt
 c="\[\e[0m\]"
