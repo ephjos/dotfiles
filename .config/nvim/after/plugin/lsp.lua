@@ -1,6 +1,9 @@
 local lsp = require('lsp-zero').preset({})
 local lspconfig = require('lspconfig')
 
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
 lsp.ensure_installed({
 	'tsserver',
 	'eslint',
@@ -26,6 +29,12 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+cmp.setup({
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+  }
+})
 
 lspconfig.lua_ls.setup({
 	settings = {
