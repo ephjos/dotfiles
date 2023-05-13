@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- Temporary Autocmds
-vim.keymap.set("n", "<C-r>", ":autocmd BufWritePost * !")
+vim.keymap.set("n", "<F1>", ":autocmd!<CR> :autocmd BufWritePost * !")
 
 -- Substitutions
 vim.keymap.set("n", "S", ':%s//g<Left><Left>')

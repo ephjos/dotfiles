@@ -31,6 +31,7 @@ if type brew &>/dev/null; then
 fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export MallocNanoZone=0
 
 # Default applications
 export EDITOR="nvim"
