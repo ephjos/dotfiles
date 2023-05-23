@@ -75,6 +75,9 @@ else # User
 fi
 
 # Setup fzf
+command -v fzf &> /dev/null || \
+  (git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.config/.fzf && \
+    $HOME/.config/.fzf/install --bin)
 source "$HOME/.config/.fzf/shell/key-bindings.bash"
 
 # FNM
