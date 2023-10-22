@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
 
   -- Fuzzy find
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
   -- Colorscheme
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use('rebelot/kanagawa.nvim')
+  use('dasupradyumna/midnight.nvim')
 
   -- LSP
   use {

@@ -33,6 +33,7 @@ lsp.setup()
 cmp.setup({
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({select = false}),
+    ['<C-Space>'] = cmp.mapping.complete(),
   }
 })
 
@@ -46,4 +47,14 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
+})
+
+lspconfig.pyright.setup({
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = 'openFilesOnly',
+      },
+    },
+  },
 })

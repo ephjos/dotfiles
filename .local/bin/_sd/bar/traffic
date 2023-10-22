@@ -15,7 +15,7 @@ update() {
     printf %d\\n $(( sum - old ))
 }
 
-rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
-tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
+rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes 2>/dev/null)
+tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes 2>/dev/null)
 
 printf "🔺%4sB 🔻%4sB\\n" $(numfmt --to=iec $rx) $(numfmt --to=iec $tx)
