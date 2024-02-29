@@ -9,6 +9,12 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- Git
   use('tpope/vim-fugitive')
 
@@ -44,20 +50,20 @@ return require('packer').startup(function(use)
   }
 
   -- Focus
-  use("junegunn/goyo.vim") 
+  use('junegunn/goyo.vim') 
 
   -- Per-project config
   use {
-    "klen/nvim-config-local",
+    'klen/nvim-config-local',
     config = function()
       require('config-local').setup {
         -- Default options (optional)
 
         -- Config file patterns to load (lua supported)
-        config_files = { ".nvim.lua", ".nvimrc", ".exrc" },
+        config_files = { '.nvim.lua', '.nvimrc', '.exrc' },
 
         -- Where the plugin keeps files data
-        hashfile = vim.fn.stdpath("data") .. "/config-local",
+        hashfile = vim.fn.stdpath('data') .. '/config-local',
 
         autocommands_create = true, -- Create autocommands (VimEnter, DirectoryChanged)
         commands_create = true,     -- Create commands (ConfigLocalSource, ConfigLocalEdit, ConfigLocalTrust, ConfigLocalIgnore)

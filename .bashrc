@@ -21,6 +21,7 @@ addpath "$HOME/.local/share/npm/bin"
 addpath "$CARGO_HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
 addpath "$HOME/.dotnet/tools"
+addpath "$HOME/repos/Odin"
 
 # Add all gnu coreutils overrides to path when on Mac
 # https://apple.stackexchange.com/a/371984
