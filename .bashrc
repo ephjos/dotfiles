@@ -42,7 +42,7 @@ alias vi="nvim"
 export FILE="lf"
 export TERMINAL="xterm-256color"
 export TERM="xterm-256color"
-export BROWSER="brave"
+export BROWSER="chromium"
 
 # Program configs
 export FZF_DEFAULT_COMMAND="rg --files --hidden --no-heading --follow --glob '!.git'"
