@@ -20,8 +20,6 @@ addpath "$HOME/.local/bin"
 addpath "$HOME/.local/share/npm/bin"
 addpath "$CARGO_HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
-addpath "$HOME/.dotnet/tools"
-addpath "$HOME/repos/Odin"
 
 # Add all gnu coreutils overrides to path when on Mac
 # https://apple.stackexchange.com/a/371984
@@ -37,7 +35,6 @@ export MallocNanoZone=0
 # Default applications
 export EDITOR="nvim"
 alias vim="nvim"
-alias vi="nvim"
 
 export FILE="lf"
 export TERMINAL="xterm-256color"
