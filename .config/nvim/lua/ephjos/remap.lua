@@ -8,8 +8,8 @@ vim.keymap.set("n", "S", ':%s//g<Left><Left>')
 vim.keymap.set("v", "S", ':s//g<Left><Left>')
 
 -- Spellcheck
---vim.keymap.set("n", "<F6>", ':setlocal spell! spelllang=en_us<CR>')
---vim.keymap.set("i", "<C-l>", 'c-g>u<Esc>[s1z=`]a<c-g>u')
+vim.keymap.set("n", "<F6>", ':setlocal spell! spelllang=en_us<CR>')
+vim.keymap.set("i", "<C-l>", 'c-g>u<Esc>[s1z=`]a<c-g>u')
 
 -- Clear highlight on ESC
 vim.keymap.set("n", "<ESC>", ":noh<CR>", { silent = true })
