@@ -21,6 +21,9 @@ addpath "$HOME/.local/share/npm/bin"
 addpath "$CARGO_HOME/bin"
 addpath "$HOME/.config/.fzf/bin"
 
+# Activate brew env if present
+[[ -f "/opt/homebrew/bin/brew" ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
 # Add all gnu coreutils overrides to path when on Mac
 # https://apple.stackexchange.com/a/371984
 if type brew &>/dev/null; then
