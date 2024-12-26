@@ -1,0 +1,7 @@
+# MacOS keybinds
+keybind = super+c=text:\x03
+keybind = super+v=unbind
+keybind = super+l=text:\x0C
+keybind = alt+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
+
