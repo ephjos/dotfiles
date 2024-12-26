@@ -14,3 +14,5 @@ keybind = super+r=text:\x12
 keybind = super+w=text:\x17
 keybind = super+six=text:\x1E #super+^
 
+keybind = global:ctrl+space=toggle_quick_terminal
+quick-terminal-animation-duration = 0.1
