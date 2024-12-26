@@ -1,7 +1,16 @@
+
 # MacOS keybinds
-keybind = super+c=text:\x03
 keybind = super+v=unbind
-keybind = super+l=text:\x0C
 keybind = alt+c=copy_to_clipboard
 keybind = alt+v=paste_from_clipboard
+
+keybind = super+a=text:\x01
+keybind = super+b=text:\x02
+keybind = super+c=text:\x03
+keybind = super+f=text:\x06
+keybind = super+l=text:\x0C
+keybind = super+o=text:\x0F
+keybind = super+r=text:\x12
+keybind = super+w=text:\x17
+keybind = super+six=text:\x1E #super+^
 
