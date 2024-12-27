@@ -1,3 +1,4 @@
+theme = GruvboxDarkHard
 
 # MacOS keybinds
 keybind = super+v=unbind

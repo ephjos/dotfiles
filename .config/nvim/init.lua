@@ -103,18 +103,21 @@ require("lazy").setup({
   },
 
   -- Colorscheme
-  { 
-    'rose-pine/neovim', 
-    name = 'rose-pine' ,
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
   },
-  { 
-    'rebelot/kanagawa.nvim' ,
+  {
+    'rebelot/kanagawa.nvim',
   },
-  { 
-    'dasupradyumna/midnight.nvim' ,
+  {
+    'dasupradyumna/midnight.nvim',
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
     lazy=false,
     config = function()
-      ApplyColor("midnight")
+      ApplyColor("gruvbox")
     end,
   },
 
