@@ -13,7 +13,7 @@ keybind = super+l=text:\x0C
 keybind = super+o=text:\x0F
 keybind = super+r=text:\x12
 keybind = super+w=text:\x17
-keybind = super+six=text:\x1E #super+^
+keybind = super+six=text:\x1E
 
 keybind = global:ctrl+space=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
