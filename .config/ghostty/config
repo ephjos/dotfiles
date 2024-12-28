@@ -1,4 +1,5 @@
 theme = GruvboxDark
+font-family = TX-02
 
 # MacOS keybinds
 keybind = super+v=unbind
@@ -10,10 +11,13 @@ keybind = super+b=text:\x02
 keybind = super+c=text:\x03
 keybind = super+f=text:\x06
 keybind = super+l=text:\x0C
+keybind = super+n=text:\x0E
 keybind = super+o=text:\x0F
+keybind = super+p=text:\x10
 keybind = super+r=text:\x12
 keybind = super+w=text:\x17
 keybind = super+six=text:\x1E
 
 keybind = global:ctrl+space=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
+macos-titlebar-style = hidden

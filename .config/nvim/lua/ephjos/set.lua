@@ -32,4 +32,4 @@ vim.opt.termguicolors=false
 vim.opt.undodir="/tmp/undos/$USER"
 vim.opt.undofile=true
 vim.opt.wildmenu=true
-vim.opt.wrap=true
+vim.opt.wrap=false
