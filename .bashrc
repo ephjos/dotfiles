@@ -63,16 +63,16 @@ export LESS_TERMCAP_ue=$'\E[0m'
 
 # Prompt
 c="\[\e[0m\]"
-pink="\[\e[38;5;168m\]"
-cyan="\[\e[38;5;51m\]"
 offwhite="\[\e[38;5;252m\]"
-green="\[\e[38;5;83m\]"
-red="\[\e[38;5;196m\]"
+red="\[\e[38;5;203m\]"
+orange="\[\e[38;5;208m\]"
+purple="\[\e[38;5;175m\]"
+green="\[\e[38;5;142m\]"
 
 if [ "`id -u`" -eq 0 ]; then # Root
-    PS1="$cyan\u$c$offwhite@$c$pink\H$c $red\w$c #$c ";
+    PS1="$red\u$c$offwhite@$c$purple\H$c $red\w$c #$c ";
 else # User
-    PS1="$cyan\u$c$offwhite@$c$pink\H$c $green\w$c \$$c ";
+    PS1="$orange\u$c$offwhite@$c$purple\H$c $green\w$c \$$c ";
 fi
 
 # Setup fzf
