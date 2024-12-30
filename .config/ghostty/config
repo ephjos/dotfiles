@@ -1,5 +1,8 @@
 theme = GruvboxDark
-font-family = TX-02
+font-family = TX-02-Regular
+font-family-italic = TX-02-Oblique
+font-family-bold = TX-02-Bold
+font-family-bold-italic = TX-02-Bold-Oblique
 
 # MacOS keybinds
 keybind = super+v=unbind
@@ -20,4 +23,6 @@ keybind = super+six=text:\x1E
 
 keybind = global:ctrl+space=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
+quick-terminal-position = center
+quick-terminal-autohide = false
 macos-titlebar-style = hidden
