@@ -1,10 +1,18 @@
 theme = GruvboxDark
-font-family = TX-02-Regular
-font-family-italic = TX-02-Oblique
-font-family-bold = TX-02-Bold
-font-family-bold-italic = TX-02-Bold-Oblique
+font-family = TX-02
+#font-thicken = true
 
-# MacOS keybinds
+shell-integration-features = true
+title = " "
+
+# MacOS
+macos-titlebar-style = hidden
+
+keybind = global:ctrl+space=toggle_quick_terminal
+quick-terminal-animation-duration = 0.1
+quick-terminal-position = center
+quick-terminal-autohide = false
+
 keybind = super+v=unbind
 keybind = alt+c=copy_to_clipboard
 keybind = alt+v=paste_from_clipboard
@@ -21,8 +29,20 @@ keybind = super+r=text:\x12
 keybind = super+w=text:\x17
 keybind = super+six=text:\x1E
 
-keybind = global:ctrl+space=toggle_quick_terminal
-quick-terminal-animation-duration = 0.1
-quick-terminal-position = center
-quick-terminal-autohide = false
-macos-titlebar-style = hidden
+#keybind = super+a>c=new_tab
+#keybind = super+a>1=goto_tab:1
+#keybind = super+a>2=goto_tab:2
+#keybind = super+a>3=goto_tab:3
+#keybind = super+a>4=goto_tab:4
+#keybind = super+a>5=goto_tab:5
+#keybind = super+a>6=goto_tab:6
+#keybind = super+a>7=goto_tab:7
+#keybind = super+a>8=goto_tab:8
+#keybind = super+a>9=goto_tab:9
+#keybind = super+a>\=new_split:right
+#keybind = super+a>shift+\=new_split:right
+#keybind = super+a>-=new_split:down
+#keybind = super+a>h=goto_split:left
+#keybind = super+a>j=goto_split:bottom
+#keybind = super+a>k=goto_split:top
+#keybind = super+a>l=goto_split:right
