@@ -94,7 +94,6 @@ eval "`fnm env`"
 [[ -e "$HOME/.local/bin/_sd_complete" ]] && \
   source "$HOME/.local/bin/_sd_complete"
 
-
 # sdkman
 [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]] || \
   (curl -s "https://get.sdkman.io" | \
@@ -102,3 +101,4 @@ eval "`fnm env`"
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

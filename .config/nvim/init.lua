@@ -121,6 +121,7 @@ require("lazy").setup({
     end,
   },
 
+  --[[
   -- LSP
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -204,6 +205,7 @@ require("lazy").setup({
       })
     end,
   },
+  ]]--
 
   -- Focus
   {
