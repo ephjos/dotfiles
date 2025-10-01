@@ -1,4 +1,4 @@
-theme = GruvboxDark
+theme = Gruvbox Dark
 font-family = TX-02
 
 shell-integration-features = true
@@ -7,9 +7,10 @@ title = " "
 # MacOS
 macos-titlebar-style = hidden
 
-keybind = global:ctrl+space=toggle_quick_terminal
+keybind = global:ctrl+`=toggle_quick_terminal
+keybind = global:ctrl+enter=new_window
 quick-terminal-animation-duration = 0.1
-quick-terminal-position = center
+quick-terminal-position = top
 quick-terminal-autohide = false
 
 keybind = super+v=unbind
@@ -42,7 +43,7 @@ keybind = super+w=text:\x17
 keybind = super+x=text:\x18
 keybind = super+y=text:\x19
 keybind = super+z=text:\x1A
-keybind = super+six=text:\x1E
+keybind = super+digit_6=text:\x1E
 
 #keybind = super+a>c=new_tab
 #keybind = super+a>1=goto_tab:1

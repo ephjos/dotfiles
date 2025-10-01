@@ -43,6 +43,8 @@ export FILE="lf"
 export TERMINAL="xterm-256color"
 export TERM="xterm-256color"
 export BROWSER="firefox"
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+alias icloud="cd \"$ICLOUD\""
 
 # Program configs
 export FZF_DEFAULT_COMMAND="rg --files --hidden --no-heading --follow --glob '!.git'"
