@@ -1,0 +1,9 @@
+#!/bin/sh
+
+e_installed hyprpicker
+
+color="$(hyprpicker)"
+
+copy "$color"
+notify-send "Copied $color to clipboard"
+

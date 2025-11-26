@@ -1,5 +1,5 @@
 configuration {
-   modi: "window,drun,ssh,combi";
+   modi: "window,drun,run,ssh,combi";
    font: "mono 14";
    show-icons: false;
    disable-history: false;
@@ -8,169 +8,85 @@ configuration {
 
 * {
     /* Theme settings */
-    highlight: bold italic;
+    highlight: bold;
     scrollbar: false;
 
-    /* Gruvbox dark colors */
-    gruvbox-dark-bg0-hard:     #1d2021;
-    gruvbox-dark-bg0:          #282828;
-    gruvbox-dark-bg2:          #504945;
-    gruvbox-dark-fg0:          #fbf1c7;
-    gruvbox-dark-fg1:          #ebdbb2;
-    gruvbox-dark-red-dark:     #cc241d;
-    gruvbox-dark-red-light:    #fb4934;
-    gruvbox-dark-yellow-dark:  #d79921;
-    gruvbox-dark-yellow-light: #fabd2f;
-    gruvbox-dark-gray:         #a89984;
+    /* Gruvbox Dark Colors */
+    bg0:     rgba(40, 40, 40, 100%);      /* #282828 - Background */
+    bg1:     rgba(60, 56, 54, 100%);      /* #3c3836 - Background alt */
+    bg2:     rgba(80, 73, 69, 100%);      /* #504945 - Background highlight */
+    bg3:     rgba(102, 92, 84, 100%);     /* #665c54 - Background lighter */
+    bg4:     rgba(124, 111, 100, 100%);   /* #7c6f64 - Background lightest */
 
-    /* Theme colors */
-    background:                  @gruvbox-dark-bg0-hard;
-    background-color:            @background;
-    foreground:                  @gruvbox-dark-fg1;
-    border-color:                @gruvbox-dark-gray;
-    separatorcolor:              @border-color;
-    scrollbar-handle:            @border-color;
+    fg0:     rgba(251, 241, 199, 100%);   /* #fbf1c7 - Foreground */
+    fg1:     rgba(235, 219, 178, 100%);   /* #ebdbb2 - Foreground alt */
+    fg2:     rgba(213, 196, 161, 100%);   /* #d5c4a1 - Foreground dim */
+    fg3:     rgba(189, 174, 147, 100%);   /* #bdae93 - Foreground dimmer */
+    fg4:     rgba(168, 153, 132, 100%);   /* #a89984 - Foreground dimmest */
 
-    normal-background:           @background;
-    normal-foreground:           @foreground;
-    alternate-normal-background: @gruvbox-dark-bg0;
-    alternate-normal-foreground: @foreground;
-    selected-normal-background:  @gruvbox-dark-bg2;
-    selected-normal-foreground:  @gruvbox-dark-fg0;
+    /* Standard accent colors */
+    red:     rgba(204, 36, 29, 100%);     /* #cc241d - Red */
+    green:   rgba(152, 151, 26, 100%);    /* #98971a - Green */
+    yellow:  rgba(215, 153, 33, 100%);    /* #d79921 - Yellow */
+    blue:    rgba(69, 133, 136, 100%);    /* #458588 - Blue */
+    purple:  rgba(177, 98, 134, 100%);    /* #b16286 - Purple */
+    aqua:    rgba(104, 157, 106, 100%);   /* #689d6a - Aqua */
+    gray:    rgba(146, 131, 116, 100%);   /* #928374 - Gray */
+    orange:  rgba(214, 93, 14, 100%);     /* #d65d0e - Orange */
 
-    active-background:           @gruvbox-dark-yellow-dark;
-    active-foreground:           @background;
-    alternate-active-background: @active-background;
-    alternate-active-foreground: @active-foreground;
-    selected-active-background:  @gruvbox-dark-yellow-light;
-    selected-active-foreground:  @active-foreground;
+    /* Bright variants */
+    red-bright:     rgba(251, 73, 52, 100%);    /* #fb4934 */
+    green-bright:   rgba(184, 187, 38, 100%);   /* #b8bb26 */
+    yellow-bright:  rgba(250, 189, 47, 100%);   /* #fabd2f */
+    blue-bright:    rgba(131, 165, 152, 100%);  /* #83a598 */
+    purple-bright:  rgba(211, 134, 155, 100%);  /* #d3869b */
+    aqua-bright:    rgba(142, 192, 124, 100%);  /* #8ec07c */
+    orange-bright:  rgba(254, 128, 25, 100%);   /* #fe8019 */
 
-    urgent-background:           @gruvbox-dark-red-dark;
-    urgent-foreground:           @background;
-    alternate-urgent-background: @urgent-background;
-    alternate-urgent-foreground: @urgent-foreground;
-    selected-urgent-background:  @gruvbox-dark-red-light;
-    selected-urgent-foreground:  @urgent-foreground;
+    /* Dim variants */
+    red-dim:     rgba(157, 0, 6, 100%);      /* #9d0006 */
+    green-dim:   rgba(121, 116, 14, 100%);   /* #79740e */
+    yellow-dim:  rgba(181, 118, 20, 100%);   /* #b57614 */
+    blue-dim:    rgba(7, 102, 120, 100%);    /* #076678 */
+    purple-dim:  rgba(143, 63, 113, 100%);   /* #8f3f71 */
+    aqua-dim:    rgba(66, 123, 88, 100%);    /* #427b58 */
+    orange-dim:  rgba(175, 58, 3, 100%);     /* #af3a03 */
+
+    /* Rofi element mappings */
+    background:                  @bg0;
+    background-color:            @bg0;
+    foreground:                  @fg1;
+    border-color:                @bg2;
+    separatorcolor:              @bg2;
+
+    normal-background:           @bg0;
+    normal-foreground:           @fg1;
+    alternate-normal-background: @bg1;
+    alternate-normal-foreground: @fg1;
+    selected-normal-background:  @orange;
+    selected-normal-foreground:  @fg1;
+
+    active-background:           @bg0;
+    active-foreground:           @orange-bright;
+    alternate-active-background: @bg1;
+    alternate-active-foreground: @orange-bright;
+    selected-active-background:  @orange-bright;
+    selected-active-foreground:  @bg0;
+
+    urgent-background:           @bg0;
+    urgent-foreground:           @red-bright;
+    alternate-urgent-background: @bg1;
+    alternate-urgent-foreground: @red-bright;
+    selected-urgent-background:  @red-bright;
+    selected-urgent-foreground:  @bg0;
 }
 
-window {
-    background-color: @background;
-    border:           2;
-    padding:          2;
-}
-
-mainbox {
-    border:  0;
-    padding: 0;
-}
-
-message {
-    border:       2px 0 0;
-    border-color: @separatorcolor;
-    padding:      1px;
-}
-
-textbox {
-    highlight:  @highlight;
-    text-color: @foreground;
-}
 
 listview {
     border:       2px solid 0 0;
-    padding:      2px 0 0;
+    padding:      20px 0 0;
     border-color: @separatorcolor;
     spacing:      2px;
     scrollbar:    @scrollbar;
-    lines: 6;
-}
-
-element {
-    border:  0;
-}
-
-element-text {
-   padding: 10px;
-   horizontal-align: 0.5;
-}
-
-element.normal.normal {
-    background-color: @normal-background;
-    text-color:       @normal-foreground;
-}
-
-element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
-}
-
-element.normal.active {
-    background-color: @active-background;
-    text-color:       @active-foreground;
-}
-
-element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-
-element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @selected-urgent-foreground;
-}
-
-element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @selected-active-foreground;
-}
-
-element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
-}
-
-element.alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
-}
-
-element.alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
-}
-
-mode-switcher {
-    border:       2px 0 0;
-    border-color: @separatorcolor;
-}
-
-inputbar {
-    spacing:    0;
-    text-color: @normal-foreground;
-    padding:    2px;
-    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
-}
-
-case-indicator,
-entry,
-prompt,
-button {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-
-button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-
-textbox-prompt-sep {
-    expand:     false;
-    str:        ":";
-    text-color: @normal-foreground;
-    margin:     0 0.3em 0 0;
-}
-element-text, element-icon {
-    background-color: inherit;
-    text-color:       inherit;
 }
 

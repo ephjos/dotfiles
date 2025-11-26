@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Generate a latex pdf with a bibliography, with file.tex and file.bib in
+# the same directory like:
+#   `sd doc bib file`
+
+set -euo pipefail
+
+dir="$(dirname $0)"
+
+$dir/clean
+
+$dir/tex xelatex -interaction nonstopmode "$1.tex"
+$dir/tex bibtex "$1"
+$dir/tex xelatex -interaction nonstopmode "$1.tex"
+$dir/tex xelatex -interaction nonstopmode "$1.tex"

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# removes auxillary files from project generation
+
+set -euo pipefail
+
+rm -fv *.log *.aux *.blg *.bbl

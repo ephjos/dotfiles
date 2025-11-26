@@ -1,5 +1,0 @@
-# fzf aliases
-
-alias \
-  brpl="fzf --print-query --multi --preview='bash -c {q}' --preview-window=up:70"
-  # TODO: More fzf aliases

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Sets the background. If given an argument, will set file as background.
+
+if [ $# -eq 1 ]; then
+  cp "$1" "$WALLPAPER";
+  notify-send -i "$WALLPAPER" "Wallpaper changed.";
+fi
+
+killall hyprpaper
+hyprpaper &
+

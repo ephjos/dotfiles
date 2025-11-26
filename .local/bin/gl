@@ -1,0 +1,7 @@
+#!/bin/sh
+  
+set -euo pipefail
+
+e_installed git
+
+git log --graph --abbrev-commit --decorate --date=relative --all $@

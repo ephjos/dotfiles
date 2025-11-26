@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Open a prompt to take a screenshot
+
+set -euo pipefail
+
+# Create output dir
+mkdir -p "$SCREENSHOTS"
+
+options="\
+a selected area
+pick window
+full screen";
+
+choice="$(echo -e "$options" | rofi -dmenu -p "Screenshot")";
+
+case "$choice" in
+  "a selected area") \
+    hyprshot --output-folder "$SCREENSHOTS" --mode region ;;
+  "pick window") \
+    hyprshot --output-folder "$SCREENSHOTS" --mode window ;;
+  "full screen")
+    hyprshot --output-folder "$SCREENSHOTS" --mode output ;;
+  *) \
+    notify-send "make image failed" "Unknown option: $option" ;;
+esac
+

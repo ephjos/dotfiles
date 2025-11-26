@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -euo pipefail
+  
+if [[ -e "$HOME/repos/dotfiles" ]]; then
+  e_installed git
+  git --git-dir=$HOME/repos/dotfiles/.git --work-tree=$HOME "$@"
+else
+  echo "Must clone github.com/ephjos/dotfiles to ~/repos/dotfiles"
+fi

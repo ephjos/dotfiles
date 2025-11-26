@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -euo pipefail
+
+e_installed git
+e_installed fzf
+e_installed xargs
+  
+git status &> /dev/null || { echo "Not in a git repo"; return; }
+git branch -a | cut -d" " -f2- | xargs -I{} basename {} | sort | uniq | \
+  fzf -0 --reverse --prompt "Checkout ($(git branch --show-current)): " \
+  --preview "git diff --color=always HEAD {}" --preview-window up | \
+  xargs -I{} git checkout {}

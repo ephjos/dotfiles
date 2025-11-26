@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# launch a docker container and build a PDF using it like:
+#   `sd doc tex xelatex -interaction nonstopmode file.tex`
+
+set -euo pipefail
+
+exec docker run --rm -i --network host \
+  -v $(pwd):/mounted josephthomashines/tex \
+  $@
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Bash REPL
+#
+  
+
+fzf --print-query --multi --preview='bash -c {q}' --preview-window=up:70

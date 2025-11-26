@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cal -3
+read -n1 -s -r -p ""

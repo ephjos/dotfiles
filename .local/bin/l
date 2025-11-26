@@ -1,0 +1,3 @@
+#!/bin/sh
+  
+ls -a --color=auto --group-directories-first $@

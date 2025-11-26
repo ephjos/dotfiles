@@ -1,0 +1,88 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 0,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "bluetooth",
+    "wireplumber",
+    "network",
+    "cpu",
+    "memory",
+    "battery",
+  ],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+    }
+  },
+  "cpu": {
+    "format": "cpu:{usage}%",
+    "interval": 5,
+    "on-click": "hyprctl dispatch exec [float] 'ghostty -e btop -p 1'"
+  },
+  "memory": {
+    "format": "mem:{percentage}%",
+    "interval": 5,
+    "on-click": "hyprctl dispatch exec [float] 'ghostty -e btop -p 2'"
+  },
+  "clock": {
+    "format": "{:L%d %B %Y %H:%M}",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exec [float] 'ghostty -e e_cal'"
+  },
+  "network": {
+    "format": "net:{bandwidthTotalBytes}",
+    "tooltip-format-wifi": "net:{essid} ({bandwidthTotalBytes})",
+    "tooltip-format-ethernet": "net:{ipaddr}/{cidr} ({bandwidthTotalBytes})",
+    "format-disconnected": "net:disconnected",
+    "interval": 5,
+    "spacing": 1,
+    "on-click": "hyprctl dispatch exec [float] 'ghostty -e nmtui'"
+  },
+  "battery": {
+    "format": "bat:{capacity}%",
+    "interval": 60,
+    "on-click": "e_rofi_power",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
+  },
+  "bluetooth": {
+    "format": "bt:{status}",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "hyprctl dispatch exec [float] 'ghostty -e bluetuith'",
+  },
+  "wireplumber": {
+    "format": "vol:{volume}",
+    "format-muted": "vol:muted",
+    "tooltip-format": "Playing at {volume}%",
+    "on-click": "hyprctl dispatch exec [float] 'ghostty -e wiremix'",
+    "scroll-step": 5,
+  },
+}

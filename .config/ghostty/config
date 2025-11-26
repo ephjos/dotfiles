@@ -1,14 +1,16 @@
 theme = Gruvbox Dark
 font-family = TX-02
 
-shell-integration-features = true
+cursor-style = block
+
+shell-integration-features = false
 title = " "
 
-# MacOS
+window-decoration = none
 macos-titlebar-style = hidden
 
-keybind = global:ctrl+`=toggle_quick_terminal
-keybind = global:ctrl+enter=new_window
+#keybind = global:ctrl+`=toggle_quick_terminal
+#keybind = global:ctrl+enter=new_window
 quick-terminal-animation-duration = 0.1
 quick-terminal-position = top
 quick-terminal-autohide = false

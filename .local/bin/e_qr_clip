@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Create a qr from the clipboard contents and display it
+
+set -euo pipefail
+
+clip=$(xclip -o);
+
+[[ -z "$clip" ]] && { notify-send "Nothing in Clipboard" "Can't display QRCode unless something is in the clipboard..." && exit 1; };
+
+xclip -o | qrencode -o /tmp/qrencode && sxiv /tmp/qrencode -z 300
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -euo pipefail
+
+e_installed tree
+
+tree -C -I "*node*|*venv*|*cache*|*dist*|*CMakeFiles*|*Target*|*target*" $@
+

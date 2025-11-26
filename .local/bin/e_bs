@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Quickly start a browser-sync server
+
+set -euo pipefail
+
+e_installed browser-sync
+
+browser-sync start \
+  --no-notify --no-ui --no-open \
+  --ignore '**/.*' \
+  -sw

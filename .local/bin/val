@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -euo pipefail
+ 
+e_installed valgrind
+
+valgrind -v --leak-check=full --track-origins=yes --show-leak-kinds=all $@

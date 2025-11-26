@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if e_installed nvim &> /dev/null; then
+  nvim -d $@
+fi
+
+# TODO: check this
+if e_installed vimdiff &> /dev/null; then
+  vimdiff $@
+fi
+
+echo "nvim/vimdiff not installed"
+exit 1

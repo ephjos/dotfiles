@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# The power menu, a prompt to logout or shutdown
+
+set -euo pipefail
+
+function logout_prompt {
+  choice=$(echo -e "No\nYes" | rofi -dmenu -p "Logout now?")
+  [[ "$choice" == "Yes" ]] && \
+    loginctl terminate-user $USER
+}
+
+function shutdown_prompt {
+  choice=$(echo -e "No\nYes" | rofi -dmenu -p "Shutdown now?")
+  [[ "$choice" == "Yes" ]] && \
+    shutdown now
+}
+
+choice=$(echo -e "Cancel\nLogout\nShutdown" | rofi -dmenu -p "Power menu")
+case "$choice" in
+  "Logout") \
+    logout_prompt ;;
+  "Shutdown") \
+    shutdown_prompt ;;
+esac

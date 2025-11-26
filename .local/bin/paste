@@ -1,0 +1,9 @@
+#!/bin/sh
+  
+if e_installed wl-paste &> /dev/null; then
+  wl-paste $@
+  exit 0
+fi
+
+echo "wl-paste not installed"
+exit 1

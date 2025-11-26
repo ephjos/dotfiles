@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# As of 2020, my life expectancy is ~78 years,
-# these are the days I have left.
-
-set -euo pipefail
-
-echo $((($(date +%s --date "2076-07-25")-$(date +%s))/(3600*24)))
-
