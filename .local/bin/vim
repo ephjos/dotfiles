@@ -1,19 +1,14 @@
 #!/bin/sh
 
-if e_installed /bin/nvim &> /dev/null; then
-  /bin/nvim $@
+if e_installed nvim &> /dev/null; then
+  nvim $@
   exit 0
 fi
 
-if e_installed /bin/vim &> /dev/null; then
-  /bin/vim $@
+if e_installed vi &> /dev/null; then
+  vi $@
   exit 0
 fi
 
-if e_installed /bin/vi &> /dev/null; then
-  /bin/vi $@
-  exit 0
-fi
-
-echo "nvim/vim/vi not installed"
+echo "nvim/vi not installed"
 exit 1
