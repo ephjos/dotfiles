@@ -1,6 +1,6 @@
 configuration {
    modi: "window,drun,run,ssh,combi";
-   font: "mono 14";
+   font: "TX-02, mono 14";
    show-icons: false;
    disable-history: false;
    sidebar-mode: false;
