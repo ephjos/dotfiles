@@ -93,6 +93,14 @@ window=#ebdbb2,#282828
 '
 
 #
+# :optional
+#
+export HYPRPAPER_MONITOR="eDP-1"
+export HYPRLAND_RETINA="0"
+export HYPRLAND_FANCY="0"
+[[ -f "$HOME/.opt" ]] && source "$HOME/.opt"
+
+#
 # :path
 #
 function addpath {

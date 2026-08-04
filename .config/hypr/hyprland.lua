@@ -4,19 +4,29 @@
 --- MONITORS ---
 ----------------
 
-hl.monitor({
+local use_retina = os.getenv("HYPRLAND_RETINA") == "1"
+
+if use_retina then
+  hl.monitor({
     output = "",
     mode = "preferred",
     position = "auto",
-    -- scale = 1, -- Default
-    scale = 1.6, -- Retina
-})
+    scale = 1.6,
+  })
+else
+  hl.monitor({
+    output = "",
+    mode = "preferred",
+    position = "auto",
+    scale = 1,
+  })
+end
 
 ---------------------
 --- SET VARIABLES ---
 ---------------------
 
-local fancy = false
+local fancy = os.getenv("HYPRLAND_FANCY") == "1"
 
 -- Gruvbox Dark
 local bg0_h = "rgba(1d2021ff)"
