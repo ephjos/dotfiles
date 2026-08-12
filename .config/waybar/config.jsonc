@@ -43,17 +43,17 @@
   "cpu": {
     "format": "cpu:{usage}%",
     "interval": 5,
-    "on-click": "hyprctl dispatch exec [float] 'ghostty -e btop -p 1'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e btop -p 1\")'",
   },
   "memory": {
     "format": "mem:{percentage}%",
     "interval": 5,
-    "on-click": "hyprctl dispatch exec [float] 'ghostty -e btop -p 2'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e btop -p 2\")'",
   },
   "clock": {
     "format": "{:L%d %B %Y %H:%M}",
     "tooltip": false,
-    "on-click": "hyprctl dispatch exec [float] 'ghostty -e e_cal'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e e_cal\")'",
   },
   "network": {
     "format": "net:{bandwidthTotalBytes}",
@@ -62,7 +62,7 @@
     "format-disconnected": "net:disconnected",
     "interval": 5,
     "spacing": 1,
-    "on-click": "hyprctl dispatch exec [float] 'ghostty -e nmtui'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e nmtui\")'",
   },
   "battery": {
     "format": "bat:{capacity}%",
@@ -76,13 +76,13 @@
   "bluetooth": {
     "format": "bt:{status}",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "hyprctl dispatch exec [float] 'ghostty -e bluetuith'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e bluetuith\")'",
   },
   "wireplumber": {
     "format": "vol:{volume}",
     "format-muted": "vol:muted",
     "tooltip-format": "Playing at {volume}%",
-    "on-click": "hyprctl dispatch exec [float] 'ghostty -e wiremix'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e wiremix\")'",
     "scroll-step": 5,
   },
 }
