@@ -2,17 +2,19 @@ vim.g.mapleader = " "
 
 -- Temporary Autocmds
 vim.keymap.set("n", "<leader>r", function()
-  vim.ui.input({ prompt = "Enter command: " }, function(command)
+  vim.ui.input({ prompt = "Enter make command: " }, function(command)
     if not command or command == "" then
       return
     end
 
-    vim.keymap.set("n", "<CR>", "<cmd>!" .. command .. "<CR>", {
-      desc = "Run: " .. command,
-    })
+    vim.opt.makeprg = command
+    vim.cmd.make()
   end)
 end, {
-  desc = "Rebind Enter to a shell command",
+  desc = "Set makeprg and run make",
+})
+vim.keymap.set("n", "<CR>", function() vim.cmd.make() end, {
+  desc = "Run make",
 })
 
 -- Substitutions
