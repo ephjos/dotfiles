@@ -6,7 +6,7 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export BROWSER="brave"
 export EDITOR="vim"
-export FILE="lf"
+export FILE="yazi"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --no-heading --follow --glob '!.git'"
 export GTK_THEME=Adwaita:dark
 export GTK_USE_PORTAL=1
