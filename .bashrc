@@ -4,11 +4,12 @@
 # :vars
 #
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export BROWSER="firefox"
+export BROWSER="brave"
 export EDITOR="vim"
 export FILE="lf"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --no-heading --follow --glob '!.git'"
 export GTK_THEME=Adwaita:dark
+export GTK_USE_PORTAL=1
 export GTK_APPLICATION_PREFER_DARK_THEME=1
 export LESSHISTFILE=-
 export MallocNanoZone=0
@@ -95,9 +96,6 @@ window=#ebdbb2,#282828
 #
 # :optional
 #
-export HYPRPAPER_MONITOR="eDP-1"
-export HYPRLAND_RETINA="0"
-export HYPRLAND_FANCY="0"
 [[ -f "$HOME/.opt" ]] && source "$HOME/.opt"
 
 #

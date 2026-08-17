@@ -8,11 +8,12 @@
   "modules-center": ["clock"],
   "modules-right": [
     "bluetooth",
-    "wireplumber",
     "network",
+    "wireplumber",
     "cpu",
     "memory",
     "battery",
+    "custom/power",
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -43,11 +44,15 @@
   "cpu": {
     "format": "cpu:{usage}%",
     "interval": 5,
+    "max-length": 9,
+    "min-length": 9,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e btop -p 1\")'",
   },
   "memory": {
     "format": "mem:{percentage}%",
     "interval": 5,
+    "max-length": 9,
+    "min-length": 9,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e btop -p 2\")'",
   },
   "clock": {
@@ -56,17 +61,19 @@
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e e_cal\")'",
   },
   "network": {
-    "format": "net:{bandwidthTotalBytes}",
-    "tooltip-format-wifi": "net:{essid} ({bandwidthTotalBytes})",
-    "tooltip-format-ethernet": "net:{ipaddr}/{cidr} ({bandwidthTotalBytes})",
-    "format-disconnected": "net:disconnected",
+    "format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
     "interval": 5,
     "spacing": 1,
+    "tooltip": false,
+    "max-length": 20,
+    "min-length": 20,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e nmtui\")'",
   },
   "battery": {
     "format": "bat:{capacity}%",
     "interval": 60,
+    "max-length": 9,
+    "min-length": 9,
     "on-click": "e_rofi_power",
     "states": {
       "warning": 30,
@@ -75,14 +82,23 @@
   },
   "bluetooth": {
     "format": "bt:{status}",
-    "tooltip-format": "Devices connected: {num_connections}",
+    "tooltip": false,
+    "max-length": 20,
+    "min-length": 20,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e bluetuith\")'",
   },
   "wireplumber": {
-    "format": "vol:{volume}",
+    "format": "vol:{volume}%",
     "format-muted": "vol:muted",
-    "tooltip-format": "Playing at {volume}%",
+    "tooltip": false,
+    "max-length": 9,
+    "min-length": 9,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e wiremix\")'",
     "scroll-step": 5,
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "e_rofi_power",
   },
 }
