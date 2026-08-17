@@ -28,7 +28,7 @@
   box-shadow: none;
   color: @fg1;
   font-family: "TX-02", monospace;
-  font-size: 12px;
+  font-size: 14px;
   transition: all 100ms;
 }
 

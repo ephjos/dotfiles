@@ -5,7 +5,7 @@
   "spacing": 0,
   "height": 0,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-center": ["clock", "custom/update"],
   "modules-right": [
     "bluetooth",
     "network",
@@ -100,5 +100,10 @@
     "format": "⏻",
     "tooltip": false,
     "on-click": "e_rofi_power",
+  },
+  "custom/update": {
+    "format": "⟳",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e e_update\")'",
   },
 }

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+read -p "Press [Enter] to update the system, [Ctrl+c] to cancel"
+
+yay -Syyuu --noconfirm
+
+notify-send "System update complete"
