@@ -145,7 +145,7 @@ hl.bind(MOD .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(MOD .. " + SHIFT + W",     hl.dsp.exec_cmd(TERMINAL .. " -e nmtui"))
 hl.bind(MOD .. " + SHIFT + X",     hl.dsp.exec_cmd("e_rofi_power"))
 hl.bind(MOD .. " + SHIFT + P",     hl.dsp.exec_cmd("e_hyprpicker"))
-hl.bind(MOD .. " + SHIFT + L",     hl.dsp.exec_cmd("localsend"))
+hl.bind(MOD .. " + SHIFT + S",     hl.dsp.exec_cmd("localsend"))
 
 hl.bind(MOD .. " + SHIFT + EQUAL", hl.dsp.exec_cmd(BRIGHTNESS_UP),   { locked = true, repeating = true })
 hl.bind(MOD .. " + SHIFT + MINUS", hl.dsp.exec_cmd(BRIGHTNESS_DOWN), { locked = true, repeating = true })
