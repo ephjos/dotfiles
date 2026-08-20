@@ -5,8 +5,9 @@
   "spacing": 0,
   "height": 0,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock", "custom/update"],
+  "modules-center": ["clock"],
   "modules-right": [
+    "custom/update",
     "bluetooth",
     "network",
     "wireplumber",
@@ -46,19 +47,19 @@
     "interval": 5,
     "max-length": 9,
     "min-length": 9,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e btop -p 1\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=btop--center -e btop -p 1\")'",
   },
   "memory": {
     "format": "mem:{percentage}%",
     "interval": 5,
     "max-length": 9,
     "min-length": 9,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e btop -p 2\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=btop--center -e btop -p 2\")'",
   },
   "clock": {
     "format": "{:L%d %B %Y %H:%M}",
     "tooltip": false,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e e_cal\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=cal--center -e e_cal\")'",
   },
   "network": {
     "format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
@@ -67,14 +68,14 @@
     "tooltip": false,
     "max-length": 20,
     "min-length": 20,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e nmtui\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=nmtui--center -e nmtui\")'",
   },
   "battery": {
     "format": "bat:{capacity}%",
     "interval": 60,
     "max-length": 9,
     "min-length": 9,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e e_battery\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=battery--center -e e_battery\")'",
     "states": {
       "warning": 30,
       "critical": 15
@@ -83,7 +84,7 @@
   "bluetooth": {
     "format": "bt:{status}",
     "tooltip": false,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e bluetuith\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=bluetooth--center -e bluetuith\")'",
   },
   "wireplumber": {
     "format": "vol:{volume}%",
@@ -91,7 +92,7 @@
     "tooltip": false,
     "max-length": 9,
     "min-length": 9,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e wiremix\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=volume--center -e wiremix\")'",
     "scroll-step": 5,
   },
   "custom/power": {
@@ -102,6 +103,6 @@
   "custom/update": {
     "format": "⟳",
     "tooltip": false,
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty -e e_update\")'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"ghostty --title=update--center -e e_update\")'",
   },
 }

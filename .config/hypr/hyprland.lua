@@ -247,7 +247,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { title = "^CHOOSER$" },
+    match = { title = ".*--center.*" },
     float = true,
     center = true,
     size = {

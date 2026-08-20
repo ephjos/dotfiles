@@ -4,5 +4,6 @@ read -p "Press [Enter] to update the system, [Ctrl+c] to cancel"
 
 yay -Syyuu --noconfirm
 
+echo "System update complete"
 notify-send "System update complete"
 read -n1 -s -r -p ""
