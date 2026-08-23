@@ -7,8 +7,8 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
-    "custom/update",
     "bluetooth",
+    "custom/update",
     "network",
     "wireplumber",
     "cpu",
