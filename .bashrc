@@ -154,6 +154,10 @@ command -v fnm &> /dev/null || \
     bash -s -- --install-dir "$FNM_DIR" --skip-shell)
 eval "`fnm env`"
 
+# ruby
+command -v ruby &> /dev/null && \
+  addpath "$(ruby -e 'print Gem.user_dir')/bin"
+
 # sdkman
 [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]] || \
   (curl -s "https://get.sdkman.io" | \
