@@ -7,9 +7,96 @@ function ApplyColor(color)
   vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
 
--- Grab personal vim._ config
-require("ephjos")
+--
+-- :remap
+--
+vim.g.mapleader = " "
 
+-- Temporary Autocmds
+vim.keymap.set("n", "<leader>r", function()
+  vim.ui.input({ prompt = "Enter make command: " }, function(command)
+    if not command or command == "" then
+      return
+    end
+
+    vim.opt.makeprg = command
+    vim.cmd.make()
+  end)
+end, {
+  desc = "Set makeprg and run make",
+})
+vim.keymap.set("n", "<CR>", function() vim.cmd.make() end, {
+  desc = "Run make",
+})
+
+-- Substitutions
+vim.keymap.set("n", "S", ':%s//g<Left><Left>')
+vim.keymap.set("v", "S", ':s//g<Left><Left>')
+
+-- Spellcheck
+vim.keymap.set("n", "<F6>", ':setlocal spell! spelllang=en_us<CR>')
+
+-- Clear highlight on ESC
+vim.keymap.set("n", "<ESC>", ":noh<CR>", { silent = true })
+
+-- No arrow keys
+vim.keymap.set("n", "<Up>", "<NOP>")
+vim.keymap.set("n", "<Down>", "<NOP>")
+vim.keymap.set("n", "<Left>", "<NOP>")
+vim.keymap.set("n", "<Right>", "<NOP>")
+vim.keymap.set("i", "<Up>", "<NOP>")
+vim.keymap.set("i", "<Down>", "<NOP>")
+vim.keymap.set("i", "<Left>", "<NOP>")
+vim.keymap.set("i", "<Right>", "<NOP>")
+
+-- Quick switch between panes
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-k>", "<C-w>l")
+
+--
+-- :set
+--
+vim.opt.backupcopy="yes"
+vim.opt.background="dark"
+vim.opt.clipboard="unnamedplus"
+vim.opt.colorcolumn="80"
+vim.opt.encoding="utf-8"
+vim.opt.errorbells=false
+vim.opt.errorbells=true
+vim.opt.expandtab=true
+vim.opt.expandtab=true
+vim.opt.guicursor=""
+vim.opt.hidden=true
+vim.opt.hlsearch=false
+vim.opt.hlsearch=true
+vim.opt.incsearch=true
+vim.opt.incsearch=true
+vim.opt.linebreak=true
+vim.opt.list=true
+vim.opt.listchars="tab:>-"
+vim.opt.mouse="i"
+vim.opt.nrformats=""
+vim.opt.number=true
+vim.opt.relativenumber=true
+vim.opt.scrolloff=8
+vim.opt.shiftwidth=2
+vim.opt.showmode=false
+vim.opt.smartcase=true
+vim.opt.smartindent=true
+vim.opt.softtabstop=2
+vim.opt.swapfile=false
+vim.opt.tabstop=2
+vim.opt.termguicolors=false
+vim.opt.undodir="/tmp/vim_undos_" .. os.getenv("USER")
+vim.opt.undofile=true
+vim.opt.wildmenu=true
+vim.opt.wrap=false
+
+--
+-- :plugins
+--
 -- Install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -73,10 +160,9 @@ require("lazy").setup({
   -- Highlighting
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
     build = ':TSUpdate',
     config = function()
-      require'nvim-treesitter.configs'.setup {
+      require('nvim-treesitter').setup({
         -- A list of parser names, or "all" (the five listed parsers should always be installed)
         ensure_installed = {"javascript", "typescript", "python", "c", "lua", "vim", "vimdoc", "query" },
 
@@ -96,7 +182,13 @@ require("lazy").setup({
           -- Instead of true it can also be a list of languages
           additional_vim_regex_highlighting = false,
         },
-      }
+      })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
     end,
   }
 })
