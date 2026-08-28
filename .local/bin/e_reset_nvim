@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -rfv "$XDG_CACHE_HOME/nvim" \
+  "$XDG_CONFIG_HOME/nvim/lazy-lock.json" \
+  "$XDG_DATA_HOME/nvim"
