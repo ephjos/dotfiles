@@ -58,7 +58,6 @@ export PLTUSERHOME="$XDG_DATA_HOME/racket"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export SCREENSHOTS="$PICTURES/screenshots"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
-export TERM=$TERMINAL
 export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
 export WALLPAPER="$XDG_DATA_HOME/wallpaper.png"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
@@ -170,16 +169,24 @@ command -v go &> /dev/null && go telemetry off
 #
 # :prompt
 # 
-c="\[\e[0m\]"
-offwhite="\[\e[38;5;252m\]"
-red="\[\e[38;5;203m\]"
-orange="\[\e[38;5;208m\]"
-purple="\[\e[38;5;175m\]"
-green="\[\e[38;5;142m\]"
+reset="\[\e[0m\]"
 
-if [ "`id -u`" -eq 0 ]; then # Root
-    PS1="$red\u$c$offwhite@$c$purple\H$c $red\w$c #$c ";
-else # User
-    PS1="$orange\u$c$offwhite@$c$purple\H$c $green\w$c \$$c ";
+if [[ "$TERM" == "xterm-ghostty" ]]; then
+  red="\[\e[38;2;251;73;52m\]"
+  orange="\[\e[38;2;254;128;25m\]"
+  purple="\[\e[38;2;211;134;155m\]"
+  green="\[\e[38;2;184;187;38m\]"
+else
+  red="\[\e[38;5;203m\]"
+  orange="\[\e[38;5;208m\]"
+  purple="\[\e[38;5;175m\]"
+  green="\[\e[38;5;142m\]"
+fi
+
+
+if [ "$(id -u)" -eq 0 ]; then
+    PS1="${red}\u${reset}@${purple}\H${reset} ${red}\w${reset} # "
+else
+    PS1="${orange}\u${reset}@${purple}\H${reset} ${green}\w${reset} \$ "
 fi
 

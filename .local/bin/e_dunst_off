@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Disabled dunst notifications
-
-set -euo pipefail
-
-kill -SIGUSR1 $(pidof dunst)

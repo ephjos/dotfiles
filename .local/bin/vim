@@ -1,12 +1,12 @@
 #!/bin/sh
 
 if e_installed nvim &> /dev/null; then
-  nvim $@
+  nvim "$@"
   exit 0
 fi
 
 if e_installed vi &> /dev/null; then
-  vi $@
+  vi "$@"
   exit 0
 fi
 
