@@ -592,23 +592,13 @@ ShellRoot {
                 }
             }
 
-            // Keep the clock exactly screen-centered. The invisible left spacer
-            // mirrors the updates module on the right.
+            // Keep the clock exactly screen-centered. The invisible right spacer
+            // mirrors the updates module on the left.
             Row {
                 id: center
                 spacing: root.itemSpacing
                 anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
 
-                Item {
-                    width: root.charWidth * 8 + root.padX * 2
-                    height: 1
-                }
-                BarModule {
-                    id: clockModule
-                    fixedCharacters: 16
-                    text: Qt.formatDateTime(clock.date, "yyyy-MM-dd HH:mm")
-                    onActivated: panel.togglePopup("calendar")
-                }
                 BarModule {
                     id: updateModule
                     fixedCharacters: 8
@@ -616,6 +606,16 @@ ShellRoot {
                     normalForeground: root.updateState === "error" ? root.c.redBright
                         : root.updateCount ? root.c.orangeBright : root.c.fg1
                     onActivated: panel.togglePopup("updates")
+                }
+                BarModule {
+                    id: clockModule
+                    fixedCharacters: 16
+                    text: Qt.formatDateTime(clock.date, "yyyy-MM-dd HH:mm")
+                    onActivated: panel.togglePopup("calendar")
+                }
+                Item {
+                    width: root.charWidth * 8 + root.padX * 2
+                    height: 1
                 }
             }
 
@@ -667,7 +667,7 @@ ShellRoot {
                     id: batteryModule
                     visible: root.hasBattery
                     fixedCharacters: 8
-                    readonly property int pct: root.battery ? Math.round(root.battery.percentage) : 0
+                    readonly property int pct: root.battery ? Math.round(root.battery.percentage * 100) : 0
                     readonly property bool plugged: !UPower.onBattery
                     text: "bat:" + pct + "%"
                     normalBackground: plugged ? root.c.green : pct <= 15 ? root.c.redBright : pct <= 30 ? root.c.yellow : root.c.bg
@@ -1166,12 +1166,12 @@ ShellRoot {
                 anchorItem: batteryModule
                 popupWidth: 390
 
-                Header { title: "battery"; subtitle: root.battery ? Math.round(root.battery.percentage) + "%" : "-" }
+                Header { title: "battery"; subtitle: root.battery ? Math.round(root.battery.percentage * 100) + "%" : "-" }
                 Meter {
                     implicitWidth: parent.width
-                    value: root.battery ? root.battery.percentage / 100 : 0
-                    fillColor: !UPower.onBattery ? root.c.green : (root.battery && root.battery.percentage <= 15) ? root.c.red
-                        : (root.battery && root.battery.percentage <= 30) ? root.c.yellow : root.c.orangeBright
+                    value: root.battery ? root.battery.percentage : 0
+                    fillColor: !UPower.onBattery ? root.c.green : (root.battery && root.battery.percentage <= 0.15) ? root.c.red
+                        : (root.battery && root.battery.percentage <= 0.3) ? root.c.yellow : root.c.orangeBright
                 }
                 ValueRow { label: "state"; value: root.batteryState() }
                 ValueRow { label: root.battery && root.battery.state === UPowerDeviceState.Charging ? "until full" : "remaining"; value: root.batteryTime() }
@@ -1784,11 +1784,24 @@ ShellRoot {
         onSlideOffsetYChanged: {
             if (surfaceVisible) anchor.updateAnchor()
         }
-        grabFocus: popupWindow.requestedVisible
+        // PopupWindow's native grab is dismissed when an unrelated Wayland
+        // surface (such as the transient notification window) is unmapped.
+        // Let Hyprland track the intended popup windows explicitly instead.
+        grabFocus: false
         visible: surfaceVisible
         implicitWidth: popupWidth
         implicitHeight: body.implicitHeight + (contentPadding + root.borderWidth) * 2
         color: "transparent"
+
+        HyprlandFocusGrab {
+            id: popupFocusGrab
+            windows: [popupWindow.owner, popupWindow]
+            active: popupWindow.requestedVisible && popupWindow.surfaceVisible
+
+            onCleared: {
+                if (popupWindow.requestedVisible) popupWindow.hideAnimated()
+            }
+        }
 
         Rectangle {
             id: popupSurface
@@ -2067,7 +2080,7 @@ ShellRoot {
         actionsSupported: true
         imageSupported: true
         persistenceSupported: true
-        bodyMarkupSupported: false
+        bodyMarkupSupported: true
         bodyImagesSupported: false
         actionIconsSupported: false
         inlineReplySupported: false
@@ -2662,5 +2675,4 @@ ShellRoot {
         }
     }
 }
-
 

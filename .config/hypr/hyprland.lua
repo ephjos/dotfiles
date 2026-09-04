@@ -204,7 +204,7 @@ hl.bind(MOD .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(MOD .. " + mouse:272",  hl.dsp.window.drag(),   { mouse = true })
 hl.bind(MOD .. " + mouse:273",  hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("CTRL + SHIFT + 3", hl.dsp.exec_cmd("hyprshot --output-folder $SCREENSHOTS --mode output"))
+hl.bind("CTRL + SHIFT + 3", hl.dsp.exec_cmd("hyprshot --output-folder $SCREENSHOTS --mode output --mode active"))
 hl.bind("CTRL + SHIFT + 4", hl.dsp.exec_cmd("hyprshot --output-folder $SCREENSHOTS --mode region"))
 hl.bind("CTRL + SHIFT + 5", hl.dsp.exec_cmd("e_rofi_screenshot"))
 
