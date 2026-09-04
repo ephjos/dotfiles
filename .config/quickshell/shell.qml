@@ -527,7 +527,7 @@ ShellRoot {
             screen: modelData
             aboveWindows: true
             color: root.c.bg
-            implicitHeight: Math.max(left.implicitHeight, center.implicitHeight, right.implicitHeight) + root.borderWidth
+            implicitHeight: Math.max(left.implicitHeight, center.implicitHeight, right.implicitHeight)
             exclusiveZone: implicitHeight
             anchors { top: true; left: true; right: true }
 

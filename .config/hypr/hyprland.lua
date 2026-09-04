@@ -12,7 +12,7 @@ MONITOR_SCALE = MONITOR_SCALE or 1
 FANCY         = FANCY or 1
 
 MOD = "SUPER"
-BAR = "qs -c bar ipc call bar "
+BAR = "qs ipc call bar "
 
 TERMINAL = os.getenv("TERMINAL") or "ghostty"
 BROWSER  = os.getenv("BROWSER") or "brave"
@@ -39,8 +39,8 @@ MEDIA_PREV      = "playerctl previous"
 -- :config
 --
 hl.on("hyprland.start", function()
+  hl.exec_cmd("sh -c 'qs & until qs ipc show >/dev/null 2>&1; do sleep 1; done; " .. BAR .. "setAnimations " .. FANCY .. "'")
   hl.exec_cmd("hyprpaper")
-  hl.exec_cmd("qs -c bar")
   hl.exec_cmd("udiskie")
   hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 end)
