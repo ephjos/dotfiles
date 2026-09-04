@@ -63,8 +63,8 @@ configuration {
     normal-foreground:           @fg1;
     alternate-normal-background: @bg1;
     alternate-normal-foreground: @fg1;
-    selected-normal-background:  @orange;
-    selected-normal-foreground:  @fg1;
+    selected-normal-background:  @orange-bright;
+    selected-normal-foreground:  @bg1;
 
     active-background:           @bg0;
     active-foreground:           @orange-bright;
